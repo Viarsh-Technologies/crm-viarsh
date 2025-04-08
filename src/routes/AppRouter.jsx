@@ -10,6 +10,12 @@ import InboxPage from '../pages/InboxPage'
 import AddProjectPage from '../pages/AddProjectPage'
 import PendingApprovalPage from '../pages/PendingApprovalPage'
 import SearchContactPage from '../pages/SearchContactPage'
+import Signin from '../pages/Signin'
+import Signup from '../pages/Signup'
+import ForgotPassword from '../pages/ForgotPassword'
+import NewPassword from '../pages/NewPassword'
+
+
 
 const AppRouter = () => {
   return (
@@ -23,6 +29,10 @@ const AppRouter = () => {
           <Route path="/aiagent" element={<AiAgentPage />} />
           <Route path="/leads" element={<LeadsPage />} />
           <Route path="/inbox" element={<InboxPage />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/newpassword" element={<NewPassword />} />
           <Route path="/addProject" element={<AddProjectPage />} />
           <Route path="/searchContact" element={<SearchContactPage/>} />
           <Route path="/pendingApproval" element={<PendingApprovalPage />} />
