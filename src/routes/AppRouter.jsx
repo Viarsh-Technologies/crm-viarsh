@@ -21,6 +21,10 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/newpassword" element={<NewPassword />} />
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="/contacts" element={<ContactsPage />} />
@@ -29,10 +33,7 @@ const AppRouter = () => {
           <Route path="/aiagent" element={<AiAgentPage />} />
           <Route path="/leads" element={<LeadsPage />} />
           <Route path="/inbox" element={<InboxPage />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="/newpassword" element={<NewPassword />} />
+          
           <Route path="/addProject" element={<AddProjectPage />} />
           <Route path="/searchContact" element={<SearchContactPage/>} />
           <Route path="/pendingApproval" element={<PendingApprovalPage />} />

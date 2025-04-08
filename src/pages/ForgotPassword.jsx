@@ -51,7 +51,7 @@ export default function ForgotPassword() {
               to="/signin"
               className="text-sm text-blue-600 hover:underline"
             >
-              Forgot password?
+              Signin
             </Link>
             </a>
           </p>

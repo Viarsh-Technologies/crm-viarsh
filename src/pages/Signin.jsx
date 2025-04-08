@@ -16,7 +16,7 @@ export default function Signin() {
               to="/signup"
               className="text-sm text-blue-600 hover:underline"
             >
-              Forgot password?
+              Signun
             </Link>
           </a>
         </p>

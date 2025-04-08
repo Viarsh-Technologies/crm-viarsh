@@ -14,7 +14,7 @@ export default function Signup() {
           Already have an account?{' '}
           <a>
           <Link
-              to="/signin"
+              to="/forgotpassword"
               className="text-sm text-blue-600 hover:underline"
             >
               Forgot password?
