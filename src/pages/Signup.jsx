@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { FaGoogle, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,8 +12,13 @@ export default function Signup() {
         <h2 className="text-2xl font-semibold text-center mb-2">Sign Up</h2>
         <p className="text-center text-sm text-gray-600 mb-6">
           Already have an account?{' '}
-          <a href="/signin" className="text-blue-600 hover:underline">
-            Sign in
+          <a>
+          <Link
+              to="/signin"
+              className="text-sm text-blue-600 hover:underline"
+            >
+              Forgot password?
+            </Link>
           </a>
         </p>
 
