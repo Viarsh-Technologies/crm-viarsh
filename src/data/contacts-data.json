@@ -1,0 +1,326 @@
+[
+  {"id":1,
+    "name": "Devon Lane",
+    "title": "Marketing Coordinator",
+    "contact": "(308) 555-0121",
+    "location": "London, United Kingdom",
+    "profile": "https://avatar.iran.liara.run/public/15",
+    "company": "IBM",
+    "experience": "7+ years of experience",
+    "roles": [
+      {
+        "title": "Project Manager",
+        "company": "ABC Consultancy",
+        "duration": "2022 - Present"
+      },
+      {
+        "title": "Senior UX/UI Designer",
+        "company": "ABC Consultancy",
+        "duration": "2020 - 2022"
+      },
+      
+      {
+        "title": "Senior UX/UI Designer",
+        "company": "ABC Consultancy",
+        "duration": "2020 - 2022"
+      }
+      ,
+      {
+        "title": "Senior UX/UI Designer",
+        "company": "ABC Consultancy",
+        "duration": "2020 - 2022"
+      }
+    ],
+    "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "Potential"
+  },
+  {"id":2,
+    "name": "Sophia Green",
+    "title": "Product Manager",
+    "contact": "(312) 555-0176",
+    "location": "New York, USA",
+    "profile": "https://avatar.iran.liara.run/public/18",
+    "company": "IBM",
+    "experience": "6+ years of experience",
+    "roles": [
+      {
+        "title": "Product Manager",
+        "company": "XYZ Tech",
+        "duration": "2021 - Present"
+      },
+      {
+        "title": "Senior Associate",
+        "company": "Marketing Solutions",
+        "duration": "2018 - 2021"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "New Customer"
+  },
+  {"id":3,
+    "name": "Liam James",
+    "title": "Software Engineer",
+    "contact": "(310) 555-0129",
+    "location": "San Francisco, USA",
+    "profile": "https://avatar.iran.liara.run/public/19",
+    "company": "IBM",
+    "experience": "5+ years of experience",
+    "roles": [
+      {
+        "title": "Project Manager",
+        "company": "ABC Consultancy",
+        "duration": "2022 - Present"
+      },
+      {
+        "title": "Senior UX/UI Designer",
+        "company": "ABC Consultancy",
+        "duration": "2020 - 2022"
+      },
+      
+      {
+        "title": "Senior UX/UI Designer",
+        "company": "ABC Consultancy",
+        "duration": "2020 - 2022"
+      }
+      ,
+      {
+        "title": "Senior UX/UI Designer",
+        "company": "ABC Consultancy",
+        "duration": "2020 - 2022"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "Fraud"
+  },
+  {"id":4,
+    "name": "Emma Brown",
+    "title": "Data Scientist",
+    "contact": "(314) 555-0230",
+    "location": "Chicago, USA",
+    "profile": "https://avatar.iran.liara.run/public/20",
+    "company": "IBM",
+    "experience": "4+ years of experience",
+    "roles": [
+      {
+        "title": "Data Scientist",
+        "company": "DataTech",
+        "duration": "2021 - Present"
+      },
+      {
+        "title": "Data Analyst",
+        "company": "InfoTech",
+        "duration": "2019 - 2021"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "Repeat Customer"
+  },
+  {"id":5,
+    "name": "Olivia White",
+    "title": "UX/UI Designer",
+    "contact": "(315) 555-0142",
+    "location": "San Francisco, USA",
+    "profile": "https://avatar.iran.liara.run/public/21",
+    "company": "IBM",
+    "experience": "3+ years of experience",
+    "roles": [
+      {
+        "title": "UX/UI Designer",
+        "company": "Creative Labs",
+        "duration": "2022 - Present"
+      },
+      {
+        "title": "Web Designer",
+        "company": "WebSolvers",
+        "duration": "2020 - 2022"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "Potential"
+  },
+  {"id":6,
+    "name": "Mason Smith",
+    "title": "HR Manager",
+    "contact": "(316) 555-0103",
+    "location": "Los Angeles, USA",
+    "profile": "https://avatar.iran.liara.run/public/22",
+    "company": "IBM",
+    "experience": "8+ years of experience",
+    "roles": [
+      {
+        "title": "HR Manager",
+        "company": "Global HR Solutions",
+        "duration": "2020 - Present"
+      },
+      {
+        "title": "HR Coordinator",
+        "company": "City Enterprises",
+        "duration": "2017 - 2020"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "New Customer"
+  },
+  {"id":7,
+    "name": "Amelia Lee",
+    "title": "Content Writer",
+    "contact": "(317) 555-0194",
+    "location": "Miami, USA",
+    "profile": "https://avatar.iran.liara.run/public/23",
+    "company": "IBM",
+    "experience": "5+ years of experience",
+    "roles": [
+      {
+        "title": "Content Writer",
+        "company": "Creative Studio",
+        "duration": "2019 - Present"
+      },
+      {
+        "title": "Copywriter",
+        "company": "Ad Agency",
+        "duration": "2017 - 2019"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "Repeat Customer"
+  },
+  {"id":8,
+    "name": "James Wilson",
+    "title": "Network Administrator",
+    "contact": "(318) 555-0145",
+    "location": "Austin, USA",
+    "profile": "https://avatar.iran.liara.run/public/24",
+    "company": "IBM",
+    "experience": "6+ years of experience",
+    "roles": [
+      {
+        "title": "Network Administrator",
+        "company": "Global Systems",
+        "duration": "2021 - Present"
+      },
+      {
+        "title": "IT Specialist",
+        "company": "Tech Solutions",
+        "duration": "2016 - 2021"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "Fraud"
+  },
+  {"id":9,
+    "name": "Lucas Taylor",
+    "title": "Sales Executive",
+    "contact": "(319) 555-0156",
+    "location": "Dallas, USA",
+    "profile": "https://avatar.iran.liara.run/public/25",
+    "company": "IBM",
+    "experience": "4+ years of experience",
+    "roles": [
+      {
+        "title": "Sales Executive",
+        "company": "Mega Corp",
+        "duration": "2020 - Present"
+      },
+      {
+        "title": "Sales Associate",
+        "company": "RetailPro",
+        "duration": "2017 - 2020"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "Potential"
+  },
+  {"id":10,
+    "name": "Isabella Martinez",
+    "title": "Marketing Analyst",
+    "contact": "(320) 555-0187",
+    "location": "Boston, USA",
+    "profile": "https://avatar.iran.liara.run/public/26",
+    "company": "IBM",
+    "experience": "5+ years of experience",
+    "roles": [
+      {
+        "title": "Marketing Analyst",
+        "company": "Smart Insights",
+        "duration": "2018 - Present"
+      },
+      {
+        "title": "Marketing Coordinator",
+        "company": "Digital Strategy",
+        "duration": "2015 - 2018"
+      }
+    ],
+     "education": [
+      {
+        "title": "B.S.",
+        "institution": "Oxford University",
+        "field": "Political Science",
+        "duration": "year-year"
+      }
+    ],
+    "tag": "New Customer"
+  }
+]

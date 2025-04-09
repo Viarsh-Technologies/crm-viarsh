@@ -1,0 +1,47 @@
+[
+  {
+    "profile": "https://avatar.iran.liara.run/public/16",
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "subject": "Follow-up on Proposal",
+    "status": "Engaged",
+    "dateTime": "2025-02-13T10:30:00Z",
+    "body": "Hi Wyatt,<br><p>Lorem ipsum dolor sit amet...</p>Thanks<br>Devon Lane"
+  },
+  {
+    "profile": "https://avatar.iran.liara.run/public/16",
+    "email": "jane.smith@example.com",
+    "name": "Jane Smith",
+    "subject": "Meeting Schedule Confirmation",
+    "status": "Sent",
+    "dateTime": "2025-02-13T11:15:00Z",
+    "body": "Hi Wyatt,<br><p>Lorem ipsum dolor sit amet...</p>Thanks<br>Devon Lane"
+  },
+  {
+    "profile": "https://avatar.iran.liara.run/public/16",
+    "email": "michael.johnson@example.com",
+    "name": "Michael Johnson",
+    "subject": "Pending Documents for Review",
+    "status": "Pending",
+    "dateTime": "2025-02-13T12:00:00Z",
+    "body": "Hi Wyatt,<br><p>Lorem ipsum dolor sit amet...</p>Thanks<br>Devon Lane"
+  },
+  {
+    "profile": "https://avatar.iran.liara.run/public/16",
+    "email": "emily.wilson@example.com",
+    "name": "Emily Wilson",
+    "subject": "Project Kickoff Discussion",
+    "status": "Engaged",
+    "dateTime": "2025-02-13T13:45:00Z",
+    "body": "Hi Wyatt,<br><p>Lorem ipsum dolor sit amet...</p>Thanks<br>Devon Lane"
+  },
+  {
+    "profile": "https://avatar.iran.liara.run/public/16",
+    "email": "david.brown@example.com",
+    "name": "David Brown",
+    "subject": "Proposal Submission Update",
+    "status": "Sent",
+    "dateTime": "2025-02-13T14:30:00Z",
+    "body": "Hi Wyatt,<br><p>Lorem ipsum dolor sit amet...</p>Thanks<br>Devon Lane"
+  }
+]

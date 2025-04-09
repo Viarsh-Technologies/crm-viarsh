@@ -1,0 +1,35 @@
+{
+    "topProjects": [
+      { "name": "IT Support Verizon", "value": 900000 },
+      { "name": "IT Support Chevron", "value": 500000 },
+      { "name": "IT Support McKesson", "value": 120000 },
+      { "name": "AI CRM Starbucks", "value": 40000 },
+      { "name": "Project Manager IBM", "value": 10000 }
+    ],
+    "monthlyData": [
+      { "name": "Jan", "uv": 4000, "pv": 2400, "amt": 2400 },
+      { "name": "Feb", "uv": 3000, "pv": 3398, "amt": 2210 },
+      { "name": "Mar", "uv": 2000, "pv": 1000, "amt": 2290 },
+      { "name": "Apr", "uv": 2780, "pv": 3908, "amt": 2000 },
+      { "name": "May", "uv": 1890, "pv": 4800, "amt": 2181 },
+      { "name": "Jun", "uv": 2390, "pv": 3800, "amt": 2500 }
+    ],
+    "keyMetrics": [
+       {"title":"Total Sales", "value": "$5580000", "percentageChange": 6, "duration": "last 30 days" },
+       {"title":"Total Sales", "value": "109", "percentageChange": -2, "duration": "last 30 days" },
+       {"title":"Active customers", "value": "2,100", "percentageChange": -1, "duration": "last 30 days" },
+       {"title":"total customers", "value": "32,000", "percentageChange": 3, "duration": "last 30 days" }
+    ],
+    "recentSales": [
+        {"title":"AI CRM @ eBay", "value" : "$40,000", "timeSpam":"3 minutes ago"},
+        {"title":"Yellow Tie", "value" : "$17", "timeSpam":"5 hours ago"},
+        {"title":"Suede Jacket", "value" : "$96", "timeSpam":"2 days ago"},
+        {"title":"Abaya", "value" : "$11", "timeSpam":"56 days ago"}
+    ],
+    "newContacts":[
+        {"name":"Leslie Alexander", "contact":"(252) 555-0126",  "profile": "https://avatar.iran.liara.run/public/12"},
+        {"name":"Bessie Cooper", "contact":"(319) 555-0115",  "profile": "https://avatar.iran.liara.run/public/13"},
+        {"name":"Arlene McCoy", "contact":"(704) 555-0127",  "profile": "https://avatar.iran.liara.run/public/15"},
+        {"name":"Jane Cooper", "contact":"(316) 555-0116",  "profile": "https://avatar.iran.liara.run/public/16"}
+    ]
+  }
