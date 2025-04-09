@@ -14,7 +14,10 @@ import Signin from '../pages/Signin'
 import Signup from '../pages/Signup'
 import ForgotPassword from '../pages/ForgotPassword'
 import NewPassword from '../pages/NewPassword'
+<<<<<<< HEAD
 import Settings from '../pages/settings/Settings'
+=======
+>>>>>>> 993a2fb19d5ecb6dfe32a0f870518a3155af853c
 
 
 
@@ -34,7 +37,11 @@ const AppRouter = () => {
           <Route path="/aiagent" element={<AiAgentPage />} />
           <Route path="/leads" element={<LeadsPage />} />
           <Route path="/inbox" element={<InboxPage />} />
+<<<<<<< HEAD
           <Route path="/settings" element={<Settings />} />
+=======
+          
+>>>>>>> 993a2fb19d5ecb6dfe32a0f870518a3155af853c
           <Route path="/addProject" element={<AddProjectPage />} />
           <Route path="/searchContact" element={<SearchContactPage/>} />
           <Route path="/pendingApproval" element={<PendingApprovalPage />} />
