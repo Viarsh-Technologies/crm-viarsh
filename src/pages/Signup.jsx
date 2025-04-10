@@ -7,7 +7,7 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br">
+    <div className="min-h-screen flex items-center justify-center bg-brand-surface">
       <div className="p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center mb-2">Sign Up</h2>
         <p className="text-center text-sm text-gray-600 mb-6">
@@ -31,7 +31,7 @@ export default function Signup() {
               id="name"
               type="text"
               required
-              className="w-full mt-1 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
           <div>
@@ -42,7 +42,7 @@ export default function Signup() {
               id="email"
               type="email"
               required
-              className="w-full mt-1 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full mt-1 px-3 py-2 border bg-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
 
@@ -55,7 +55,7 @@ export default function Signup() {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 required
-                className="w-full mt-1 px-3 py-2 border rounded-md pr-10 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 py-2 border rounded-md bg-white pr-10 focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function Signup() {
                 id="confirmPassword"
                 type={showPassword ? 'text' : 'password'}
                 required
-                className="w-full mt-1 px-3 py-2 border rounded-md pr-10 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 py-2 border bg-white rounded-md pr-10 focus:outline-none focus:ring focus:border-blue-300"
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}

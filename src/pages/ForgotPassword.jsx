@@ -11,7 +11,7 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br">
+    <div className="min-h-screen flex items-center justify-center bg-brand-surface">
       <div className="p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-3xl font-semibold text-center mb-2">Forgot Your Password?</h2>
         <p className="text-center text-sm text-gray-600 mb-6">
@@ -29,7 +29,7 @@ export default function ForgotPassword() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full mt-1 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full mt-1 px-3 py-2 border bg-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
 

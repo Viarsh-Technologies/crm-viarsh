@@ -81,7 +81,7 @@ const AiAgentPage = () => {
     
 
     const onAction = () => {
-        navigate('/chatbot');
+        navigate('/mainagent');
     }
 
     return (

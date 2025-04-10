@@ -16,6 +16,7 @@ import Signup from '../pages/Signup'
 import ForgotPassword from '../pages/ForgotPassword'
 import NewPassword from '../pages/NewPassword'
 import Settings from '../pages/settings/Settings'
+import MainAgent from '../pages/agent/mainAgent'
 
 
 
@@ -38,7 +39,7 @@ const AppRouter = () => {
           <Route path="/inbox" element={<InboxPage />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/chatbot" element={<Chatbot />} />
-=======
+          <Route path="/mainagent" element={<MainAgent />} />
           
           <Route path="/addProject" element={<AddProjectPage />} />
           <Route path="/searchContact" element={<SearchContactPage/>} />

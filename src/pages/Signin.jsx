@@ -6,8 +6,8 @@ export default function Signin() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br">
-      <div className=" p-8 rounded-lg shadow-md w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-brand-surface ">
+      <div className=" p-8 rounded-lg shadow-md w-full max-w-md ">
         <h2 className="text-2xl font-semibold text-center mb-2">Sign in</h2>
         <p className="text-center text-sm text-gray-600 mb-6">
           Don’t have an account?{" "}
@@ -16,7 +16,7 @@ export default function Signin() {
               to="/signup"
               className="text-sm text-blue-600 hover:underline"
             >
-              Signun
+              Signup
             </Link>
           </a>
         </p>
@@ -33,7 +33,7 @@ export default function Signin() {
               id="email"
               type="email"
               required
-              className="w-full mt-1 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full mt-1 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300 bg-white"
             />
           </div>
 
@@ -49,7 +49,7 @@ export default function Signin() {
                 id="password"
                 type={showPassword ? "text" : "password"}
                 required
-                className="w-full mt-1 px-3 py-2 border rounded-md pr-10 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 py-2 border rounded-md pr-10 focus:outline-none bg-white focus:ring focus:border-blue-300"
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
