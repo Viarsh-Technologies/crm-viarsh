@@ -12,7 +12,7 @@ function ChatMessage({ message }) {
         </div>
         <div
           className={`px-4 py-2 rounded-lg shadow-md ${
-            isUser ? 'bg-blue-100 text-gray-800' : 'bg-white text-gray-800 border border-gray-200'
+            isUser ? 'bg-blue-100 text-gray-800' : 'bg-[#F0F1FA] text-gray-800 border border-gray-200'
           }`}
         >
           <p className="text-sm whitespace-pre-wrap">{message.text}</p>

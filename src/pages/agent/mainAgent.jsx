@@ -3,15 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import HistoryPanel from './HistoryPanel';
 import ChatPanel from './ChatPanel';
 import PageTitle from '../../components/layout/PageTitle'
-import { FaPlus } from 'react-icons/fa'; // Importing the Plus icon
+import { FaPlus, FaRedo } from 'react-icons/fa'; // Importing the Plus icon
 
 // Initial history data
 const initialHistory = [
     {
         id: 1,
-        userQuestion: "How do you style a button in Tailwind CSS?",
-        agentResponse: "To style a button in Tailwind, you can use utility classes like `bg-blue-500`, `hover:bg-blue-700`, `text-white`, `font-bold`, `py-2`, `px-4`, and `rounded`.",
-        topic: "Tailwind CSS",
+        userQuestion: "What is a Design Subscription Agency?",
+        agentResponse: "A Design Subscription Agency offers design services on a recurring subscription basis, typically monthly, rather than a project-by-project fee structure",
+        topic: "Off_topic",
         instructions: "This is instructions column",
         action: "This is action column",
       },
@@ -61,7 +61,9 @@ function MainAgent() {
       {/* Main Container */}
       <div className="flex h-[90vh] w-[80%] border-[#c6c6c6] border-1">
         {/* Left Panel: History Panel */}
-        <div className="w-[70%] border-r border-gray-300 overflow-y-auto bg-white p-2">
+        <div className="w-[70%] border-r border-gray-300 overflow-y-auto bg-white ">
+          <div className="flex justify-between items-center p-[26px] border-b border-gray-200 bg-[#F0F1FA]">
+                          </div>
           <HistoryPanel historyItems={historyItems} />
         </div>
 

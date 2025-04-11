@@ -103,7 +103,7 @@ function ChatPanel({ addHistoryEntry }) {
     return (
         <div className="flex flex-col h-full bg-white">
             {/* Header */}
-            <div className="flex justify-between items-center p-3 border-b border-gray-200 bg-[#BDBDBD]">
+            <div className="flex justify-between items-center p-3 border-b border-gray-200 bg-[#F0F1FA]">
                 <h2 className="text-lg font-semibold text-gray-700">Conversation Preview</h2>
                 <FaRedo
                     className="text-gray-500 hover:text-blue-600 cursor-pointer"
@@ -113,7 +113,7 @@ function ChatPanel({ addHistoryEntry }) {
             </div>
 
             {/* Chat Messages Area */}
-            <div className="flex-grow p-4 overflow-y-auto space-y-4 bg-[#F0F1FA]">
+            <div className="flex-grow p-4 overflow-y-auto space-y-4 bg-[white]">
                 {messages.map((msg) => (
                     <ChatMessage key={msg.id} message={msg} />
                 ))}
@@ -141,12 +141,7 @@ function ChatPanel({ addHistoryEntry }) {
             {/* Input Area */}
             <div className="p-4 border-t border-gray-200 ">
                 <div className="flex items-center bg-white border border-gray-300 rounded-lg p-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
-                    <button onClick={handleFileUpload} className="p-2 text-gray-500 hover:text-blue-600" title="Attach File">
-                        <FaPaperclip />
-                    </button>
-                    <button onClick={handleVoiceInput} className="p-2 text-gray-500 hover:text-blue-600" title="Voice Input">
-                        <FaMicrophone />
-                    </button>
+                    
                     <input
                         type="text"
                         value={inputValue}
@@ -161,7 +156,17 @@ function ChatPanel({ addHistoryEntry }) {
                         disabled={!inputValue.trim()}
                         title="Send Message"
                     >
-                        <FaPaperPlane />
+                        <button onClick={handleFileUpload} className="p-2 text-gray-500 hover:text-blue-600" title="Attach File">
+                        <FaPaperclip />
+                    </button>
+                    <button onClick={handleVoiceInput} className="p-2 text-gray-500 hover:text-blue-600" title="Voice Input">
+                        <FaMicrophone />
+                    </button>
+                    <button onClick={null} className="p-2 text-white hover:text-blue-600 bg-[#32D583] rounded-2xl" title="Voice Input">
+                    <FaPaperPlane />
+                    </button>
+                    
+                        
                     </button>
                 </div>
             </div>

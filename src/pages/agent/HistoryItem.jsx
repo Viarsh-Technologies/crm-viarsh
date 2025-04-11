@@ -19,10 +19,9 @@ function HistoryItem({ item }) {
   const [showAction, setShowAction] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-lg shadow-sm overflow-hidden transition-all duration-300">
+    <div className=" rounded-lg overflow-hidden transition-all duration-300">
       <div
-        className={`flex justify-between items-center p-3 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all duration-300 ${
-          isExpanded ? 'bg-gray-100' : 'bg-gray-50'
+        className={`flex justify-between items-center p-3   cursor-pointer transition-all duration-300
         }`}
         onClick={() => setIsExpanded(!isExpanded)}
       >
