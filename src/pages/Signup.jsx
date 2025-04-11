@@ -29,7 +29,7 @@ export default function Signup() {
               to="/forgotpassword"
               className="text-sm text-blue-600 hover:underline"
             >
-              Forgot password?
+              Signin
             </Link>
           </a>
         </p>
