@@ -220,8 +220,6 @@ function Chatbot() {
           onTitleChange={handleTitleChange}
           onShare={handleShare}
           onSave={handleSave}
-          onToggleSidebar={toggleSidebar} // NEW prop
-          isSidebarOpen={isSidebarOpen}
         />
 
         <div className="flex h-screen overflow-hidden bg-white">

@@ -7,8 +7,20 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-brand-surface">
-      <div className="p-8 rounded-lg shadow-md w-full max-w-md">
+    <div className="h-screen bg-brand-surface flex flex-col">
+      {/* Top Bar */}
+      <div className="flex justify-between items-center py-3 border-b  border-gray-300 px-[30px] bg-brand-surface shadow-sm">
+        <h1 className="text-2xl px-[70px] font-semibold text-gray-800">Projects</h1>
+        <Link to="/signup">
+          <button className="bg-brand-green hover:bg-green-600 text-white text-sm h-[36px] py-2 px-4 rounded-sm transition duration-200">
+            Sign Up
+          </button>
+        </Link>
+      </div>
+
+      {/* Main Content Centered */}
+      <div className="flex-grow flex items-center justify-center px-4">
+        <div className="p-8  w-full max-w-md ">
         <h2 className="text-2xl font-semibold text-center mb-2">Sign Up</h2>
         <p className="text-center text-sm text-gray-600 mb-6">
           Already have an account?{' '}
@@ -100,7 +112,7 @@ export default function Signup() {
             <div className="w-full border-t border-gray-300" />
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="bg-white px-3 text-gray-500 border-1 rounded-md p-1">OR</span>
+            <span className="bg-brand-surface border-gray-300 border-1 px-3 text-gray-500 rounded-md p-1">OR</span>
           </div>
         </div>
 
@@ -116,6 +128,7 @@ export default function Signup() {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 }
