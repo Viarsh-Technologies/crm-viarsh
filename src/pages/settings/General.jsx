@@ -78,9 +78,9 @@ const General = () => {
                 />
               </div>
               <div className="border-t border-gray-100 pt-4">
-                <div className="text-sm text-gray-600 mb-1">Linked team account</div>
+                <div className="text-sm text-gray-600 mb-1">Linked team company</div>
                 <div className="text-xs text-gray-400">
-                  Easily switch between them and access both accounts from any device.
+                  Easily switch between them and access both companys from any device.
                 </div>
               </div>
             </div>

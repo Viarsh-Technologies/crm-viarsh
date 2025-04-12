@@ -93,7 +93,10 @@ const Mailbox = () => {
       });
 
       if (response.ok) {
-        setMailboxes((prev) => [...prev, { ...newMailbox, id: mailboxes.length + 1 }]);
+        setMailboxes((prev) => [
+          ...prev,
+          { ...newMailbox, id: mailboxes.length + 1 },
+        ]);
       } else {
         alert("Error adding mailbox.");
       }
@@ -110,9 +113,12 @@ const Mailbox = () => {
       <div className="bg-white rounded-xl shadow-lg p-6">
         <div className="flex justify-between items-center mb-6">
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800">Mailbox Manager</h2>
+            <h2 className="text-2xl font-semibold text-gray-800">
+              Mailbox Manager
+            </h2>
             <p className="text-sm text-gray-500">
-              Ava will dynamically rotate between your mailboxes, maximizing deliverability.
+              Ava will dynamically rotate between your mailboxes, maximizing
+              deliverability.
             </p>
           </div>
           <div className="flex gap-4">
@@ -120,7 +126,9 @@ const Mailbox = () => {
               onClick={addMailbox}
               disabled={isLoading}
               className={`${
-                isLoading ? "bg-gray-300 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"
+                isLoading
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-green-500 hover:bg-green-600"
               } text-white px-5 py-2 rounded-md text-sm transition-colors duration-200`}
             >
               {isLoading ? "Adding..." : "+ Add Email Address"}
@@ -132,7 +140,7 @@ const Mailbox = () => {
           <table className="min-w-full table-auto border-collapse">
             <thead>
               <tr className="text-left text-gray-600 text-sm bg-gray-200">
-                <th className="py-3 px-6">Accounts</th>
+                <th className="py-3 px-6">companys</th>
                 <th className="py-3 px-6">Daily Email Capacity</th>
                 <th className="py-3 px-6">Status</th>
                 <th className="py-3 px-6">Mailbox Health</th>
@@ -203,7 +211,8 @@ const Mailbox = () => {
               ) : (
                 <tr>
                   <td colSpan="6" className="text-center text-gray-500 py-6">
-                    No mailboxes connected. Click "Add Email Address" to add one.
+                    No mailboxes connected. Click "Add Email Address" to add
+                    one.
                   </td>
                 </tr>
               )}

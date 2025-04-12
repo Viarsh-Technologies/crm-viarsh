@@ -21,17 +21,17 @@ export default function Signup() {
       {/* Main Content Centered */}
       <div className="flex-grow flex items-center justify-center px-4">
         <div className="p-8  w-full max-w-md ">
-        <h2 className="text-2xl font-semibold text-center mb-2">Sign Up</h2>
-        <p className="text-center text-sm text-gray-600 mb-6">
-          Already have an account?{' '}
+        <h2 className="text-2xl text-[#37352F] font-semibold text-center mb-2">Sign Up</h2>
+        <p className="text-center text-sm text-[#101010] mb-6">
+          Already have an company?{' '}
           <a>
           <Link
-              to="/forgotpassword"
-              className="text-sm text-blue-600 hover:underline"
+              to="/signin"
+              className="text-sm text-[#009DE9] hover:underline"
             >
               Signin
             </Link>
-          </a>
+          </a>  
         </p>
 
         <form className="space-y-4">
@@ -43,7 +43,7 @@ export default function Signup() {
               id="name"
               type="text"
               required
-              className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
             />
           </div>
           <div>
@@ -54,7 +54,7 @@ export default function Signup() {
               id="email"
               type="email"
               required
-              className="w-full mt-1 px-3 py-2 border bg-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
             />
           </div>
 
@@ -67,7 +67,7 @@ export default function Signup() {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 required
-                className="w-full mt-1 px-3 py-2 border rounded-md bg-white pr-10 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
               />
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function Signup() {
                 id="confirmPassword"
                 type={showPassword ? 'text' : 'password'}
                 required
-                className="w-full mt-1 px-3 py-2 border bg-white rounded-md pr-10 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
@@ -101,7 +101,7 @@ export default function Signup() {
 
           <button
             type="submit"
-            className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
+            className="w-full bg-[#32D583] text-white py-2 rounded-md "
           >
             Sign Up
           </button>
@@ -109,10 +109,10 @@ export default function Signup() {
 
         <div className="mt-6 relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-300" />
+            <div className="w-full border-t border-[#B5BACA]" />
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="bg-brand-surface border-gray-300 border-1 px-3 text-gray-500 rounded-md p-1">OR</span>
+            <span className="bg-brand-surface border-[#B5BACA] border-1 px-3 text-gray-500 rounded-md p-1">OR</span>
           </div>
         </div>
 

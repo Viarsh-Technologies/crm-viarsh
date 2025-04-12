@@ -16,7 +16,7 @@ export default function ForgotPassword() {
       <div className="flex justify-between items-center py-3 border-b  border-gray-300 px-[30px] bg-brand-surface shadow-sm">
         <h1 className="text-2xl px-[70px] font-semibold text-gray-800">Projects</h1>
         <Link to="/signup">
-          <button className="bg-brand-green hover:bg-green-600 text-white text-sm h-[36px] py-2 px-4 rounded-sm transition duration-200">
+          <button className="bg-[brand-green] hover:bg-green-600 text-white text-sm h-[36px] py-2 px-4 rounded-sm transition duration-200">
             Sign Up
           </button>
         </Link>
@@ -25,8 +25,8 @@ export default function ForgotPassword() {
       {/* Main Content Centered */}
       <div className="flex-grow flex items-center justify-center px-4">
         <div className="p-8  w-full max-w-md ">
-        <h2 className="text-3xl font-semibold text-center mb-2">Forgot Your Password?</h2>
-        <p className="text-center text-sm text-gray-600 mb-6">
+        <h2 className="text-3xl font-semibold text-center mb-2 text-[#37352F]" >Forgot Your Password?</h2>
+        <p className="text-center text-sm text-[#101010] mb-6">
           Enter your email address and we will send you instructions to reset your password.
         </p>
 
@@ -41,13 +41,13 @@ export default function ForgotPassword() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full mt-1 px-3 py-2 border bg-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
+            className="w-full bg-[#32D583] text-white py-2 rounded-md "
           >
             <a href="/newpassword">
             Continue

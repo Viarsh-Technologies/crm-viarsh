@@ -34,8 +34,8 @@ export default function NewPassword() {
       {/* Main Content Centered */}
       <div className="flex-grow flex items-center justify-center px-4">
         <div className="p-8  w-full max-w-md ">
-          <h2 className="text-3xl font-semibold text-center mb-4">Enter Your New Password</h2>
-          <p className="text-center text-sm text-gray-600 mb-6">
+          <h2 className="text-3xl font-semibold text-center mb-4 text-[#37352F]">Enter Your New Password</h2>
+          <p className="text-center text-sm text-[#101010] mb-6">
             Enter the OTP sent to your email and create a new password.
           </p>
 
@@ -50,7 +50,7 @@ export default function NewPassword() {
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
                 required
-                className="w-full mt-1 px-3 py-2 bg-white border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
               />
             </div>
 
@@ -64,7 +64,7 @@ export default function NewPassword() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full mt-1 px-3 py-2 bg-white border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
               />
             </div>
 
@@ -78,13 +78,13 @@ export default function NewPassword() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="w-full mt-1 px-3 py-2 bg-white border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
+              className="w-full bg-[#32D583] text-white py-2 rounded-md"
             >
               Submit
             </button>

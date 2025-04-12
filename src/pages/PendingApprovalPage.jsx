@@ -16,7 +16,7 @@ const PendingApprovalPage = () => {
     <div>
       <PageTitle title={'Pending Approval'} actionText='Approve & Schedule All' ActionIcon={Plus} onAction={''} />
       <div><Breadcrumbs items={breadcrumbItems} /></div>
-      <p className='text-gray-400 mb-3'>Conversation from all of your connected email accounts.</p>
+      <p className='text-gray-400 mb-3'>Conversation from all of your connected email companys.</p>
       <div className='flex w-full '>
         <div className='w-full'>
           <div className='bg-gray-300 flex py-1 px-2 rounded-md gap-5 max-w-md '>

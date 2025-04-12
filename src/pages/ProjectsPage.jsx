@@ -1,171 +1,324 @@
-import React, { useEffect, useState } from 'react'
-import PageTitle from '../components/layout/PageTitle'
-import { Edit, Trash, Plus, Search, RefreshCcwDot } from "lucide-react";
-import Breadcrumbs from '../components/layout/Breadcrumbs';
-import Th from '../components/common/Th';
-import Td from '../components/common/Td';
-import data from '../data/projectss-data.json'
-import Pagination from '../components/Pagination';
-import StatusBadge from '../components/StatusBadge';
-import CustomCheckbox from '../components/common/CustomCheckbox';
-import { usePagination } from '../hooks/usePagination';
-import { useRowSelection } from '../hooks/useRowSelection';
-import { RefreshCcw } from 'lucide';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import PageTitle from "../components/layout/PageTitle";
+import { Plus, Search } from "lucide-react";
+import { FiUpload } from "react-icons/fi";
+import Breadcrumbs from "../components/layout/Breadcrumbs";
+import Th from "../components/common/Th";
+import Td from "../components/common/Td";
+import data from "../data/projectss-data.json";
+import Pagination from "../components/Pagination";
+import StatusBadge from "../components/StatusBadge";
+import CustomCheckbox from "../components/common/CustomCheckbox";
+import { usePagination } from "../hooks/usePagination";
+import { useRowSelection } from "../hooks/useRowSelection";
+import { useNavigate } from "react-router-dom";
+import UpDownIcon from "../components/common/UpDownIcon";
+import UserCard from "../components/common/UserCard";
 
 const breadcrumbItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Projects', path: '' },
-]
-const columns = [
-    { key: "type", label: "Type" },
-    { key: "stage", label: "Stage" },
-    { key: "account", label: "Account" },
-    { key: "contractValue", label: "Contract Value" },
-    { key: "qaDate", label: "Q&A Date" },
-    { key: "closeDate", label: "Close Date" },
-    { key: "leads", label: "Leads" },
-    { key: "reports", label: "Reports" },
-    { key: "complaints", label: "Complaints" },
+  { name: "Home", path: "/" },
+  { name: "Projects", path: "" },
 ];
+
+const columns = [
+  { key: "type", label: "Type" },
+  { key: "stage", label: "Sales Stage" },
+  { key: "company", label: "Company" },
+  { key: "contractValue", label: "Contract Value" },
+  { key: "qaDate", label: "Q&A Date" },
+  { key: "closeDate", label: "Close Date" },
+  { key: "nextStep", label: "Next Step" },
+  { key: "contactPerson", label: "Contact" },
+];
+
 const statusMapping = {
-    "Deal Closed": "positive",
-    Negotiation: "warning",
-    "Not Interested": "negative",
-    Default: "neutral",
+  "Deal Closed": "positive",
+  Negotiation: "warning",
+  "Not Interested": "negative",
+  Default: "neutral",
 };
+
 const ProjectsPage = () => {
-    const [filteredData, setFilteredData] = useState([]);
-    const [loading, setLoading] = useState(false); // Add loading state
-    const navigate = useNavigate(); // Correct usage
+  const [filteredData, setFilteredData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-    const itemsPerPage = 8;
+  const itemsPerPage = 8;
 
-    const {
-        currentPage,
-        totalPages,
-        paginatedData,
-        paginationRange,
-        handlePaginate, // Use handlePaginate from usePagination
-    } = usePagination(filteredData, itemsPerPage);
-    const { selectedRows, handleSelectAll, handleRowSelect } = useRowSelection(data);
+  useEffect(() => {
+    const initialData = data.map((item) => ({
+      ...item,
+      contactPerson: item.contactPerson || null,
+    }));
+    setFilteredData(initialData);
+    if (data.length > 0 && !data[0].contactPerson) {
+      console.warn(
+        "Project data might be missing the nested 'contactPerson' object. UserCards may not display correctly."
+      );
+    }
+  }, []);
 
+  const {
+    currentPage,
+    totalPages,
+    paginatedData,
+    paginationRange,
+    handlePaginate,
+    setCurrentPage,
+  } = usePagination(filteredData, itemsPerPage);
 
-    useEffect(() => {
-        setFilteredData(data)
-    }, [])
+  const { selectedRows, handleSelectAll, handleRowSelect, setSelectedRows } =
+    useRowSelection(data.map((item) => item.id));
 
-    const [query, setQuery] = useState("");
-    const [selectedStage, setSelectedStage] = useState("All");
-    useEffect(() => {
-        setLoading(true); 
-        const timeoutId = setTimeout(() => {
-            handleFilterAndSearch();
-            setLoading(false);
-        }, 500); // Debounce search (wait 500ms before filtering)
+  const [query, setQuery] = useState("");
+  const [selectedStage, setSelectedStage] = useState("All");
 
-        return () => clearTimeout(timeoutId); // Clear timeout on change
-    }, [query, selectedStage]); // Runs whenever query or stage changes
+  useEffect(() => {
+    setLoading(true);
+    const timeoutId = setTimeout(() => {
+      handleFilterAndSearch();
+      setLoading(false);
+    }, 500);
 
-    const handleFilterAndSearch = () => {
-        let filtered = data;
+    return () => clearTimeout(timeoutId);
+  }, [query, selectedStage]);
 
-        if (selectedStage !== "All") {
-            filtered = filtered.filter((row) => row.leads === selectedStage);
-        }
+  const handleFilterAndSearch = () => {
+    let processedData = [...data];
 
-        if (query.length > 2) {
-            filtered = filtered.filter((row) =>
-                Object.values(row).some((value) =>
-                    value.toString().toLowerCase().includes(query.toLowerCase())
-                )
-            );
-        }
+    processedData = processedData.map((item) => ({
+      ...item,
+      contactPerson: item.contactPerson || {},
+    }));
 
-        setFilteredData(filtered); // Updates displayed results
-        console.log("changed")
-    };
-
-    const onAction = () => {
-        navigate('/addProject');
+    if (selectedStage !== "All") {
+      processedData = processedData.filter(
+        (row) => row.stage === selectedStage
+      );
     }
 
-    return (
-        <div>
-            <PageTitle title={'Projects'} actionText='Add New' ActionIcon={Plus} onAction={onAction} />
-            <div><Breadcrumbs items={breadcrumbItems} /></div>
-            <div className='flex mt-3 gap-4'>
-                <div className="flex gap-0 mb-4 p-2 border border-gray-400 bg-white rounded-lg relative ">
-                    <select
-                        onChange={(e) => setSelectedStage(e.target.value)}
-                        className="px-2 border-0 rounded w-[100px] focus:outline-0 active:outline-0 focus:bg-gray-100"
-                    >
-                        <option value="All">All</option>
-                        <option value="Not Interested">Not Interested</option>
-                        <option value="Negotiation">Negotiation</option>
-                        <option value="Deal Closed">Deal Closed</option>
-                    </select>
-                    <span className='height-full w-px bg-gray-400 ml-2 mr-2'></span>
-                    <div className='relative pr-8'>
-                        <input
-                            type="text"
-                            placeholder="Search by project name or phone ..."
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                            className="border-0 rounded-sm px-2 mr-2 w-64 focus:outline-0 active:outline-0 focus:bg-gray-100"
-                        />
-                        <Search size='20px' className='absolute right-4  top-[2px] text-gray-400' />
-                    </div>
-                    {loading ? (
-    <RefreshCcwDot className="animate-spin text-gray-600" size={24} />
-) :('')}
-                </div>
-            </div>
-            <div className="border border-gray-300 rounded-lg overflow-hidden mt-4">
-                <table className='min-w-full bg-white'>
-                    <thead>
-                        <tr>
-                            <Th></Th>
-                            <Th className='w-2.5 px-1'><CustomCheckbox onChange={handleSelectAll} checked={selectedRows.length === data.length && data.length > 0} /></Th>
-                            {columns.map((column) => (
-                                <Th key={column.key}>{column.label}</Th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {paginatedData.map((row, rowIndex) => (
-                            <tr key={rowIndex} className='group  bg-white hover:shadow-[0px_4px_7px_rgb(0_0_0_/_13%)] hover:z-10 transition-shadow duration-200 relative'>
-                                <Td className='text-center group-hover:bg-brand-surface/50'>{rowIndex}</Td>
-                                <Td className='w-2.5  px-0 group-hover:bg-brand-surface/50'>
-                                    <CustomCheckbox onChange={() => handleRowSelect(row.id)} checked={selectedRows.includes(row.id)} />
-                                </Td>
+    if (query.trim().length > 0) {
+      const lowerQuery = query.toLowerCase();
+      processedData = processedData.filter((row) =>
+        Object.entries(row).some(([key, value]) => {
+          if (
+            key === "contactPerson" &&
+            typeof value === "object" &&
+            value !== null
+          ) {
+            return Object.values(value).some((contactValue) =>
+              contactValue?.toString().toLowerCase().includes(lowerQuery)
+            );
+          }
+          return value?.toString().toLowerCase().includes(lowerQuery);
+        })
+      );
+    }
 
-                                {columns.map((column) => (
-                                    <Td key={column.key} className=' group-hover:bg-brand-surface/50'>
-                                        {column.key === "leads" ? (
-                                            <StatusBadge
-                                                status={row[column.key]}
-                                                statusType={statusMapping[row[column.key]] || "neutral"}
-                                            />
-                                        ) : (
-                                            row[column.key]
-                                        )}
-                                    </Td>
-                                ))}
-                            </tr>
-                        ))
-                        }
-                    </tbody>
-                </table>
-            </div>
-            <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                paginationRange={paginationRange}
-                onPaginate={handlePaginate}
+    setFilteredData(processedData);
+    setCurrentPage(1);
+    setSelectedRows([]);
+    console.log("Filtered/Searched, data updated.");
+  };
+
+  const onAction = () => {
+    navigate("/addProject");
+  };
+
+  const currentItemsIds = paginatedData.map((item) => item.id);
+  const allVisibleSelected =
+    currentItemsIds.length > 0 &&
+    currentItemsIds.every((id) => selectedRows.includes(id));
+  const isIndeterminate =
+    currentItemsIds.some((id) => selectedRows.includes(id)) &&
+    !allVisibleSelected;
+
+  const handleSelectAllVisible = (isChecked) => {
+    const currentIds = paginatedData.map((item) => item.id);
+    if (isChecked) {
+      setSelectedRows((prevSelected) => [
+        ...new Set([...prevSelected, ...currentIds]),
+      ]);
+    } else {
+      setSelectedRows((prevSelected) =>
+        prevSelected.filter((id) => !currentIds.includes(id))
+      );
+    }
+  };
+
+  return (
+    <div>
+      <PageTitle
+        title={"Projects"}
+        actionText="Add New"
+        ActionIcon={Plus}
+        onAction={onAction}
+      />
+      <div>
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
+      <div className="flex mt-3 gap-4 items-center">
+        <div className="flex gap-0 mb-4 p-2 border border-gray-300 bg-white rounded-lg relative shadow-sm">
+          <select
+            value={selectedStage}
+            onChange={(e) => setSelectedStage(e.target.value)}
+            className="text-[#6B7280]"
+          >
+            <option value="All">All Stages</option>
+            <option value="Not Interested">Not Interested</option>
+            <option value="Negotiation">Negotiation</option>
+            <option value="Deal Closed">Deal Closed</option>
+          </select>
+
+          <span className="h-full w-px bg-gray-300 mx-2"></span>
+          <div className="relative flex items-center">
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="border-0 rounded-sm px-2 py-1 mr-2 w-64 focus:outline-none focus:ring-1 focus:ring-brand-primary bg-transparent" // Adjusted styling
             />
+            <Search size="18px" className="absolute right-3 text-gray-400" />
+          </div>
         </div>
-    )
-}
 
-export default ProjectsPage
+        <div className="flex gap-0 mb-4 p-2 text-[#6B7280] border-gray-300 bg-[#32D583] rounded-lg relative shadow-sm">
+          <select
+            value={selectedStage}
+            onChange={(e) => setSelectedStage(e.target.value)}
+            className="px-2 py-1  w-[250px]  "
+          >
+            <option value="All">All Stages</option>
+            <option value="Not Interested">Not Interested</option>
+            <option value="Negotiation">Negotiation</option>
+            <option value="Deal Closed">Deal Closed</option>
+          </select>
+        </div>
+
+        <div className="flex gap-0 mb-4 p-2 text-[#6B7280] border-gray-300 bg-[#FFFFFF] rounded-lg relative shadow-sm">
+          <select
+            value={selectedStage}
+            onChange={(e) => setSelectedStage(e.target.value)}
+            className="px-2 py-1  w-[250px]  "
+          >
+            <option value="All">All Stages</option>
+            <option value="Not Interested">Not Interested</option>
+            <option value="Negotiation">Negotiation</option>
+            <option value="Deal Closed">Deal Closed</option>
+          </select>
+        </div>
+
+        <div className="flex gap-0 mb-4 p-2 w-[199px] h-[38px] border border-gray-300 bg-[#767572] rounded-lg relative shadow-sm items-center justify-between">
+          <label
+            htmlFor="file-upload"
+            className="cursor-pointer flex items-center gap-2 text-sm text-white font-medium py-2 px-4 rounded-lg transition-all duration-300"
+          >
+            <FiUpload className="w-5 h-5" />
+            Upload File
+            <input
+              id="file-upload"
+              type="file"
+              className="hidden"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                if (file) {
+                  console.log("Selected file:", file);
+                }
+              }}
+            />
+          </label>
+        </div>
+      </div>
+
+      {/* Table Structure */}
+      <div className="border border-gray-200 rounded-lg overflow-x-auto shadow-sm mt-4 bg-white">
+        {" "}
+        {/* Added overflow-x-auto */}
+        <table className="min-w-full">
+          <thead className="bg-gray-50">
+            <tr>
+              <Th className="w-10"></Th>
+              <Th className="w-2.5 px-2">
+                <CustomCheckbox
+                  onChange={(e) => handleSelectAllVisible(e.target.checked)}
+                  checked={allVisibleSelected}
+                  indeterminate={isIndeterminate}
+                />
+              </Th>
+              {columns.map((column) => (
+                <Th key={column.key}>
+                  <div className="flex items-center gap-1">
+                    <span>{column.label}</span>
+                    {column.key !== "contactPerson" && <UpDownIcon />}
+                  </div>
+                </Th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody className="divide-y divide-gray-200">
+            {paginatedData.length > 0 ? (
+              paginatedData.map((row, rowIndex) => (
+                <tr
+                  key={row.id}
+                  className={`group hover:bg-brand-surface/30 transition-colors duration-150 ${
+                    selectedRows.includes(row.id)
+                      ? "bg-brand-surface/20"
+                      : "bg-white"
+                  }`}
+                >
+                  <Td className="text-center text-gray-500 w-10">
+                    {(currentPage - 1) * itemsPerPage + rowIndex + 1}
+                  </Td>
+                  <Td className="w-2.5 px-2">
+                    <CustomCheckbox
+                      onChange={() => handleRowSelect(row.id)}
+                      checked={selectedRows.includes(row.id)}
+                    />
+                  </Td>
+
+                  {columns.map((column) => (
+                    <Td key={column.key} className="align-middle">
+                      {column.key === "stage" ? (
+                        <StatusBadge
+                          status={row.stage}
+                          statusType={statusMapping[row.stage] || "neutral"}
+                        />
+                      ) : column.key === "contactPerson" ? (
+                        <UserCard user={row.contactPerson} />
+                      ) : (
+                        row[column.key] ?? "-"
+                      )}
+                    </Td>
+                  ))}
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <Td
+                  colSpan={columns.length + 2}
+                  className="text-center py-10 text-gray-500"
+                >
+                  {loading
+                    ? "Loading..."
+                    : "No projects found matching your criteria."}
+                </Td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+      {totalPages > 1 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          paginationRange={paginationRange}
+          onPaginate={handlePaginate}
+        />
+      )}
+    </div>
+  );
+};
+
+export default ProjectsPage;
