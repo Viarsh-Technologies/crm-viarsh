@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PageTitle from '../components/layout/PageTitle'
 import { Edit, Trash, Plus, Search, RefreshCcwDot, Phone } from "lucide-react";
+
 import Breadcrumbs from '../components/layout/Breadcrumbs';
 import Th from '../components/common/Th';
 import Td from '../components/common/Td';
@@ -89,12 +90,17 @@ const ContactsPage = () => {
     };
 
     const onAction = () => {
-        console.log('Clicked')
-    }
+      navigate("/searchContact");
+    };
 
     return (
         <div>
-            <PageTitle title={'Contacts'} actionText='' ActionIcon={''} onAction={''} />
+            <PageTitle
+        title={"Contacts"}
+        actionText="Add New"
+        ActionIcon={Plus}
+        onAction={onAction}
+      />
             <div><Breadcrumbs items={breadcrumbItems} /></div>
             <div className='flex mt-3 gap-4'>
                 <div className="flex gap-0 mb-4 p-2 border border-gray-400 bg-white rounded-lg relative ">

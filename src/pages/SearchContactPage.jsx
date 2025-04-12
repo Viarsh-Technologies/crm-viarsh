@@ -4,6 +4,10 @@ import Breadcrumbs from '../components/layout/Breadcrumbs'
 import InputField from '../components/common/InputField'
 import TextArea from '../components/common/TextArea'
 import Button from '../components/common/Button'
+import { useNavigate } from 'react-router-dom';
+import {  Plus, Search, RefreshCcwDot, Phone } from "lucide-react";
+
+
 const breadcrumbItems = [
     { name: 'Home', path: '/' },
     { name: 'Contacts', path: '/contacts' },
@@ -29,11 +33,18 @@ const SearchContactPage = () => {
             }
         ])
     }
+    const navigate = useNavigate(); // Correct usage
+
+
+    const onAction = () => {
+        navigate("/searchContact");
+      };
+  
     return (
         <div>
-            <PageTitle title={'Search Contacts'} actionText='' />
+            <PageTitle title={'Search Contacts'} actionText='Create New Contact' />
             <div><Breadcrumbs items={breadcrumbItems} /></div>
-            <div className='bg-white rounded-md border border-gray-300 p-8 max-w-4xl'>
+            <div className='bg-white rounded-md border border-gray-300 p-8 mt-5 max-w-4xl'>
                 <form className="flex flex-col gap-4" >
                     <div className='flex gap-4'>
                         <TextArea label={'Job Titles (Top 3 Skills)'} className='max-h-10' />
