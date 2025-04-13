@@ -21,7 +21,7 @@ const columns = [
     { key: "company", label: "Company", orderBy: false },
     { key: "stage", label: "Stage", orderBy: false },
     { key: "leadDateCreated", label: "Date Created", orderBy: false },
-    { key: "notes", label: "Notes", orderBy: false },
+    { key: "summary", label: "summary", orderBy: false },
     { key: "magic", label: "", orderBy: false },
   ]
   const statusMapping = {
@@ -33,7 +33,7 @@ const columns = [
   
 const LeadsPage = () => {
     const [filteredData, setFilteredData] = useState([]);
-    const [loading, setLoading] = useState(false); // Add loading state
+    const [loading, setLoading] = useState(false);
 
     const itemsPerPage = 8;
 

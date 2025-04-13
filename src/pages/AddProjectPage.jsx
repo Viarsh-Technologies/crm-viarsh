@@ -25,7 +25,7 @@ const AddProjectPage = () => {
         partner: "",
         email: "",
         projectManager: "",
-        notes: "",
+        summary: "",
         drugTest: "No",
         skills: [],
         additionalFields: [{
@@ -246,7 +246,7 @@ const AddProjectPage = () => {
                         <InputField label={'Project Manager'} name={'projectManager'} value={formData.projectManager} onChange={handleChange} />
                     </div>
                     <div>
-                        <TextArea label={'Business Challenges/Notes'} name={'businessChallenges'} value={formData.businessChallenges} onChange={handleChange} />
+                        <TextArea label={'Business Challenges/summary'} name={'businessChallenges'} value={formData.businessChallenges} onChange={handleChange} />
                     </div>
                     <div className="mt-4">
                         <h3 className="text-lg font-semibold">Additional Fields</h3>

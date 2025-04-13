@@ -3,7 +3,7 @@
     "contact": "Project Manager",
     "company": "IBM",
     "leadDateCreated": "01/12/25",
-    "notes": "Deal Closed, Candidate Starts October 1, 2024",
+    "summary": "Interested in project 1, need to catch up again.",
     "magic": true,
     "stage": "Closed"
   },
@@ -11,7 +11,7 @@
     "contact": "Sales Executive",
     "company": "Google",
     "leadDateCreated": "02/05/25",
-    "notes": "Negotiation Phase",
+    "summary": "Interested in project 1, need to catch up again.",
     "magic": false,
     "stage": "Negotiation"
   },
@@ -19,7 +19,7 @@
     "contact": "HR Specialist",
     "company": "Microsoft",
     "leadDateCreated": "12/15/24",
-    "notes": "Initial Discussion Scheduled",
+    "summary": "Interested in project 1, need to catch up again.",
     "magic": true,
     "stage": "Lead"
   },
@@ -27,7 +27,7 @@
     "contact": "Software Engineer",
     "company": "Amazon",
     "leadDateCreated": "01/20/25",
-    "notes": "Candidate Shortlisted",
+    "summary": "Candidate Shortlisted",
     "magic": false,
     "stage": "Follow-up"
   },
@@ -35,7 +35,7 @@
     "contact": "Business Analyst",
     "company": "Tesla",
     "leadDateCreated": "03/01/25",
-    "notes": "Proposal Sent",
+    "summary": "Proposal Sent",
     "magic": true,
     "stage": "Negotiation"
   },
@@ -43,7 +43,7 @@
     "contact": "Operations Manager",
     "company": "Meta",
     "leadDateCreated": "02/10/25",
-    "notes": "Follow-up Required",
+    "summary": "Follow-up Required",
     "magic": false,
     "stage": "Follow-up"
   },
@@ -51,7 +51,7 @@
     "contact": "Marketing Director",
     "company": "Adobe",
     "leadDateCreated": "01/30/25",
-    "notes": "Deal Under Review",
+    "summary": "Deal Under Review",
     "magic": true,
     "stage": "Lead"
   },
@@ -59,7 +59,7 @@
     "contact": "Data Scientist",
     "company": "Netflix",
     "leadDateCreated": "12/20/24",
-    "notes": "Offer Extended",
+    "summary": "Offer Extended",
     "magic": false,
     "stage": "Closed"
   },
@@ -67,7 +67,7 @@
     "contact": "IT Consultant",
     "company": "Oracle",
     "leadDateCreated": "02/18/25",
-    "notes": "Discussion In Progress",
+    "summary": "Discussion In Progress",
     "magic": true,
     "stage": "Negotiation"
   },
@@ -75,7 +75,7 @@
     "contact": "Finance Manager",
     "company": "Deloitte",
     "leadDateCreated": "01/08/25",
-    "notes": "Candidate Accepted Offer",
+    "summary": "Candidate Accepted Offer",
     "magic": false,
     "stage": "Closed"
   },
@@ -83,7 +83,7 @@
     "contact": "Product Manager",
     "company": "Apple",
     "leadDateCreated": "03/05/25",
-    "notes": "Final Interview Scheduled",
+    "summary": "Final Interview Scheduled",
     "magic": true,
     "stage": "Lead"
   },
@@ -91,7 +91,7 @@
     "contact": "Support Engineer",
     "company": "Cisco",
     "leadDateCreated": "02/25/25",
-    "notes": "Contract Signed",
+    "summary": "Contract Signed",
     "magic": false,
     "stage": "Closed"
   },
@@ -99,7 +99,7 @@
     "contact": "Cloud Architect",
     "company": "Salesforce",
     "leadDateCreated": "01/15/25",
-    "notes": "Awaiting Candidate Confirmation",
+    "summary": "Awaiting Candidate Confirmation",
     "magic": true,
     "stage": "Follow-up"
   },
@@ -107,7 +107,7 @@
     "contact": "Security Analyst",
     "company": "Palo Alto Networks",
     "leadDateCreated": "02/02/25",
-    "notes": "Background Check Pending",
+    "summary": "Background Check Pending",
     "magic": false,
     "stage": "Lead"
   },
@@ -115,7 +115,7 @@
     "contact": "UX Designer",
     "company": "Spotify",
     "leadDateCreated": "01/28/25",
-    "notes": "Offer Negotiation Ongoing",
+    "summary": "Offer Negotiation Ongoing",
     "magic": true,
     "stage": "Negotiation"
   },
@@ -123,7 +123,7 @@
     "contact": "Project Coordinator",
     "company": "Zoom",
     "leadDateCreated": "02/12/25",
-    "notes": "Documentation Submitted",
+    "summary": "Documentation Submitted",
     "magic": false,
     "stage": "Follow-up"
   },
@@ -131,7 +131,7 @@
     "contact": "company Manager",
     "company": "SAP",
     "leadDateCreated": "01/10/25",
-    "notes": "Candidate Declined Offer",
+    "summary": "Candidate Declined Offer",
     "magic": true,
     "stage": "Closed"
   },
@@ -139,7 +139,7 @@
     "contact": "DevOps Engineer",
     "company": "Red Hat",
     "leadDateCreated": "03/03/25",
-    "notes": "Technical Assessment Passed",
+    "summary": "Technical Assessment Passed",
     "magic": false,
     "stage": "Lead"
   },
@@ -147,7 +147,7 @@
     "contact": "QA Specialist",
     "company": "Dropbox",
     "leadDateCreated": "02/14/25",
-    "notes": "Feedback Pending",
+    "summary": "Feedback Pending",
     "magic": true,
     "stage": "Follow-up"
   },
@@ -155,7 +155,7 @@
     "contact": "Customer Success Manager",
     "company": "Slack",
     "leadDateCreated": "01/22/25",
-    "notes": "Deal Closed Successfully",
+    "summary": "Deal Closed Successfully",
     "magic": false,
     "stage": "Closed"
   }
