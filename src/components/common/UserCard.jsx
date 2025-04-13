@@ -11,7 +11,7 @@ const UserCard = ({ user }) => {
   }
 
   return (
-    <div className="flex items-center bg-transparent rounded-lg gap-1 py-1 w-full min-w-[180px]">
+    <div className="flex items-center gap-1 min-w-[130px]">
       <img
         src={user.avatar || "https://via.placeholder.com/48"}
         alt={`${user.name || "User"} profile`}

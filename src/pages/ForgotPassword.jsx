@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import PageTitleLogin from '../components/layout/PageTitleLogin';
+
 
 
 export default function ForgotPassword() {
@@ -13,14 +14,7 @@ export default function ForgotPassword() {
   return (
     <div className="h-screen bg-brand-surface flex flex-col">
       {/* Top Bar */}
-      <div className="flex justify-between items-center py-3 border-b  border-gray-300 px-[30px] bg-brand-surface shadow-sm">
-        <h1 className="text-2xl px-[70px] font-semibold text-gray-800">Projects</h1>
-        <Link to="/signup">
-          <button className="bg-[brand-green] hover:bg-green-600 text-white text-sm h-[36px] py-2 px-4 rounded-sm transition duration-200">
-            Sign Up
-          </button>
-        </Link>
-      </div>
+      <PageTitleLogin title={'CM'} />
 
       {/* Main Content Centered */}
       <div className="flex-grow flex items-center justify-center px-4">

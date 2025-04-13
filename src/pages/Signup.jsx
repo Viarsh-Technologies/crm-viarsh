@@ -1,25 +1,19 @@
 import { useState } from 'react';
 import { FaGoogle, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import PageTitleLogin from '../components/layout/PageTitleLogin';
 
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="h-screen bg-brand-surface flex flex-col">
+    <div className="h-screen flex flex-col">
       {/* Top Bar */}
-      <div className="flex justify-between items-center py-3 border-b  border-gray-300 px-[30px] bg-brand-surface shadow-sm">
-        <h1 className="text-2xl px-[70px] font-semibold text-gray-800">Projects</h1>
-        <Link to="/signup">
-          <button className="bg-brand-green hover:bg-green-600 text-white text-sm h-[36px] py-2 px-4 rounded-sm transition duration-200">
-            Sign Up
-          </button>
-        </Link>
-      </div>
+      <PageTitleLogin title={'CM'} />
 
       {/* Main Content Centered */}
-      <div className="flex-grow flex items-center justify-center px-4">
+      <div className="flex-grow flex items-center justify-center px-4 bg-brand-surface ">
         <div className="p-8  w-full max-w-md ">
         <h2 className="text-2xl text-[#37352F] font-semibold text-center mb-2">Sign Up</h2>
         <p className="text-center text-sm text-[#101010] mb-6">
@@ -92,12 +86,7 @@ export default function Signup() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox text-green-600" />
-              <span className="ml-2 text-sm text-gray-700">Agree to Terms and Conditions</span>
-            </label>
-          </div>
+         
 
           <button
             type="submit"

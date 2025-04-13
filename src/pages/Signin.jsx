@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FaGoogle, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import PageTitle from '../components/layout/PageTitle'
+import PageTitleLogin from '../components/layout/PageTitleLogin';
+
 
 
 export default function Signin() {
@@ -9,27 +10,19 @@ export default function Signin() {
 
   return (
     <div className="h-screen bg-brand-surface flex flex-col">
-      {/* Top Bar */}
-      <div className="flex justify-between items-center py-3 border-b  border-gray-300 px-[30px] bg-brand-surface shadow-sm">
-        <h1 className="text-2xl px-[70px] font-semibold text-gray-800">Projects</h1>
-        <Link to="/signup">
-          <button className="bg-brand-green hover:bg-green-600 text-white text-sm h-[36px] py-2 px-4 rounded-sm transition duration-200">
-            Sign Up
-          </button>
-        </Link>
-      </div>
+      <PageTitleLogin title={'CM'} />
 
       {/* Main Content Centered */}
       <div className="flex-grow flex items-center justify-center px-4">
         <div className="p-8  w-full max-w-md ">
           <h2 className="text-2xl font-semibold text-center mb-2 text-[#37352F]">Sign in</h2>
           <p className="text-center text-sm text-[#101010] mb-6">
-            Don’t have an company?{" "}
+            Don’t have an Account?{" "}
             <Link
               to="/signup"
               className="text-sm text-[#009DE9] hover:underline"
             >
-              Signup
+              Create an account
             </Link>
           </p>
 
