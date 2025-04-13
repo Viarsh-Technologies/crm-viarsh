@@ -5,7 +5,9 @@
     "leadDateCreated": "01/12/25",
     "summary": "Interested in project 1, need to catch up again.",
     "magic": true,
-    "stage": "Closed"
+    "stage": "Closed",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Sales Executive",
@@ -13,7 +15,9 @@
     "leadDateCreated": "02/05/25",
     "summary": "Interested in project 1, need to catch up again.",
     "magic": false,
-    "stage": "Negotiation"
+    "stage": "Negotiation",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "HR Specialist",
@@ -21,7 +25,9 @@
     "leadDateCreated": "12/15/24",
     "summary": "Interested in project 1, need to catch up again.",
     "magic": true,
-    "stage": "Lead"
+    "stage": "Lead",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Software Engineer",
@@ -29,7 +35,9 @@
     "leadDateCreated": "01/20/25",
     "summary": "Candidate Shortlisted",
     "magic": false,
-    "stage": "Follow-up"
+    "stage": "Follow-up",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Business Analyst",
@@ -37,7 +45,9 @@
     "leadDateCreated": "03/01/25",
     "summary": "Proposal Sent",
     "magic": true,
-    "stage": "Negotiation"
+    "stage": "Negotiation",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Operations Manager",
@@ -45,7 +55,9 @@
     "leadDateCreated": "02/10/25",
     "summary": "Follow-up Required",
     "magic": false,
-    "stage": "Follow-up"
+    "stage": "Follow-up",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Marketing Director",
@@ -53,7 +65,9 @@
     "leadDateCreated": "01/30/25",
     "summary": "Deal Under Review",
     "magic": true,
-    "stage": "Lead"
+    "stage": "Lead",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Data Scientist",
@@ -61,7 +75,9 @@
     "leadDateCreated": "12/20/24",
     "summary": "Offer Extended",
     "magic": false,
-    "stage": "Closed"
+    "stage": "Closed",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "IT Consultant",
@@ -69,7 +85,9 @@
     "leadDateCreated": "02/18/25",
     "summary": "Discussion In Progress",
     "magic": true,
-    "stage": "Negotiation"
+    "stage": "Negotiation",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Finance Manager",
@@ -77,7 +95,9 @@
     "leadDateCreated": "01/08/25",
     "summary": "Candidate Accepted Offer",
     "magic": false,
-    "stage": "Closed"
+    "stage": "Closed",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Product Manager",
@@ -85,7 +105,9 @@
     "leadDateCreated": "03/05/25",
     "summary": "Final Interview Scheduled",
     "magic": true,
-    "stage": "Lead"
+    "stage": "Lead",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Support Engineer",
@@ -93,7 +115,9 @@
     "leadDateCreated": "02/25/25",
     "summary": "Contract Signed",
     "magic": false,
-    "stage": "Closed"
+    "stage": "Closed",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Cloud Architect",
@@ -101,7 +125,9 @@
     "leadDateCreated": "01/15/25",
     "summary": "Awaiting Candidate Confirmation",
     "magic": true,
-    "stage": "Follow-up"
+    "stage": "Follow-up",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Security Analyst",
@@ -109,7 +135,9 @@
     "leadDateCreated": "02/02/25",
     "summary": "Background Check Pending",
     "magic": false,
-    "stage": "Lead"
+    "stage": "Lead",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "UX Designer",
@@ -117,7 +145,9 @@
     "leadDateCreated": "01/28/25",
     "summary": "Offer Negotiation Ongoing",
     "magic": true,
-    "stage": "Negotiation"
+    "stage": "Negotiation",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Project Coordinator",
@@ -125,7 +155,9 @@
     "leadDateCreated": "02/12/25",
     "summary": "Documentation Submitted",
     "magic": false,
-    "stage": "Follow-up"
+    "stage": "Follow-up",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "company Manager",
@@ -133,7 +165,9 @@
     "leadDateCreated": "01/10/25",
     "summary": "Candidate Declined Offer",
     "magic": true,
-    "stage": "Closed"
+    "stage": "Closed",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "DevOps Engineer",
@@ -141,7 +175,9 @@
     "leadDateCreated": "03/03/25",
     "summary": "Technical Assessment Passed",
     "magic": false,
-    "stage": "Lead"
+    "stage": "Lead",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "QA Specialist",
@@ -149,7 +185,9 @@
     "leadDateCreated": "02/14/25",
     "summary": "Feedback Pending",
     "magic": true,
-    "stage": "Follow-up"
+    "stage": "Follow-up",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   },
   {
     "contact": "Customer Success Manager",
@@ -157,6 +195,8 @@
     "leadDateCreated": "01/22/25",
     "summary": "Deal Closed Successfully",
     "magic": false,
-    "stage": "Closed"
+    "stage": "Closed",
+    "RecommendationButton": "Recommendation",
+    "view": "View"
   }
 ]

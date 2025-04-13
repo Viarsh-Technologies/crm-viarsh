@@ -39,8 +39,8 @@ const statusMapping = {
 };
 const ContactsPage = () => {
     const [filteredData, setFilteredData] = useState([]);
-    const [loading, setLoading] = useState(false); // Add loading state
-    const navigate = useNavigate(); // Correct usage
+    const [loading, setLoading] = useState(false); 
+    const navigate = useNavigate(); 
 
     const itemsPerPage = 8;
 
@@ -49,7 +49,7 @@ const ContactsPage = () => {
         totalPages,
         paginatedData,
         paginationRange,
-        handlePaginate, // Use handlePaginate from usePagination
+        handlePaginate,
     } = usePagination(filteredData, itemsPerPage);
     const { selectedRows, handleSelectAll, handleRowSelect } = useRowSelection(data);
 
@@ -65,10 +65,10 @@ const ContactsPage = () => {
         const timeoutId = setTimeout(() => {
             handleFilterAndSearch();
             setLoading(false);
-        }, 500); // Debounce search (wait 500ms before filtering)
+        }, 500); 
 
-        return () => clearTimeout(timeoutId); // Clear timeout on change
-    }, [query, selectedStage]); // Runs whenever query or stage changes
+        return () => clearTimeout(timeoutId);
+    }, [query, selectedStage]);
 
     const handleFilterAndSearch = () => {
         let filtered = data;
@@ -85,7 +85,7 @@ const ContactsPage = () => {
             );
         }
 
-        setFilteredData(filtered); // Updates displayed results
+        setFilteredData(filtered);
         console.log("changed")
     };
 
