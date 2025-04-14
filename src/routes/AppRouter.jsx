@@ -17,7 +17,7 @@ import ForgotPassword from '../pages/ForgotPassword';
 import NewPassword from '../pages/NewPassword';
 import Settings from '../pages/settings/Settings';
 import MainAgent from '../pages/agent/mainAgent';
-
+import ContactDetailPage from '../pages/ContactDetailPage'
 import { ContactsProvider } from '../context/ContactsContext';
 
 const AppRouter = () => {
@@ -43,6 +43,7 @@ const AppRouter = () => {
           <Route path="/mainagent" element={<MainAgent />} />
           <Route path="/addProject" element={<AddProjectPage />} />
           <Route path="/pendingApproval" element={<PendingApprovalPage />} />
+          <Route path='/contactdetailpage' element={<ContactDetailPage />} />
         </Route>
 
         {/* Routes that need ContactsProvider */}
