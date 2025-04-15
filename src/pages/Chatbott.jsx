@@ -9,7 +9,7 @@ import PageTitle from '../components/layout/PageTitle';
 
 
 
-export default function Chatbot() {
+export default function Chatbott() {
   const [history, setHistory] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [input, setInput] = useState("");
