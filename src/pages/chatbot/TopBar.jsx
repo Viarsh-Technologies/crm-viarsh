@@ -34,7 +34,7 @@ const TopBar = ({
   };
 
   return (
-    <div className="h-16 bg-[#F0F1FA] border-b border-gray-200 flex items-center justify-between px-6 mt-5">
+    <div className="h-16 bg-[#F0F1FA] border-b border-gray-200 flex items-center justify-between px-6 ">
       <button
         onClick={onToggleSidebar}
         className="p-2 rounded-full hover:bg-gray-100 text-gray-600 mr-2"
