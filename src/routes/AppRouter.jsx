@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import DashboardPage from '../pages/DashboardPage';
 import ContactsPage from '../pages/ContactsPage';
@@ -8,7 +7,7 @@ import AiAgentPage from '../pages/AiAgentPage';
 import LeadsPage from '../pages/LeadsPage';
 import InboxPage from '../pages/InboxPage';
 import AddProjectPage from '../pages/AddProjectPage';
-import Chatbot from '../pages/chatbot/Chatbot';
+import Chatbot from '../pages/chatbot/Chatbot.jsx';
 import PendingApprovalPage from '../pages/PendingApprovalPage';
 import SearchContactPage from '../pages/SearchContactPage';
 import Signin from '../pages/Signin';
