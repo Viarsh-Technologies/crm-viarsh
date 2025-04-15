@@ -7,7 +7,7 @@ import AiAgentPage from '../pages/AiAgentPage';
 import LeadsPage from '../pages/LeadsPage';
 import InboxPage from '../pages/InboxPage';
 import AddProjectPage from '../pages/AddProjectPage';
-import Chatbot from '../pages/chatbot/Chatbot.jsx';
+import Chatbot from '../pages/chatbot/chatbot'
 import PendingApprovalPage from '../pages/PendingApprovalPage';
 import SearchContactPage from '../pages/SearchContactPage';
 import Signin from '../pages/Signin';
