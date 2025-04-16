@@ -6,6 +6,13 @@ import Send from "../assets/Send.svg";
 import { Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import PageTitle from "../components/layout/PageTitle";
+import Breadcrumbs from '../components/layout/Breadcrumbs';
+
+
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Chatbot', path: '' },
+]
 
 function Dummy() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -28,15 +35,15 @@ function Dummy() {
 }
 
   return (
-    <div className="">
+    <div>
       <PageTitle
         title={"Chatbot"}
         actionText="New Chat"
         ActionIcon={Plus}
         onAction={onAction} // Use the new chat handler
       />
-    
-    <div className="flex-col font-sans transition-all duration-500 ease-in-out mt-4">
+    <div><Breadcrumbs items={breadcrumbItems} /></div>
+    <div className="flex-col font-sans transition-all duration-500 ease-in-out ">
       
       <div
         className={`bg-[#F0F1FA] border border-[#DDDFE3] text-[#37352F] p-4 max-w-[1140px] relative transition-all duration-500 ${

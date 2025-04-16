@@ -7,7 +7,8 @@ import Breadcrumbs from "../components/layout/Breadcrumbs";
 
 const breadcrumbItems = [
   { name: "Home", path: "/" },
-  { name: "Inbox", path: "" },
+  { name: "Contact", path: "/contacts" },
+  { name: "Dinesh Pawar", path: "" },
 ];
 
 export default function ContactDetailPage() {

@@ -4,6 +4,14 @@ import HistoryPanel from './HistoryPanel';
 import ChatPanel from './ChatPanel';
 import PageTitle from '../../components/layout/PageTitle'
 import { FaPlus, FaRedo } from 'react-icons/fa'; // Importing the Plus icon
+import Breadcrumbs from '../../components/layout/Breadcrumbs';
+
+
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'AI Agnet', path: '/aiagent' },
+  { name: 'Add New Agent', path: '/mainagent' },
+]
 
 // Initial history data
 const initialHistory = [
@@ -42,7 +50,7 @@ function MainAgent() {
   };
 
   const onAction = () => {
-    navigate('/'); 
+    navigate('/aiagent'); 
   };
 
   return (
@@ -54,10 +62,9 @@ function MainAgent() {
         ActionIcon={FaPlus} 
         onAction={onAction} 
       />
+      <div><Breadcrumbs items={breadcrumbItems} /></div>
     <div className="flex flex-col h-screen mt-2">
       
-      <h3 className="text-1xl mb-1 text-gray-800">Chatbot Agent &gt; Project Flow</h3>
-
       {/* Main Container */}
       <div className="flex h-[90vh] w-[80%] border-[#c6c6c6] border-1">
         {/* Left Panel: History Panel */}
