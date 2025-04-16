@@ -4,6 +4,12 @@
 @theme{
     --color-brand-green:#32D583;
     --color-brand-surface:#ECF0FE;
+    --color-title: #37352F;
+    --color-paragraph: #101010;
+    --color-border: #DDDFE3;
+    --color-bluelinks: #009DE9;
+    --color-lines: #B5BACA;
+    --color-second-bg: #F0F1FA;
 }
 body {
     font-family: 'Inter', sans-serif;

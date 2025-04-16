@@ -1,25 +1,33 @@
+import { FaParagraph } from "react-icons/fa6";
+
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-      "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx}",
-    ],
-    theme: {
-      extend: {
-        keyframes: {
-          typing: {
-            "0%": { width: "0%" },
-            "100%": { width: "100%" }
-          },
-          blinkCaret: {
-            "0%, 100%": { borderColor: "transparent" },
-            "50%": { borderColor: "currentColor" }
-          }
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        title: "#37352F",
+        paragraph: "#101010",
+        border: "#DDDFE3",
+        btnGreen: "#32D583",
+        bluelinks: "#009DE9",
+        lines: "#B5BACA",
+        gary: "#767572",
+      },
+      keyframes: {
+        typing: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
         },
-        animation: {
-          typing: 'typing 1s steps(40, end), blinkCaret .75s step-end infinite',
-        }
+        blinkCaret: {
+          "0%, 100%": { borderColor: "transparent" },
+          "50%": { borderColor: "currentColor" },
+        },
+      },
+      animation: {
+        typing: "typing 1s steps(40, end), blinkCaret .75s step-end infinite",
       },
     },
-    plugins: [],
-  }
+  },
+  plugins: [],
+};
