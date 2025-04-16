@@ -14,7 +14,7 @@ export default function Signin() {
       {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
         <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
-          <h2 className="text-2xl font-bold text-center mb-2 text-[#37352F]">
+          <h2 className="text-[32px] font-bold text-center mb-2 text-[#37352F]">
           Sign up
           </h2>
           <p className="text-center text-sm text-[#767572] mb-6">
