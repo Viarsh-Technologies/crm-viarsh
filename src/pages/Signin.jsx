@@ -1,33 +1,31 @@
 import { useState } from "react";
 import { FaGoogle, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import PageTitleLogin from '../components/layout/PageTitleLogin';
-
-
+import PageTitleLogin from "../components/layout/PageTitleLogin";
+import { IoEyeOutline, IoEyeOffSharp } from "react-icons/io5";
 
 export default function Signin() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="h-screen bg-brand-surface flex flex-col">
-      <PageTitleLogin title={'CM'} />
+      <PageTitleLogin title={"CM"} />
 
-      {/* Main Content Centered */}
-      <div className="flex-grow flex items-center justify-center px-4">
-        <div className="p-8  w-full max-w-md ">
-          <h2 className="text-2xl font-semibold text-center mb-2 text-[#37352F]">Sign in</h2>
-          <p className="text-center text-sm text-[#101010] mb-6">
+      {/* Main Content Fully Centered */}
+      <div className="flex-grow flex items-center justify-center">
+        <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
+          <h2 className="text-2xl font-bold text-center mb-2 text-[#37352F]">
+            Sign in
+          </h2>
+          <p className="text-center text-sm text-[#767572] mb-6">
             Don’t have an Account?{" "}
-            <Link
-              to="/signup"
-              className="text-sm text-[#009DE9] hover:underline"
-            >
+            <Link to="/signup" className="text-sm text-[#009DE9] underline">
               Create an account
             </Link>
           </p>
 
           {/* Form */}
-          <form className="space-y-4">
+          <form className="space-y-7 w-[450px]">
             <div>
               <label
                 htmlFor="email"
@@ -39,7 +37,7 @@ export default function Signin() {
                 id="email"
                 type="email"
                 required
-                className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
+                className="w-full h-[37px] mt-1 px-3 bg-white py-2 border-1 border-border"
               />
             </div>
 
@@ -55,13 +53,13 @@ export default function Signin() {
                   id="password"
                   type={showPassword ? "text" : "password"}
                   required
-                  className="w-full mt-1 px-3 bg-white py-2 border rounded-md focus:border-[#DDDFE3]"
+                  className="w-full h-[37px] mt-1 px-3 bg-white py-2 border-1 border-border"
                 />
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-gray-500 cursor-pointer"
+                  className="absolute right-3 top-3 text-[#676872] mt-1 cursor-pointer"
                 >
-                  {showPassword ? "🙈" : "👁️"}
+                  {showPassword ? <IoEyeOutline /> : <IoEyeOffSharp />}
                 </span>
               </div>
             </div>
@@ -70,35 +68,36 @@ export default function Signin() {
               <label className="inline-flex items-center">
                 <input
                   type="checkbox"
-                  className="form-checkbox text-green-600"
+                  className="w-[16px] h-[16px] form-checkbox accent-[#60708B]"
                 />
-                <span className="ml-2 text-sm text-gray-700">
-                  Remember me
-                </span>
+                <span className="ml-2 text-sm text-[#60708B]">Remember me</span>
               </label>
+            </div>
+
+            <div className="flex justify-between items-center text-white rounded-md">
+              <button
+                type="submit"
+                className="w-[134px] h-[37px] bg-[#32D583] text-white py-2 rounded-md"
+              >
+                Sign In
+              </button>
+
               <Link
                 to="/forgotpassword"
-                className="text-sm text-[#009DE9] hover:underline"
+                className="text-sm text-[#009DE9] underline"
               >
                 Forgot password?
               </Link>
             </div>
-
-            <button
-              type="submit"
-              className="w-full bg-[#32D583] text-white py-2 rounded-md "
-            >
-              Sign In
-            </button>
           </form>
 
           {/* Divider */}
-          <div className="mt-6 relative">
+          <div className="mt-6 relative w-full">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-[#B5BACA]" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="bg-brand-surface border-[#B5BACA] border-1 px-3 text-gray-500 rounded-md p-1">
+              <span className="bg-brand-surface border-[#B5BACA] border-1 px-3 text-gray-500 rounded-[10px] p-1">
                 OR Login
               </span>
             </div>
@@ -130,5 +129,3 @@ export default function Signin() {
     </div>
   );
 }
-
-
