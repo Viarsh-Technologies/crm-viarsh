@@ -3,6 +3,8 @@ import { FaGoogle, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PageTitleLogin from "../components/layout/PageTitleLogin";
 import { IoEyeOutline, IoEyeOffSharp } from "react-icons/io5";
+import BackArrow from "../assets/back-arrow.svg";
+
 
 export default function NewPassword() {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,9 +15,12 @@ export default function NewPassword() {
 
       {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
-        <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
-          <h2 className="text-auth-header mb-2 ">Enter Your New Password</h2>
-          <p className="text-secondary mb-6">
+        <div className="w-full max-w-md flex flex-col items-center justify-center">
+          <Link to="/signin" className="pt-4 self-start">
+                      <img src={BackArrow} alt="Back" />
+                    </Link>
+          <h2 className="text-auth-header mb-2 mt-8">Enter Your New Password</h2>
+          <p className="text-black font-semibold mb-6 pl-8 pr-8 text-center">
             Add OTP and reset your password.
           </p>
 

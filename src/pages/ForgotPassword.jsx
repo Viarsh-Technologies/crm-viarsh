@@ -24,13 +24,13 @@ export default function ForgotPassword() {
       <PageTitleLogin title="CM" />
 
       <div className="flex-grow flex items-center justify-center">
-        <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
+        <div className="w-full max-w-md flex flex-col items-center justify-center">
           <Link to="/signin" className="pt-4 self-start">
             <img src={BackArrow} alt="Back" />
           </Link>
 
           <h2 className="text-auth-header mb-2 mt-8">Forgot Your Password?</h2>
-          <p className="text-secondary mb-6 text-center">
+          <p className="text-black font-semibold mb-6 pl-8 pr-8 text-center">
             Enter your email address and we will send you instructions to reset
             your password.
           </p>

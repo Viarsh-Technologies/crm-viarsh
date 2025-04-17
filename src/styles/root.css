@@ -27,7 +27,6 @@
   .text-secondary {
     color: var(--color-third-bg);
     font-size: 16px;
-    font-weight: 10px;
     text-align: center;
   }
   
