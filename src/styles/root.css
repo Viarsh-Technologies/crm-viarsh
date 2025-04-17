@@ -1,0 +1,54 @@
+:root {
+    --color-brand-green: #32D583;
+    --color-brand-surface: #ECF0FE;
+    --color-title: #37352F;
+    --color-paragraph: #101010;
+    --color-border: #DDDFE3;
+    --color-bluelinks: #009DE9;
+    --color-lines: #B5BACA;
+    --color-second-bg: #F0F1FA;
+    --color-third-bg: #767572;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #0E1210;
+  }
+  
+  /* ✅ Custom class using the CSS variable */
+  .text-auth-header {
+    color: var(--color-title);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .text-secondary {
+    color: var(--color-third-bg);
+    font-size: 16px;
+    font-weight: 10px;
+    text-align: center;
+  }
+  
+
+  .text-auth-label {
+    color: var(--color-paragraph);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .text-auth-button {
+    color: var(--color-brand-green);
+    font-size: 14px;
+  }
+  
+  .bg-gradient-custom {
+    background: linear-gradient(
+      135deg, /* ← tilt angle: 135deg = bottom left to top right */
+      #F0F8F8 0%,
+      #E9F1FE 31%,
+      #F5F1F7 71%,
+      #EAF2FE 100%
+    );
+  }

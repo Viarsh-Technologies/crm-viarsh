@@ -3,21 +3,22 @@ import { FaGoogle, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PageTitleLogin from "../components/layout/PageTitleLogin";
 import { IoEyeOutline, IoEyeOffSharp } from "react-icons/io5";
+import "../styles/root.css";
 
-export default function Signin() {
+export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="h-screen bg-brand-surface flex flex-col">
+    <div className="h-screen bg-gradient-custom flex flex-col">
       <PageTitleLogin title={"CM"} />
 
       {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
         <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
-          <h2 className="text-[32px] font-bold text-center mb-2 text-[#37352F]">
-          Sign up
+          <h2 className="text-auth-header mb-2 ">
+            Sign up
           </h2>
-          <p className="text-center text-sm text-[#767572] mb-6">
+          <p className="text-secondary mb-6">
           Already a account?{" "}
             <Link to="/signin" className="text-sm text-[#009DE9] underline">
               Login
@@ -26,10 +27,10 @@ export default function Signin() {
 
           {/* Form */}
           <form className="space-y-7 w-[450px]">
-            <div>
+          <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-auth-label"
               >
                 Name
               </label>
@@ -43,7 +44,7 @@ export default function Signin() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-auth-label"
               >
                 Email
               </label>
@@ -58,7 +59,7 @@ export default function Signin() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-auth-label"
               >
                 Password
               </label>
@@ -80,7 +81,7 @@ export default function Signin() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-auth-label"
               >
                 Repeat Password
               </label>
@@ -101,14 +102,13 @@ export default function Signin() {
             </div>
 
             
-
             <div className="flex justify-between items-center text-white rounded-md">
-              <button
-                type="submit"
-                className="w-full h-[37px] mt-3 bg-[#32D583] text-white py-2 rounded-md"
-              >
-                Sign Up
-              </button>
+               <button
+                 type="submit"
+                 className="w-full h-[37px] mt-2 bg-[#32D583] text-white py-2 rounded-md"
+               >
+                 Sign Up
+               </button>
 
               
             </div>

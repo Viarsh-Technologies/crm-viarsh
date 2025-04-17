@@ -3,21 +3,22 @@ import { FaGoogle, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PageTitleLogin from "../components/layout/PageTitleLogin";
 import { IoEyeOutline, IoEyeOffSharp } from "react-icons/io5";
+import "../styles/root.css";
 
 export default function Signin() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="h-screen bg-brand-surface flex flex-col">
+    <div className="h-screen bg-gradient-custom flex flex-col">
       <PageTitleLogin title={"CM"} />
 
       {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
         <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
-          <h2 className="text-[32px] font-bold text-center mb-2 text-[#37352F]">
+          <h2 className="text-auth-header mb-2 ">
             Sign in
           </h2>
-          <p className="text-center text-sm text-[#767572] mb-6">
+          <p className="text-secondary mb-6">
             Don’t have an Account?{" "}
             <Link to="/signup" className="text-sm text-[#009DE9] underline">
               Create an account
@@ -29,7 +30,7 @@ export default function Signin() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-auth-label"
               >
                 Email
               </label>
@@ -44,7 +45,7 @@ export default function Signin() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-auth-label"
               >
                 Password
               </label>
