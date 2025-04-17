@@ -15,12 +15,10 @@ export default function Signin() {
       {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
         <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
-          <h2 className="text-auth-header mb-2 ">
-            Sign in
-          </h2>
+          <h2 className="text-auth-header mb-2 ">Sign in</h2>
           <p className="text-secondary mb-6">
             Don’t have an Account?{" "}
-            <Link to="/signup" className="text-sm text-[#009DE9] underline">
+            <Link to="/signup" className="text-sm text-bluelinks underline">
               Create an account
             </Link>
           </p>
@@ -28,10 +26,7 @@ export default function Signin() {
           {/* Form */}
           <form className="space-y-7 w-[450px]">
             <div>
-              <label
-                htmlFor="email"
-                className="block text-auth-label"
-              >
+              <label htmlFor="email" className="block text-auth-label">
                 Email
               </label>
               <input
@@ -43,10 +38,7 @@ export default function Signin() {
             </div>
 
             <div>
-              <label
-                htmlFor="password"
-                className="block text-auth-label"
-              >
+              <label htmlFor="password" className="block text-auth-label">
                 Password
               </label>
               <div className="relative">
@@ -78,7 +70,7 @@ export default function Signin() {
             <div className="flex justify-between items-center text-white rounded-md">
               <button
                 type="submit"
-                className="w-[134px] h-[37px] bg-[#32D583] text-white py-2 rounded-md"
+                className="w-[134px] h-[37px] bg-brand-green text-white py-2 rounded-md"
               >
                 Sign In
               </button>

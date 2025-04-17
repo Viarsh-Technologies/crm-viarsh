@@ -15,11 +15,9 @@ export default function Signup() {
       {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
         <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
-          <h2 className="text-auth-header mb-2 ">
-            Sign up
-          </h2>
+          <h2 className="text-auth-header mb-2 ">Sign up</h2>
           <p className="text-secondary mb-6">
-          Already a account?{" "}
+            Already a account?{" "}
             <Link to="/signin" className="text-sm text-[#009DE9] underline">
               Login
             </Link>
@@ -27,11 +25,8 @@ export default function Signup() {
 
           {/* Form */}
           <form className="space-y-7 w-[450px]">
-          <div>
-              <label
-                htmlFor="name"
-                className="block text-auth-label"
-              >
+            <div>
+              <label htmlFor="name" className="block text-auth-label">
                 Name
               </label>
               <input
@@ -42,10 +37,7 @@ export default function Signup() {
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-auth-label"
-              >
+              <label htmlFor="email" className="block text-auth-label">
                 Email
               </label>
               <input
@@ -57,10 +49,7 @@ export default function Signup() {
             </div>
 
             <div>
-              <label
-                htmlFor="password"
-                className="block text-auth-label"
-              >
+              <label htmlFor="password" className="block text-auth-label">
                 Password
               </label>
               <div className="relative">
@@ -79,10 +68,7 @@ export default function Signup() {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="password"
-                className="block text-auth-label"
-              >
+              <label htmlFor="password" className="block text-auth-label">
                 Repeat Password
               </label>
               <div className="relative">
@@ -101,16 +87,13 @@ export default function Signup() {
               </div>
             </div>
 
-            
             <div className="flex justify-between items-center text-white rounded-md">
-               <button
-                 type="submit"
-                 className="w-full h-[37px] mt-2 bg-[#32D583] text-white py-2 rounded-md"
-               >
-                 Sign Up
-               </button>
-
-              
+              <button
+                type="submit"
+                className="w-full h-[37px] mt-2 bg-brand-green text-white py-2 rounded-md"
+              >
+                Sign Up
+              </button>
             </div>
           </form>
 

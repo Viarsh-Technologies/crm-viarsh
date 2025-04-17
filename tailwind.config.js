@@ -6,13 +6,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        gary: "#767572",
         title: "#37352F",
         paragraph: "#101010",
-        border: "#DDDFE3",
-        btnGreen: "#32D583",
+        bggreen: "#32D583",
         bluelinks: "#009DE9",
         lines: "#B5BACA",
-        gary: "#767572",
       },
       keyframes: {
         typing: {

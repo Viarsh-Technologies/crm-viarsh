@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import PageTitleLogin from "../components/layout/PageTitleLogin";
 import "../styles/root.css";
+import BackArrow from "../assets/back-arrow.svg";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -10,11 +11,9 @@ export default function ForgotPassword() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Handle the email submission logic here
     console.log("Submitted email:", email);
 
-    // Simulate sending reset link and redirecting
-    // In real case, you'd probably call an API here
+    // Simulate sending reset link
     setTimeout(() => {
       navigate("/newpassword");
     }, 1000);
@@ -22,18 +21,22 @@ export default function ForgotPassword() {
 
   return (
     <div className="h-screen bg-gradient-custom flex flex-col">
-      <PageTitleLogin title={"CM"} />
+      <PageTitleLogin title="CM" />
 
-      {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
         <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
-          <h2 className="text-auth-header mb-2">Forgot Your Password?</h2>
+          <Link to="/signin" className="pt-4 self-start">
+            <img src={BackArrow} alt="Back" />
+          </Link>
+
+          <h2 className="text-auth-header mb-2 mt-8">Forgot Your Password?</h2>
           <p className="text-secondary mb-6 text-center">
-            Enter your email address and we will send you instructions to reset your password.
+            Enter your email address and we will send you instructions to reset
+            your password.
           </p>
 
           {/* Form */}
-          <form className="space-y-7 w-full" onSubmit={handleSubmit}>
+          <form className="space-y-7 w-[450px]" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-auth-label">
                 Email
@@ -50,7 +53,7 @@ export default function ForgotPassword() {
 
             <button
               type="submit"
-              className="w-full bg-[#32D583] text-white py-2 rounded-md hover:bg-[#28c276] transition"
+              className="w-full bg-brand-green text-white py-2 rounded-md"
             >
               Continue
             </button>
