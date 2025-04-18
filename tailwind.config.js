@@ -1,4 +1,3 @@
-import { FaParagraph } from "react-icons/fa6";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        gary: "#767572",
+        gray: "#767572",
         title: "#37352F",
         paragraph: "#101010",
         bggreen: "#32D583",
@@ -25,6 +24,9 @@ export default {
       },
       animation: {
         typing: "typing 1s steps(40, end), blinkCaret .75s step-end infinite",
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
       },
     },
   },

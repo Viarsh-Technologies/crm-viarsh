@@ -23,8 +23,8 @@ export default function ForgotPassword() {
     <div className="h-screen bg-gradient-custom flex flex-col">
       <PageTitleLogin title="CM" />
 
-      <div className="flex-grow flex items-center justify-center">
-        <div className="w-full max-w-md flex flex-col items-center justify-center">
+      <div className="flex-grow flex mt-[10rem] justify-center">
+        <div className="w-full max-w-md flex flex-col">
           <Link to="/signin" className="pt-4 self-start">
             <img src={BackArrow} alt="Back" />
           </Link>

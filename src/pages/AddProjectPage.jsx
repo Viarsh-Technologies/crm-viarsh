@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import InputField from '../components/common/InputField'
-import PageTitle from '../components/layout/PageTitle';
+import PageTitle from '../components/layout/PageTitle2';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
 import TextArea from '../components/common/TextArea';
-import Button from '../components/common/Button';
+import Button from '../components/common/Button2';
 import { Search, X } from 'lucide-react';
+import Upload from '../assets/upload.svg'
 
 const breadcrumbItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Project', path: '/projects' },
-    { name: 'Add Project', path: '' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Add New Project', path: '' },
 ]
 const skillOptions = [
     "UX Designer", "Front-end Developer", "Back-end Developer",
@@ -229,7 +229,12 @@ const AddProjectPage = () => {
     }
     return (
         <div>
-            <PageTitle title={'Add Project'} actionText='' />
+        
+        <PageTitle title={'Projects'} actionText='Spreadsheet'  actionImg={Upload} />
+        <div>
+        </div>
+
+            
             <div><Breadcrumbs items={breadcrumbItems} /></div>
             <div className='bg-white rounded-md border border-gray-300 p-8 max-w-4xl'>
                 <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

@@ -109,116 +109,114 @@ const Mailbox = () => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-r from-indigo-50 min-h-screen">
-      <div className="bg-white rounded-xl shadow-lg p-6">
-        <div className="flex justify-between items-center mb-6">
-          <div>
-            <h2 className="text-2xl font-semibold text-gray-800">
-              Mailbox Manager
-            </h2>
-            <p className="text-sm text-gray-500">
-              Ava will dynamically rotate between your mailboxes, maximizing
-              deliverability.
-            </p>
-          </div>
-          <div className="flex gap-4">
-            <button
-              onClick={addMailbox}
-              disabled={isLoading}
-              className={`${
-                isLoading
-                  ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-green-500 hover:bg-green-600"
-              } text-white px-5 py-2 rounded-md text-sm transition-colors duration-200`}
-            >
-              {isLoading ? "Adding..." : "+ Add Email Address"}
-            </button>
-          </div>
+    <div>
+      <div className="flex justify-between items-center mb-6">
+        <div>
+          <h2 className="text-[16px] font-semibold text-gray-800">
+            Mailbox Manager
+          </h2>
+          <p className="text-[14px] font-medium text-black">
+            Ava will dynamically rotate between your mailboxes, maximizing
+            deliverability.
+          </p>
         </div>
+        <div className="flex gap-4">
+          <button
+            onClick={addMailbox}
+            disabled={isLoading}
+            className={`${
+              isLoading ? "bg-gray-300 cursor-not-allowed" : "bg-brand-green"
+            } text-white px-5 py-2 rounded-md text-sm transition-colors duration-200`}
+          >
+            {isLoading ? "Adding..." : "+ Add Email Address"}
+          </button>
+        </div>
+      </div>
 
-        <div className="overflow-x-auto">
-          <table className="min-w-full table-auto border-collapse">
-            <thead>
-              <tr className="text-left text-gray-600 text-sm bg-gray-200">
-                <th className="py-3 px-6">companys</th>
-                <th className="py-3 px-6">Daily Email Capacity</th>
-                <th className="py-3 px-6">Status</th>
-                <th className="py-3 px-6">Mailbox Health</th>
-                <th className="py-3 px-6">Use This Mailbox</th>
-                <th className="py-3 px-6">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mailboxes.length > 0 ? (
-                mailboxes.map((box, idx) => (
-                  <tr
-                    key={box.id}
-                    className="border-t border-gray-100 hover:bg-gray-50 text-sm"
-                  >
-                    <td className="py-3 px-6 flex items-center gap-3">
-                      <img
-                        src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"
-                        alt="Gmail"
-                        className="w-6 h-6"
-                      />
-                      {box.email}
-                    </td>
-                    <td className="py-3 px-6">
-                      <div className="border border-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-blue-700 font-semibold">
-                        {box.dailyCapacity}
-                      </div>
-                    </td>
-                    <td className="py-3 px-4">
-                      <span className="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full max-w-max truncate">
-                        ⚠️ {box.status}
-                      </span>
-                    </td>
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto ">
+          <thead>
+            <tr className="text-left text-black text-[16px] bg-gray-200 font-semibold">
+              <th className="py-2 px-6 rounded-l-[10px]">companys</th>
+              <th className="py-3 ">Daily Email Capacity</th>
+              <th className="py-3 px-8">Status</th>
+              <th className="py-3 px-9">Mailbox Health</th>
+              <th className="py-3 ">Use This Mailbox</th>
+              <th className="py-3 px-6 rounded-r-[10px]"></th>{" "}
+              {/* Action/Disconnect */}
+            </tr>
+          </thead>
 
-                    <td className="py-3 px-6 flex gap-2">
-                      {box.health.map((status, i) => (
-                        <div
-                          key={i}
-                          className={`h-1 w-6 rounded-full ${
-                            status ? "bg-green-500" : "bg-red-500"
-                          }`}
-                        ></div>
-                      ))}
-                    </td>
-                    <td className="py-3 px-6">
-                      <Switch
-                        color="green"
-                        checked={box.enabled}
-                        onChange={() => toggleMailbox(idx)}
-                        className="transition-colors duration-200"
-                      />
-                    </td>
-                    <td className="py-3 px-6 flex gap-3">
-                      <button
-                        className="text-red-500 hover:text-red-700 text-sm transition-colors duration-200"
-                        onClick={() => disconnectMailbox(idx)}
-                      >
-                        Disconnect
-                      </button>
-                      <button
-                        onClick={() => disconnectMailbox(idx)}
-                        className="text-red-400 hover:text-red-600 text-sm transition-colors duration-200"
-                      >
-                        🗑️
-                      </button>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="6" className="text-center text-gray-500 py-6">
-                    No mailboxes connected. Click "Add Email Address" to add
-                    one.
+          <tbody>
+            {mailboxes.length > 0 ? (
+              mailboxes.map((box, idx) => (
+                <tr key={box.id} className="border-b border-border text-sm">
+                  <td className="py-3 px-6 flex text-[16px] font-normal items-center gap-3">
+                    <img
+                      src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+                      alt="Gmail"
+                      className="w-[25px] h-[25px]"
+                    />
+                    {box.email}
+                  </td>
+                  <td className="py-3 px-6">
+                    <div className="border-3 border-[#9ABAEB] rounded-full w-12 h-12 flex items-center justify-center text-blue-700 font-semibold">
+                      {box.dailyCapacity}
+                    </div>
+                  </td>
+                  <td className="">
+                    <span className="inline-flex items-center justify-center text-xs bg-[#FFDCDC] text-[#C9593A] w-[83px] h-[24px] rounded-full truncate">
+                      ⚠️ {box.status}
+                    </span>
+                  </td>
+
+                  <td className="py-3 px-6 flex gap-2">
+                    {box.health.map((status, i) => (
+                      <div
+                        key={i}
+                        className={`h-1 w-6 rounded-full ${
+                          status ? "bg-green-500" : "bg-red-500"
+                        }`}
+                      ></div>
+                    ))}
+                  </td>
+                  <td className="py-3 px-9">
+                    <Switch
+                      color="green"
+                      // checked={box.enabled}
+                      // onChange={() => toggleMailbox(idx)}
+                      className="transition-colors duration-200 custom-switch"
+                      style={{
+                        transform: "scale(1.5)",
+                      }}
+                    />
+                  </td>
+
+                  <td className="py-2 px-6 flex gap-3 border-2 border-[#C9593A] rounded-md">
+                    <button
+                      className="text-[#C9593A]  font-[14px]  duration-200"
+                      onClick={() => disconnectMailbox(idx)}
+                    >
+                      Disconnect
+                    </button>
+                    <button
+                      onClick={() => disconnectMailbox(idx)}
+                      className="text-[#C9593A] transition-colors duration-200"
+                    >
+                      🗑️
+                    </button>
                   </td>
                 </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="6" className="text-center text-gray-500 py-6">
+                  No mailboxes connected. Click "Add Email Address" to add one.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

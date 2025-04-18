@@ -11,7 +11,7 @@ import {  Plus, Search, RefreshCcwDot, Phone } from "lucide-react";
 const breadcrumbItems = [
     { name: 'Home', path: '/' },
     { name: 'Contacts', path: '/contacts' },
-    { name: 'Search Contact', path: '' },
+    { name: 'Search database', path: '' },
 ]
 const SearchContactPage = () => {
     const [experience, setExperience] = useState([

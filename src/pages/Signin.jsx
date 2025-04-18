@@ -9,12 +9,13 @@ export default function Signin() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="h-screen bg-gradient-custom flex flex-col">
+    <div className="h-screen overflow-hidden bg-gradient-custom flex flex-col">
+
       <PageTitleLogin title={"CM"} />
 
       {/* Main Content Fully Centered */}
-      <div className="flex-grow flex items-center justify-center">
-        <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
+      <div className="flex-grow flex mt-[5rem] justify-center">
+        <div className="p-8 w-full max-w-md flex flex-col">
           <h2 className="text-auth-header mb-2 ">Sign in</h2>
           <p className="text-secondary mb-6">
             Don’t have an Account?{" "}

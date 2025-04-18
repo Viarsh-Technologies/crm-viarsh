@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const General = () => {
+const Sender = () => {
   const [photo, setPhoto] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -83,10 +83,48 @@ const General = () => {
               </div>
             </div>
           </div>
+          <div className="my-6">
+          <h2 className="text-sm font-bold text-gray-800 mb-5">Preferences</h2>
+          <div className="space-y-6">
+
+
+            <div className="border-t border-border pt-4 flex items-center">
+              <label className="text-sm text-black font-medium w-1/4">Automatic time zone</label>
+              <input
+                  type="text"
+                  className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  value={timeZone}
+                  onChange={(e) => setTimeZone(e.target.value)}
+                  style={{ border: "none", outline: "none" }}
+                />
+            </div>
+
+            <div className="border-t border-border pt-4 flex items-center">
+              <label className="text-sm font-medium w-1/4">Language</label>
+              <input
+                  type="text"
+                  className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                  style={{ border: "none", outline: "none" }}
+                />
+            </div>
+            <div className="border-t border-border pt-4 flex items-center">
+              <label className="text-sm font-medium w-1/4">Date format</label>
+              <input
+                  type="text"
+                  className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  value={dateFormat}
+                  onChange={(e) => setDateFormat(e.target.value)}
+                  style={{ border: "none", outline: "none" }}
+                />
+            </div>
+            </div>
+            </div>
         </div>
       </form>
     </div>
   );
 };
 
-export default General;
+export default Sender;

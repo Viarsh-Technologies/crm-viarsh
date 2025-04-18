@@ -9,7 +9,8 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="h-screen bg-gradient-custom flex flex-col">
+    <div className="h-screen overflow-hidden bg-gradient-custom flex flex-col">
+
       <PageTitleLogin title={"CM"} />
 
       {/* Main Content Fully Centered */}
