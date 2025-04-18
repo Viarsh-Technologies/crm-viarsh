@@ -16,7 +16,7 @@ import UpDownIcon from "../components/common/UpDownIcon";
 import UserCard from "../components/common/UserCard";
 import QuestionIcon from "../assets/queProject.svg";
 import { FiChevronDown } from "react-icons/fi";
-import Caret from '../assets/Caret-down.svg'
+import Caret from '../assets/caret-down.svg'
 
 const breadcrumbItems = [
   { name: "Projects", path: "/" },
