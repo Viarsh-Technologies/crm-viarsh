@@ -56,7 +56,7 @@ const Settings = () => {
       <div className="max-w-6xl w-full">
         <PageTitle
           title="Dashboard"
-          actionText="Add New Project"
+          actionText="Upgrade"
           ActionIcon={Plus}
           onAction={onAction}
         />

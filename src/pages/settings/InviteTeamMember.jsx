@@ -67,44 +67,43 @@ const InviteTeamMember = () => {
   };
 
   return (
-    <div className="h-130 bg-[#f0f2ff] flex m-5">
-      <div className="bg-white p-6 rounded-lg shadow-sm w-full max-w-2xl border border-gray-200">
-        <h2 className="text-sm font-semibold text-gray-900 mb-1">Invite Team Members</h2>
-        <p className="text-xs text-gray-600 mb-6">
-          You will be billed for each team member according to the plan selected.
-          <span className="text-blue-500 underline ml-1 cursor-pointer">View pricing details here.</span>
+    <div className="">
+      <div className="bg-white p-6 w-full max-w-[44rem]">
+        <h2 className="text-sm font-semibold text-[16px] text-gray-900 mb-1">Invite Team Members</h2>
+        <p className="text-[14px] font-normal text-black mb-6">
+        You will be billed for each team member according to the plan selected. View pricing details here.
         </p>
 
         {/* Full Name */}
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-1">Team Member Full Name</label>
+          <label className="block text-[16px] font-medium text-black mb-1">Team Member Full Name</label>
           <input
             type="text"
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
             placeholder="Full Name"
-            className="w-full border border-gray-300 px-3 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
+            className="w-[33rem] border border-gray-300 px-3 py-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
           />
         </div>
 
         {/* Email + Role */}
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-1">Team Member Email</label>
-          <div className="flex gap-2">
+          <label className="block text-[16px]  font-medium text-black mb-1">Team Member Email</label>
+          <div className="flex gap-2 border border-gray-300 rounded-md w-[33rem] px-3 py-3">
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="Email"
-              className="flex-1 border border-gray-300 px-3 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              className="flex-1 rounded-md text-sm focus:outline-none"
             />
             <select
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="w-40 border border-gray-300 px-3 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              className="focus:outline-none "
             >
               <option value="Member">Member</option>
               <option value="Others">Others 1</option>
@@ -114,14 +113,14 @@ const InviteTeamMember = () => {
         </div>
 
         {/* Plan + Button */}
-        <div className="flex gap-2 items-end">
+        <div className="flex gap-2 items-end w-[33rem]">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Select Plan</label>
+            <label className="block text-[16px] font-medium text-black mb-1">Select Plan</label>
             <select
               name="plan"
               value={formData.plan}
               onChange={handleChange}
-              className="w-full border border-gray-300 px-3 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              className="w-full border border-gray-300 px-3 py-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
             >
               <option value="Accelerate">Accelerate</option>
               <option value="Accessible">SuperCharge</option>
@@ -131,7 +130,7 @@ const InviteTeamMember = () => {
           <button
             onClick={handleInvite}
             disabled={isLoading}
-            className={`mt-6 ${isLoading ? 'bg-gray-300 cursor-not-allowed' : 'bg-gray-100 hover:bg-gray-200'} text-sm px-6 py-2 rounded-md border border-gray-300`}
+            className={`mt-6 ${isLoading ? ' cursor-not-allowed' : 'bg-[#F0F1FA]'} text-sm px-9 py-3 rounded-md border border-[#54768E]`}
           >
             {isLoading ? 'Inviting...' : 'Invite'}
           </button>

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid"; // Optional icons
-import PageTitle from "../components/layout/PageTitle";
+import PageTitle from "../components/layout/PageTitle2";
 import { X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../components/layout/Breadcrumbs";
+import Call from "../assets/call.svg";
 
 const breadcrumbItems = [
   { name: "Home", path: "/" },
@@ -62,10 +63,14 @@ export default function ContactDetailPage() {
                 <span className="font-semibold">IBM</span>
               </div>
               <hr className="my-4 border-t border-[#EEF0EF]" />
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span>Phone</span>
-                <span className="font-semibold">(308) 555-0121</span>
+                <span className="flex items-center gap-2 font-semibold">
+                  (308) 555-0121
+                  <img src={Call} className="bg-[#0794531A] p-2 rounded-full" />
+                </span>
               </div>
+
               <hr className="my-4 border-t border-[#EEF0EF]" />
               <div className="flex justify-between">
                 <span>Tags</span>
@@ -238,39 +243,54 @@ export default function ContactDetailPage() {
             <textarea
               placeholder="Write a note..."
               maxLength={256}
-              className=" border rounded-md w-[604px] h-[108px] text-sm"
+              className="border rounded-md w-[604px] h-[108px] text-sm p-3"
             />
             <div className="flex justify-end mt-4">
               <button className="bg-green-500 text-white px-4 py-1 rounded">
                 Save
               </button>
             </div>
-            <hr className="my-4 border-t border-[#EEF0EF]" />
+            <hr className="my-4 w-[37rem] border-t border-[#EEF0EF] ml-auto" />
 
-            <div className="mt-4 text-sm text-gray-700">
-              <p className="text-gray-600">
-                <span className="text-[#6A6A6A] font-semibold font-regular underline">
-                  Bessie Wilson
-                </span>{" "}
-                added notes 3 days ago •{" "}
-                <span className=" cursor-pointer">Edit</span> •{" "}
-                <span className=" cursor-pointer">Delete</span>
-              </p>
+            <div className="relative mt-4 pl-10 text-sm text-gray-700">
+              {/* Vertical Line */}
+              <div className="absolute bottom-[30px] left-[5px] w-px h-[150px] bg-[#D7DADE]"></div>
+              <div className="absolute right-[39.1rem] top-3 border border-[#D7DADE] bg-white w-[11px] h-[11px] rounded-full z-10"></div>
+              <div className="absolute right-[39.1rem] top-[65px] mt-6 w-[11px] h-[11px] border border-[#D7DADE] bg-white rounded-full z-10"></div>
 
-              <p className="mt-1">
-                Absolutely! Can you send me a job description?
-              </p>
-              <hr className="my-4 border-t border-[#EEF0EF]" />
-              <p className="text-gray-600">
-                <span className="text-[#6A6A6A] font-semibold font-regular underline">
-                  Alex Smith (Linkedin)
-                </span>{" "}
-                • Feb 10, 2025
-              </p>
+              {/* Step 1 */}
+              <div className="relative mb-8">
+                {/* Circle */}
 
-              <p className="mt-1">
-                Absolutely! Can you send me a job description?
-              </p>
+                <p className="text-gray-600">
+                  <span className="text-[#6A6A6A] font-semibold underline">
+                    Bessie Wilson
+                  </span>{" "}
+                  added notes 3 days ago •{" "}
+                  <span className="cursor-pointer text-blue-600">Edit</span> •{" "}
+                  <span className="cursor-pointer text-red-500">Delete</span>
+                </p>
+                <p className="mt-1">
+                  Absolutely! Can you send me a job description?
+                </p>
+              </div>
+
+              <hr className="my-4 w-[37rem] border-t border-[#EEF0EF] ml-auto" />
+
+              {/* Step 2 */}
+              <div className="relative">
+                {/* Circle */}
+
+                <p className="text-gray-600">
+                  <span className="text-[#6A6A6A] font-semibold underline">
+                    Alex Smith (Linkedin)
+                  </span>{" "}
+                  • Feb 10, 2025
+                </p>
+                <p className="mt-1">
+                  Absolutely! Can you send me a job description?
+                </p>
+              </div>
             </div>
           </div>
         </div>

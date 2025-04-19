@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Switch } from "@material-tailwind/react";
+import Delete from '../../assets/delete.svg'
 
 // Initial mailboxes data
 const initialMailboxes = Array.from({ length: 6 }, (_, i) => ({
@@ -203,7 +204,7 @@ const Mailbox = () => {
                       onClick={() => disconnectMailbox(idx)}
                       className="text-[#C9593A] transition-colors duration-200"
                     >
-                      🗑️
+                      <img src={Delete} alt="delete" />
                     </button>
                   </td>
                 </tr>

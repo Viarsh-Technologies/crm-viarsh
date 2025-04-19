@@ -2,7 +2,7 @@ import React from 'react';
 
 const PricingCard = ({ title, leads, emailText, price }) => {
   return (
-    <div className="bg-white p-6 border-1 border-[#717171] rounded-lg shadow-lg w-full sm:w-1/3 md:w-1/4 lg:w-1/4">
+    <div className="bg-white border-1 border-[#E0E0E0] rounded-lg w-[300px] h-[400px]">
       <h3 className="text-2xl font-bold text-center mb-9">{title}</h3>
       <p className="text-md text-center mb-1">{leads}</p>
       <p className="text-md text-center mb-9">{emailText}</p>
@@ -16,8 +16,8 @@ const PricingCard = ({ title, leads, emailText, price }) => {
 
 const PricingCards = () => {
   return (
-    <div className="max-w-screen-xl m-5 mx-auto px-6 py-12 bg-white rounded-xl border border-gray-200">
-      <p className="text-1xl font-bold text-start mb-8">Pricing Plans</p>
+    <div className="">
+      <p className="text-1xl font-bold text-start mb-8">Pricing</p>
       <div className="flex flex-wrap justify-start gap-6">
         {/* Pricing Card 1 */}
         <PricingCard
