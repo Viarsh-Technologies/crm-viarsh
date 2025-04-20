@@ -12,16 +12,20 @@ import { usePagination } from "../hooks/usePagination";
 import { useRowSelection } from "../hooks/useRowSelection";
 import TableActionButton from "../components/TableActionButton";
 import RecommendationButton from "../components/layout/RecommendationButton";
+import Caret from '../assets/caret-down.svg'
+import UpDownIcon from "../components/common/UpDownIcon";
+
+
 
 const breadcrumbItems = [
-  { name: "Home", path: "/" },
-  { name: "Leads", path: "" },
+  { name: "Leads", path: "/leads" },
+  { name: "List", path: "/leads" },
 ];
 
 const columns = [
-  { key: "contact", label: "Contact", orderBy: true },
-  { key: "company", label: "Company", orderBy: false },
-  { key: "stage", label: "Stage", orderBy: false },
+  { key: "contact", label: "Contact Name", orderBy: true },
+  { key: "company", label: "Experience", orderBy: false },
+  { key: "stage", label: "Source", orderBy: false },
   { key: "leadDateCreated", label: "Date Created", orderBy: false },
   { key: "summary", label: "Summary", orderBy: false },
   { key: "actions", label: "", orderBy: false },
@@ -147,11 +151,11 @@ const LeadsPage = () => {
         <Breadcrumbs items={breadcrumbItems} />
       </div>
       <div className="flex flex-wrap mt-3 gap-4 items-center">
-        <div className="flex flex-wrap gap-2 mb-4 border border-gray-300 bg-white rounded-lg relative items-center shadow-sm">
+        <div className="flex flex-wrap gap-2 w-[436px] mb-4 border border-gray-300 bg-white rounded-lg relative items-center shadow-sm">
           {/* First Dropdown */}
           <select
             onChange={(e) => setSelectedStage(e.target.value)}
-            className="px-2 border-0 rounded  w-[250px] h-[37px] focus:outline-0 active:outline-0 focus:bg-gray-100"
+            className="px-2 border-0 rounded  w-[60px] h-[37px] focus:outline-0 active:outline-0 focus:bg-gray-100"
           >
             <option value="All">All</option>
             <option value="Negotiation">Negotiation</option>
@@ -166,26 +170,18 @@ const LeadsPage = () => {
           <div className="relative flex-grow min-w-[200px]">
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search project name, phone, tags ..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="border-0 rounded-sm px-2 py-1 mr-8 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
             />
-            {!loading && (
+            {(
               <Search
                 size="18px"
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"
               />
             )}
           </div>
-
-          {/* Spinner if loading */}
-          {loading && (
-            <RefreshCcwDot
-              className="animate-spin text-blue-600 ml-2"
-              size={18}
-            />
-          )}
 
           {/* Second Dropdown - Separated with margin-left */}
         </div>
@@ -194,7 +190,7 @@ const LeadsPage = () => {
             onChange={(e) => setSelectedStage(e.target.value)}
             className="px-2 border-0 rounded w-[250px] h-[38px] focus:outline-0 active:outline-0 focus:bg-gray-100"
           >
-            <option value="All">All</option>
+            <option value="All">Company</option>
             <option value="Negotiation">Negotiation</option>
             <option value="Lead">Lead</option>
             <option value="Closed">Closed</option>
@@ -219,20 +215,28 @@ const LeadsPage = () => {
 
       <div className="border border-gray-200 rounded-lg overflow-x-auto shadow-sm bg-white">
         <table className="min-w-full">
-          <thead className="bg-gray-50">
-            <tr>
-              <Th className="w-12 px-4">
-                <CustomCheckbox
-                  onChange={(e) => handleSelectAllOnPage(e.target.checked)}
-                  checked={isAllOnPageSelected}
-                  indeterminate={isAnySelectedOnPage && !isAllOnPageSelected}
-                />
-              </Th>
-              {columns.map((column) => (
-                <Th key={column.key}>{column.label}</Th>
-              ))}
-            </tr>
-          </thead>
+        <thead className="bg-gray-50">
+  <tr>
+    <Th className="w-12 px-4">
+      <CustomCheckbox
+        onChange={(e) => handleSelectAllOnPage(e.target.checked)}
+        checked={isAllOnPageSelected}
+        indeterminate={isAnySelectedOnPage && !isAllOnPageSelected}
+      />
+    </Th>
+    {columns.map((column) => (
+      <Th key={column.key} className=" items-center justify-start space-x-1">
+        <span className="flex items-center justify-start gap-1">{column.label}
+        {/* Only show the icon if it's not in the excluded list */}
+        {(column.key !== "company" && column.key !== "stage" && column.key !== "summary" && column.key !== "actions") && (
+          <UpDownIcon />
+        )}
+        </span>
+      </Th>
+    ))}
+  </tr>
+</thead>
+
           <tbody className="divide-y divide-gray-200">
             {paginatedData.length > 0 ? (
               paginatedData.map((row) => (
@@ -295,6 +299,7 @@ const LeadsPage = () => {
                         <span className="text-gray-400">N/A</span>
                       ) // Style N/A
                       }
+                      
                     </Td>
                   ))}
                 </tr>
@@ -313,14 +318,25 @@ const LeadsPage = () => {
         </table>
       </div>
 
-      {totalPages > 1 && (
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          paginationRange={paginationRange}
-          onPaginate={handlePaginate}
-        />
-      )}
+      <div className="flex justify-between items-center">
+  {/* Pagination - Left side */}
+  <Pagination
+    currentPage={currentPage}
+    totalPages={totalPages}
+    paginationRange={paginationRange}
+    onPaginate={handlePaginate}
+  />
+
+  {/* Per Page view - Right side */}
+  <div className="flex items-center">
+    <span className="text-[14px] font-inter text-[#B1B4BA]">Per Page:</span> 
+    <span className="font-medium text-black flex items-center ml-2">
+      {currentPage}
+      <img src={Caret} alt="Caret Icon" className="ml-1 h-[12px] w-[12px]" />
+    </span>
+  </div>
+</div>
+
     </div>
   );
 };

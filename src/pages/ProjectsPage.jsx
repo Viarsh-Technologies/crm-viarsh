@@ -278,7 +278,7 @@ const ProjectsPage = () => {
                 <Th key={column.key}>
                   <div className="flex items-center gap-1">
                     <span>{column.label}</span>
-                    {column.key !== "contactPerson" && <UpDownIcon />}
+                    {column.key !== "" && <UpDownIcon />}
                   </div>
                 </Th>
               ))}

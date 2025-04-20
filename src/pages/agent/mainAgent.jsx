@@ -8,9 +8,8 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs';
 
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
   { name: 'AI Agnet', path: '/aiagent' },
-  { name: 'Add New Agent', path: '/mainagent' },
+  { name: 'New AI Agent', path: '/mainagent' },
 ]
 
 // Initial history data
@@ -57,7 +56,7 @@ function MainAgent() {
     <>
     {/* PageTitle component with action button */}
     <PageTitle 
-        title="Projects" 
+        title="AI Agents" 
         actionText="All AI Agnets" 
         ActionIcon={FaPlus} 
         onAction={onAction} 
