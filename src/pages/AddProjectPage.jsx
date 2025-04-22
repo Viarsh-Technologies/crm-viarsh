@@ -3,8 +3,8 @@ import InputField from '../components/common/InputField'
 import PageTitle from '../components/layout/PageTitle2';
 import Breadcrumbs from '../components/layout/Breadcrumbs';
 import TextArea from '../components/common/TextArea';
-import Button from '../components/common/Button2';
-import { Search, X } from 'lucide-react';
+import Button from '../components/common/Button';
+import { Search, X, ChevronDown } from 'lucide-react';
 import Upload from '../assets/upload.svg'
 
 const breadcrumbItems = [
@@ -17,6 +17,7 @@ const skillOptions = [
 ];
 
 const AddProjectPage = () => {
+    const [showMoreFields, setShowMoreFields] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [formData, setFormData] = useState({
         projectType: "",
@@ -289,8 +290,26 @@ const AddProjectPage = () => {
                             </button>
                         </div>
                     </div>
+
+
+                    <div className="flex justify-start mt-6 pt-4 border-t border-gray-200">
+    <button
+        type="button"
+        onClick={() => setShowMoreFields((prev) => !prev)}
+        className="w-full text-black font-semibold px-0 py-2 rounded-lg flex items-center justify-between hover:underline"
+    >
+        <h3 className="text-lg font-semibold">Recruiting Project (Job Description)</h3>
+        <ChevronDown
+            size={20}
+            className={`transition-transform duration-300 ${showMoreFields ? 'rotate-180' : ''}`}
+        />
+    </button>
+</div>
+
+
+                    {showMoreFields && (
+                    <div>
                     <div className='flex gap-4 flex-col'>
-                        <h3 className="text-lg font-semibold">Recruiting Project (Job Description)</h3>
                         <div className='flex gap-4'>
                             <InputField label={'Project Name'} name={'projectName'} value={formData.recruitingProject.projectName} onChange={handleRecruitingFieldChange} />
                             <InputField label={'Why is this Position Open?'} name={'whyIsThisPositionOpen'} value={formData.recruitingProject.whyIsThisPositionOpen} onChange={handleRecruitingFieldChange} />
@@ -498,6 +517,8 @@ const AddProjectPage = () => {
                             </div>
                         </div>
                     </div>
+                    </div>
+                    )}
                     <div className='flex gap-4 justify-end'>
                         <Button variant="outline" size="md" className='mr-auto' >
                             Cancel
@@ -509,6 +530,7 @@ const AddProjectPage = () => {
                             Create
                         </Button>
                     </div>
+                    
                 </form>
             </div>
             <div>
