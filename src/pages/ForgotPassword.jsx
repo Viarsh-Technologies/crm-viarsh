@@ -8,16 +8,33 @@ export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log("Submitted email:", email);
-
-    // Simulate sending reset link
-    setTimeout(() => {
-      navigate("/newpassword");
-    }, 1000);
+  
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/forgot-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert("OTP sent to your email.");
+        // Navigate to /newpassword and pass email in state
+        navigate("/newpassword", { state: { email } });
+      } else {
+        alert(data.message || "Something went wrong.");
+      }
+    } catch (error) {
+      console.error("Forgot Password Error:", error);
+      alert("Something went wrong.");
+    }
   };
+  
 
   return (
     <div className="h-screen bg-gradient-custom flex flex-col">

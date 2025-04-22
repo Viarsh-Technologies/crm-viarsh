@@ -13,13 +13,11 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const navigate = useNavigate(); // React Router Hook for navigation
+  const navigate = useNavigate();
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Check if passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
@@ -27,15 +25,19 @@ export default function Signup() {
   
     try {
       
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/register`, 
-          {
-        
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password, confirmPassword }),
+        body: JSON.stringify({
+          fullname: name,
+          email,
+          password,
+          role: 'user'
+        }),
       });
+      
   
       const data = await response.json();
   
@@ -43,15 +45,15 @@ export default function Signup() {
         setSuccess("Registration successful! Please login.");
         setError('');
         setTimeout(() => {
-          navigate('/signin');  // Redirect to the login page
-        }, 2000); // Redirect after 2 seconds
+          navigate('/signin'); 
+        }, 2000);
       } else {
         setError(data.message || 'Registration failed');
-        console.error('Error response:', data);  // Log the error response for debugging
+        console.error('Error response:', data); 
       }
     } catch (error) {
       setError('An error occurred, please try again later.');
-      console.error('Fetch error:', error);  // Log fetch error for debugging
+      console.error('Fetch error:', error); 
     }
   };
 
@@ -60,7 +62,6 @@ export default function Signup() {
     <div className="h-screen overflow-hidden bg-gradient-custom flex flex-col">
       <PageTitleLogin title={"CM"} />
 
-      {/* Main Content Fully Centered */}
       <div className="flex-grow flex items-center justify-center">
         <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
           <h2 className="text-auth-header mb-2">Sign up</h2>
@@ -137,7 +138,6 @@ export default function Signup() {
               </div>
             </div>
 
-            {/* Show error or success messages */}
             {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
             {success && <div className="text-green-500 text-sm mt-2">{success}</div>}
 
