@@ -1,17 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ChatMessage from './ChatMessage';
-import { FaPaperPlane, FaMicrophone, FaPaperclip, FaRedo } from 'react-icons/fa';
+import { FaMicrophone, FaPaperclip, FaRedo } from 'react-icons/fa';
+import Search from '../../assets/Search.svg'
 
 const presetAnswer = {
     id: Date.now() + 1, // unique id logic needed
     sender: 'agent',
-    text: "Apologies, I’m currently not in a position to respond. I’m not connected to the backend at the moment",
+    text: "Apologies, I’m currently not in a position to respond. I’m not connected to the backend at the momentApologies, I’m currently not in a position to respond. I’m not connected Apologies, I’m currently not in a position to respond. I’m not connected to the backend at the momentApologies, I’m currently not in a position to respond. I’m not connected to the backend at the momentto the backend at the moment",
 };
 
 const presetSuggestions = [
-    "Lorem ipsum dolor sit amet.",
-    "Lorem ipsum dolor.",
-    "Lorem ipsum dolor sit",
+    "Please let me know what you would like to add to the proposal?",
+    "Create AI Agent for RFP’s for Audit Specialists",
+    "Review 10 similar RFP’s (projects)",
 ];
 
 // Accept addHistoryEntry as a prop
@@ -112,7 +113,6 @@ function ChatPanel({ addHistoryEntry }) {
                  />
             </div>
 
-            {/* Chat Messages Area */}
             <div className="flex-grow p-4 overflow-y-auto space-y-4 bg-[white]">
                 {messages.map((msg) => (
                     <ChatMessage key={msg.id} message={msg} />
@@ -120,50 +120,52 @@ function ChatPanel({ addHistoryEntry }) {
                 <div ref={chatEndRef} />
             </div>
 
-            {/* Suggestions Area */}
             {showSuggestions && (
-                <div className="px-4 pt-2 pb-1 border-t border-gray-200 bg-white">
-                     <p className="text-xs text-gray-500 mb-2">Sugg:</p>
-                    <div className="flex flex-wrap gap-2">
-                        {presetSuggestions.map((suggestion, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handleSuggestionClick(suggestion)}
-                                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition duration-150"
-                            >
-                                {suggestion}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            )}
+  <div className="flex gap-2 h-[100px] flex-nowrap overflow-x-auto m-3">
+    {presetSuggestions.map((suggestion, index) => (
+      <button
+        key={index}
+        onClick={() => handleSuggestionClick(suggestion)}
+        className={`px-3 py-1 h-[100px] text-black font-bold rounded-md text-start text-sm transition duration-150 
+          ${index === 0 ? 'bg-[#FFC5CB]' : ''}
+          ${index === 1 ? 'bg-[#CFEBF1]' : ''}
+          ${index === 2 ? 'bg-[#DCC5E8]' : ''}
+        `}
+      >
+        {suggestion}
+      </button>
+    ))}
+  </div>
+)}
+
 
             {/* Input Area */}
             <div className="p-4 border-t border-gray-200 ">
-                <div className="flex items-center bg-white border border-gray-300 rounded-lg p-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
+                <div className="flex items-center bg-white border border-gray-300 rounded-lg p-2 shadow-sm focus-within:ring-2 ">
                     
-                    <input
-                        type="text"
-                        value={inputValue}
-                        onChange={handleInputChange}
-                        onKeyPress={handleKeyPress}
-                        placeholder="Ask me a question..."
-                        className="flex-grow px-3 py-2 border-none focus:outline-none focus:ring-0 text-sm"
-                    />
+                <input
+    type="text"
+    value={inputValue}
+    onChange={handleInputChange}
+    onKeyPress={handleKeyPress}
+    placeholder="Start a New Chat"
+    className="flex-grow px-3 py-2 border-none focus:outline-none focus:ring-0 text-sm placeholder:text-base"
+/>
+
                     <button
                         onClick={handleSendMessage}
-                        className="p-2 text-blue-600 hover:text-blue-800 disabled:text-gray-400"
+                        className=" disabled:text-gray-400"
                         disabled={!inputValue.trim()}
                         title="Send Message"
                     >
-                        <button onClick={handleFileUpload} className="p-2 text-gray-500 hover:text-blue-600" title="Attach File">
+                        <button onClick={handleFileUpload} className="p-2 text-[20px] text-gray-500 " title="Attach File">
                         <FaPaperclip />
                     </button>
-                    <button onClick={handleVoiceInput} className="p-2 text-gray-500 hover:text-blue-600" title="Voice Input">
+                    <button onClick={handleVoiceInput} className="p-2 text-[20px] text-gray-500 " title="Voice Input">
                         <FaMicrophone />
                     </button>
-                    <button onClick={null} className="p-2 text-white hover:text-blue-600 bg-[#32D583] rounded-2xl" title="Voice Input">
-                    <FaPaperPlane />
+                    <button onClick={null} className="p-2 bg-[#32D583] rounded-md" title="Voice Input">
+                    <img src={Search} alt="" />
                     </button>
                     
                         

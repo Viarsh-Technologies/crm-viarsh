@@ -67,11 +67,16 @@ function MainAgent() {
       {/* Main Container */}
       <div className="flex h-[90vh] w-[80%] border-[#c6c6c6] border-1">
         {/* Left Panel: History Panel */}
-        <div className="w-[70%] border-r border-gray-300 overflow-y-auto bg-white ">
-          <div className="flex justify-between items-center p-[26px] border-b border-gray-200 bg-[#F0F1FA]">
-                          </div>
-          <HistoryPanel historyItems={historyItems} />
-        </div>
+        <div className="w-[70%] border-r border-gray-300 overflow-y-auto bg-white">
+  {/* Sticky Topbar */}
+  <div className="sticky top-0 z-10 flex justify-between items-center p-[26px] border-b border-gray-200 bg-[#F0F1FA]">
+    {/* Topbar content here */}
+  </div>
+
+  {/* Scrollable History List */}
+  <HistoryPanel historyItems={historyItems} />
+</div>
+
 
         {/* Right Panel: ChatPanel */}
         <div className="w-[70%] flex flex-col">

@@ -37,7 +37,7 @@ function HistoryItem({ item }) {
 
       {/* Expanded Content */}
       {isExpanded && (
-        <div className="p-4 border-t border-gray-200 space-y-4 text-sm">
+        <div className="p-4 border-t border-gray-200 text-sm">
           {/* User Prompt */}
           <div className="border border-gray-200 rounded-xl ">
             <div className="flex items-center text-gray-600 font-bold bg-[#F0F1FA] rounded-xl p-3">
@@ -46,6 +46,11 @@ function HistoryItem({ item }) {
             <hr className="border-gray-200" />
             <p className="text-gray-800 p-3">{item.userQuestion}</p>
           </div>
+
+          <div className="ml-9 flex bg-white">
+      <div className="h-7 w-px border-l-2 border-dashed border-[#656462]"></div>
+    </div>
+
 
           {/* Metadata */}
           <div className="border border-gray-200 rounded-xl space-y-2">
@@ -108,6 +113,12 @@ function HistoryItem({ item }) {
             </div>
           </div>
 
+          <div className="ml-9 flex bg-white">
+      <div className="h-7 w-px border-l-2 border-dashed border-[#656462]"></div>
+    </div>
+
+
+
           {/* Agent Response */}
           <div className="border border-gray-200 rounded">
             <div className="flex justify-between items-center bg-[#F4FFF9] rounded-xl p-3">
@@ -122,6 +133,11 @@ function HistoryItem({ item }) {
             <hr className="border-gray-200" />
             <p className="text-gray-800 whitespace-pre-wrap my-2 ml-4">{item.agentResponse}</p>
           </div>
+
+          <div className="ml-9 flex bg-white">
+      <div className="h-7 w-px border-l-2 border-dashed border-[#656462]"></div>
+    </div>
+    
         </div>
       )}
     </div>

@@ -5,19 +5,29 @@ function ChatMessage({ message }) {
   const isUser = message.sender === 'user';
 
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
-      <div className={`flex items-start max-w-xs md:max-w-md lg:max-w-lg ${isUser ? 'flex-row-reverse' : ''}`}>
-        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${isUser ? 'bg-blue-500 ml-2' : 'bg-green-500 mr-2'}`}>
-          {isUser ? <FaUser className="text-white text-sm" /> : <FaRobot className="text-white text-sm" />}
-        </div>
+    <div className={`flex ${isUser ? 'justify-end' : 'text-xl  justify-start'} mb-4`}>
+      <div className="flex items-start max-w-xs  bg-[#F0F1FA] rounded-lg md:max-w-md lg:max-w-lg">
+
+        {!isUser && (
+          <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-green-500 m-2">
+            <FaRobot className="text-white text-sm" />
+          </div>
+        )}
+
         <div
-          className={`px-4 py-2 rounded-lg shadow-md ${
-            isUser ? 'bg-blue-100 text-gray-800' : 'bg-[#F0F1FA] text-gray-800 border border-gray-200'
-          }`}
+          className={`px-4 py-2 rounded-lg ${isUser ? 'bg-blue-50 text-gray-800' : 'bg-[#F0F1FA] text-gray-800'}`}
         >
-          <p className="text-sm whitespace-pre-wrap">{message.text}</p>
-          {/* <span className="text-xs text-gray-400 mt-1 block">{new Date(message.id).toLocaleTimeString()}</span> */}
+          <p className="text-sm whitespace-pre-wrap font-inter">
+            {message.text}
+          </p>
         </div>
+
+        {isUser && (
+          <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-blue-500 ml-2">
+            <FaUser className="text-white text-sm" />
+          </div>
+        )}
+
       </div>
     </div>
   );
