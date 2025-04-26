@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ChatMessage from './ChatMessage';
 import { FaMicrophone, FaPaperclip, FaRedo } from 'react-icons/fa';
-import Search from '../../assets/Search.svg'
+import Search from '../../assets/search.svg'
 
 const presetAnswer = {
     id: Date.now() + 1, // unique id logic needed
