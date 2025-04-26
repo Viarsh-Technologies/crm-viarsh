@@ -53,10 +53,10 @@ export default function NewPassword() {
           </Link>
           <h2 className="text-auth-header mb-2 mt-8">Enter Your New Password</h2>
           <p className="text-black font-semibold mb-6 pl-8 pr-8 text-center">
-            Enter the OTP sent to your email and choose a new password.
+          Add OTP and reset your password.
           </p>
 
-          <form className="space-y-7 w-[450px]" onSubmit={handleSubmit}>
+          <form className="space-y-4 w-[450px]" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="otp" className="block text-auth-label">OTP</label>
               <input
@@ -93,10 +93,7 @@ export default function NewPassword() {
               />
             </div>
 
-            <div className="text-right text-sm cursor-pointer text-brand-green"
-                 onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? "Hide" : "Show"} Password
-            </div>
+           
 
             <button
               type="submit"

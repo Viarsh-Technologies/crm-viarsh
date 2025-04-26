@@ -47,7 +47,7 @@ export default function Signin() {
 
       {/* Main Content Fully Centered */}
       <div className="flex-grow flex mt-[5rem] justify-center">
-        <div className="p-8 w-full max-w-md flex flex-col">
+        <div className="w-full max-w-md flex flex-col">
           <h2 className="text-auth-header mb-2">Sign in</h2>
           <p className="text-secondary mb-6">
             Don’t have an Account?{" "}
@@ -57,7 +57,7 @@ export default function Signin() {
           </p>
 
           {/* Form */}
-          <form className="space-y-7 w-[450px]" onSubmit={handleSubmit}>
+          <form className="space-y-4 w-[450px]" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-auth-label">Email</label>
               <input

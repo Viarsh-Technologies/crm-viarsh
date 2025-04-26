@@ -165,7 +165,7 @@ const ProjectsPage = () => {
           <select
             value={selectedStage}
             onChange={(e) => setSelectedStage(e.target.value)}
-            className="text-[#6B7280] h-[40px] "
+            className="text-[#6B7280] h-[40px] p-1"
           >
             <option value="All">Workflow</option>
             <option value="Not Interested">Not Interested</option>

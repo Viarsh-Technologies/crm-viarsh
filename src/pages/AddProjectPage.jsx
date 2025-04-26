@@ -229,15 +229,11 @@ const AddProjectPage = () => {
         });
     }
     return (
-        <div>
+        <div className='max-w-4xl'>
         
         <PageTitle title={'Projects'} actionText='Spreadsheet'  actionImg={Upload} />
-        <div>
-        </div>
-
-            
             <div><Breadcrumbs items={breadcrumbItems} /></div>
-            <div className='bg-white rounded-md border border-gray-300 p-8 max-w-4xl'>
+            <div className='bg-white rounded-md border border-gray-300 p-8 mt-3'>
                 <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                     <div className='flex gap-4'>
                         <InputField label={'Project Type'} name={'projectType'} value={formData.projectType} onChange={handleChange} />

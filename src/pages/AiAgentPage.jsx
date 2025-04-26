@@ -14,7 +14,10 @@ import { RefreshCcw } from "lucide";
 import { Navigate, useNavigate } from "react-router-dom";
 import TableActionButton from "../components/TableActionButton";
 import UpDownIcon from "../components/common/UpDownIcon";
-import Caret from '../assets/caret-down.svg'
+import Caret from '../assets/caret-down.svg';
+import { FiChevronDown } from "react-icons/fi";
+
+
 
 
 const breadcrumbItems = [
@@ -135,30 +138,40 @@ const AiAgentPage = () => {
   )}
 </div>
 
-        <div>
-        <select
-            onChange={(e) => setSelectedStage(e.target.value)}
-            className="flex gap-0 mb-4 p-2 w-[250px] h-[38px] border text-[#6B7280] border-gray-400 bg-white rounded-lg relative"
-          >
-            <option value="All">Company</option>
-            <option value="DuckDuckGo">DuckDuckGo</option>
-            <option value="Outlook">Outlook</option>
-            <option value="Adobe Acrobat">Adobe Acrobat </option>
-          </select>
-          
-        </div>
-        <div>
-        <select
-            onChange={(e) => setSelectedStage(e.target.value)}
-            className="flex gap-0 mb-4 p-2 w-[250px] h-[38px] border border-gray-400 text-[#6B7280] bg-white rounded-lg relative"
-          >
-            <option value="All">Sale Stages</option>
-            <option value="DuckDuckGo">DuckDuckGo</option>
-            <option value="Outlook">Outlook</option>
-            <option value="Adobe Acrobat">Adobe Acrobat </option>
-          </select>
-          
-        </div>
+         <div className="relative w-[250px] h-[40px] mb-4 border border-gray-300 bg-white  rounded-lg">
+                          <select
+                            value={selectedStage}
+                            onChange={(e) => setSelectedStage(e.target.value)}
+                            className="appearance-none text-[#6B7280] w-full h-full pl-3 pr-8 rounded-lg text-sm"
+                          >
+                            <option value="All">Company</option>
+                            <option value="Not Interested">Not Interested</option>
+                            <option value="Negotiation">Negotiation</option>
+                            <option value="Deal Closed">Deal Closed</option>
+                          </select>
+                
+                          {/* Custom dropdown icon */}
+                          <div className="pointer-events-none absolute right-2 top-2/4 transform -translate-y-1/2">
+                            <FiChevronDown size={18} color="#6B7280" />
+                          </div>
+                        </div>
+        <div className="relative w-[250px] h-[40px] mb-4 border border-gray-300 bg-white  rounded-lg">
+                         <select
+                           value={selectedStage}
+                           onChange={(e) => setSelectedStage(e.target.value)}
+                           className="appearance-none text-[#6B7280] w-full h-full pl-3 pr-8 rounded-lg text-sm"
+                         >
+                           <option value="All">Company</option>
+                           <option value="Not Interested">Not Interested</option>
+                           <option value="Negotiation">Negotiation</option>
+                           <option value="Deal Closed">Deal Closed</option>
+                         </select>
+               
+                         {/* Custom dropdown icon */}
+                         <div className="pointer-events-none absolute right-2 top-2/4 transform -translate-y-1/2">
+                           <FiChevronDown size={18} color="#6B7280" />
+                         </div>
+                       </div>
         </div>
       <div className="border border-gray-300 rounded-lg overflow-hidden mt-4">
         <table className="min-w-full bg-white">

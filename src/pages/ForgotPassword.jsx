@@ -37,11 +37,12 @@ export default function ForgotPassword() {
   
 
   return (
-    <div className="h-screen bg-gradient-custom flex flex-col">
-      <PageTitleLogin title="CM" />
+    <div className="h-screen overflow-hidden bg-gradient-custom flex flex-col">
+    <PageTitleLogin title={"CM"} />
 
-      <div className="flex-grow flex mt-[10rem] justify-center">
-        <div className="w-full max-w-md flex flex-col">
+    {/* Main Content Fully Centered */}
+    <div className="flex-grow flex mt-[5rem] justify-center">
+      <div className="w-full max-w-md flex flex-col">
           <Link to="/signin" className="pt-4 self-start">
             <img src={BackArrow} alt="Back" />
           </Link>
@@ -53,7 +54,7 @@ export default function ForgotPassword() {
           </p>
 
           {/* Form */}
-          <form className="space-y-7 w-[450px]" onSubmit={handleSubmit}>
+          <form className="space-y-4 w-[450px]" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-auth-label">
                 Email

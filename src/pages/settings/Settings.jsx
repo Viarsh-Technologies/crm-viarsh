@@ -55,7 +55,7 @@ const Settings = () => {
     <div>
       <div className="max-w-6xl w-full">
         <PageTitle
-          title="Dashboard"
+          title="Settings"
           actionText="Upgrade"
           ActionIcon={Plus}
           onAction={onAction}
@@ -73,8 +73,8 @@ const Settings = () => {
               onClick={() => setActiveTab(tab.key)}
               className={`px-4 py-2 rounded-md text-sm font-medium transition ${
                 activeTab === tab.key
-                  ? "bg-blue-100 text-blue-600"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
+                  ? "bg-white border-border border-1 "
+                  : " text-gray-700 "
               }`}
             >
               {tab.label}
@@ -83,7 +83,7 @@ const Settings = () => {
         </div>
 
         {/* Main content area */}
-        <div className="bg-white p-6 rounded-md border-border border-1 w-full min-h-screen">
+        <div className="bg-white p-6 rounded-md w-full min-h-screen">
   {renderContent()}
 </div>
 

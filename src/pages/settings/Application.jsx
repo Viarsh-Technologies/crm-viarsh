@@ -48,13 +48,13 @@ export default function Application() {
           className="w-full p-3 border border-border rounded-md h-[295px] focus:outline-none mt-4"
         ></textarea>
         <div className="flex justify-end gap-4 mt-4">
-          <button className="w-[110px] h-[34px] py-2 border-1 border-[#A1A1A1] text-btn-text rounded-[6px] cursor-pointer">
+          <button className="w-[110px] h-[34px] py-2 border-1 border-[#A1A1A1] font-medium  text-btn-text rounded-[6px] cursor-pointer">
             Cancel
           </button>
           
           <button
           onClick={handleSubmit}
-          className="w-[110px] h-[34px] py-2 border-1 bg-[#F0F1FA] border-[#A1A1A1] text-btn-text rounded-[6px] cursor-pointer">
+          className="w-[110px] h-[34px] py-2 border-1 bg-[#F0F1FA] border-[#A1A1A1] font-medium  text-btn-text rounded-[6px] cursor-pointer">
             Save
           </button>
         </div>
@@ -68,15 +68,17 @@ export default function Application() {
           <div className="flex justify-between items-center">
             <span>Browsing data</span>
             
-            <button className="px-4 py-2 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 cursor-pointer">
-              Log out and clear site data
+            <div className="flex justify-between items-center mt-4">
+            <button className="px-4 py-2 bg-[#F0F1FA] text-[#54768E] border-border border-1 rounded-md font-semibold hover:bg-blue-200 cursor-pointer">
+            Log out and clear site data
             </button>
+          </div>
             
           </div>
           <hr className="border-border"/>
           <div className="flex justify-between items-center">
             <span>Personalization</span>
-            <button className="px-4 py-2 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 cursor-pointer">
+            <button className="px-4 py-2 bg-[#F0F1FA] text-[#54768E] border-border border-1 rounded-md font-semibold hover:bg-blue-200 cursor-pointer">
               Delete personalization
             </button>
           </div>
@@ -101,12 +103,12 @@ export default function Application() {
     ></textarea>
 
     <div className="flex justify-end gap-4 mt-4">
-      <button className="w-[110px] h-[34px] py-2 border-1 border-[#A1A1A1] text-btn-text rounded-[6px] cursor-pointer">
+      <button className="w-[110px] h-[34px] py-2 border-1 border-[#A1A1A1] text-btn-text font-semibold rounded-[6px] cursor-pointer">
         Cancel
       </button>
       <button
         onClick={handleSubmit}
-        className="w-[110px] h-[34px] py-2 border-1 bg-[#F0F1FA] border-[#A1A1A1] text-btn-text rounded-[6px] cursor-pointer"
+        className="w-[110px] h-[34px] py-2 border-1 bg-[#F0F1FA] border-[#A1A1A1] text-btn-text font-semibold rounded-[6px] cursor-pointer"
       >
         Save
       </button>

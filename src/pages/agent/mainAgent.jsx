@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import HistoryPanel from './HistoryPanel';
 import ChatPanel from './ChatPanel';
 import PageTitle from '../../components/layout/PageTitle'
-import { FaPlus, FaRedo } from 'react-icons/fa'; // Importing the Plus icon
 import Breadcrumbs from '../../components/layout/Breadcrumbs';
+import {  Plus } from "lucide-react";
+
 
 
 const breadcrumbItems = [
@@ -53,21 +54,21 @@ function MainAgent() {
   };
 
   return (
-    <>
-    {/* PageTitle component with action button */}
+    <div className='max-w-[1140px]'>
+    
     <PageTitle 
         title="AI Agents" 
         actionText="All AI Agnets" 
-        ActionIcon={FaPlus} 
+        ActionIcon={Plus} 
         onAction={onAction} 
       />
       <div><Breadcrumbs items={breadcrumbItems} /></div>
-    <div className="flex flex-col h-screen mt-2">
+    <div className="flex flex-col mt-2">
       
       {/* Main Container */}
-      <div className="flex h-[90vh] w-[80%] border-[#c6c6c6] border-1">
+      <div className="flex h-[83vh]  border-[#c6c6c6] border-1">
         {/* Left Panel: History Panel */}
-        <div className="w-[70%] border-r border-gray-300 overflow-y-auto bg-white">
+        <div className="w-[644px] border-r border-gray-300 overflow-y-auto bg-white">
   {/* Sticky Topbar */}
   <div className="sticky top-0 z-10 flex justify-between items-center p-[26px] border-b border-gray-200 bg-[#F0F1FA]">
     {/* Topbar content here */}
@@ -85,7 +86,7 @@ function MainAgent() {
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 

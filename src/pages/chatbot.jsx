@@ -10,7 +10,6 @@ import Breadcrumbs from '../components/layout/Breadcrumbs';
 
 
 const breadcrumbItems = [
-  { name: 'Home', path: '/' },
   { name: 'Chatbot', path: '' },
 ]
 
@@ -35,7 +34,7 @@ function Dummy() {
 }
 
   return (
-    <div>
+    <div className="max-w-[1140px]">
       <PageTitle
         title={"Chatbot"}
         actionText="New Chat"
@@ -46,7 +45,7 @@ function Dummy() {
     <div className="flex-col font-sans transition-all duration-500 ease-in-out ">
       
       <div
-        className={`bg-[#F0F1FA] border border-[#DDDFE3] text-[#37352F] p-4 max-w-[1140px] relative transition-all duration-500 ${
+        className={`bg-[#F0F1FA] border border-[#DDDFE3] text-[#37352F] p-4 max-w-[1140px]  relative transition-all duration-500 ${
           historyOpen ? "pl-64" : "pl-0"
         }`}
       >
@@ -76,7 +75,7 @@ function Dummy() {
       </div>
 
       {/* Main Chat Container */}
-      <div className="flex w-full max-w-[1140px] border border-[#DDDFE3] h-[795px] overflow-hidden relative bg-white transition-all duration-500">
+      <div className="flex w-full max-w-[1140px] border border-[#DDDFE3] h-[550px] overflow-hidden relative bg-white transition-all duration-500">
         {/* Sidebar */}
         <div
           className={`bg-white w-64 h-full border-r border-[#DDDFE3] transition-transform duration-500 ease-in-out absolute left-0 z-20 ${

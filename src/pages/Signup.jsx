@@ -62,8 +62,9 @@ export default function Signup() {
     <div className="h-screen overflow-hidden bg-gradient-custom flex flex-col">
       <PageTitleLogin title={"CM"} />
 
-      <div className="flex-grow flex items-center justify-center">
-        <div className="p-8 w-full max-w-md flex flex-col items-center justify-center">
+      {/* Main Content Fully Centered */}
+      <div className="flex-grow flex mt-[5rem] justify-center">
+        <div className="w-full max-w-md flex flex-col">
           <h2 className="text-auth-header mb-2">Sign up</h2>
           <p className="text-secondary mb-6">
             Already have an account?{" "}
@@ -73,7 +74,7 @@ export default function Signup() {
           </p>
 
           {/* Form */}
-          <form className="space-y-7 w-[450px]" onSubmit={handleSubmit}>
+          <form className="space-y-4 w-[450px]" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="block text-auth-label">Name</label>
               <input

@@ -14,6 +14,7 @@ import TableActionButton from "../components/TableActionButton";
 import RecommendationButton from "../components/layout/RecommendationButton";
 import Caret from '../assets/caret-down.svg'
 import UpDownIcon from "../components/common/UpDownIcon";
+import { FiChevronDown } from "react-icons/fi";
 
 
 
@@ -185,18 +186,24 @@ const LeadsPage = () => {
 
           {/* Second Dropdown - Separated with margin-left */}
         </div>
-        <div className="flex flex-wrap mb-4 border border-gray-300 bg-white rounded-lg relative items-center shadow-sm">
-          <select
-            onChange={(e) => setSelectedStage(e.target.value)}
-            className="px-2 border-0 rounded w-[250px] h-[38px] focus:outline-0 active:outline-0 focus:bg-gray-100"
-          >
-            <option value="All">Company</option>
-            <option value="Negotiation">Negotiation</option>
-            <option value="Lead">Lead</option>
-            <option value="Closed">Closed</option>
-            <option value="Follow-up">Follow-up</option>
-          </select>
-        </div>
+       
+        <div className="relative w-[250px] h-[40px] mb-4 border border-gray-300 bg-white  rounded-lg">
+                  <select
+                    value={selectedStage}
+                    onChange={(e) => setSelectedStage(e.target.value)}
+                    className="appearance-none text-[#6B7280] w-full h-full pl-3 pr-8 rounded-lg text-sm"
+                  >
+                    <option value="All">Company</option>
+                    <option value="Not Interested">Not Interested</option>
+                    <option value="Negotiation">Negotiation</option>
+                    <option value="Deal Closed">Deal Closed</option>
+                  </select>
+        
+                  {/* Custom dropdown icon */}
+                  <div className="pointer-events-none absolute right-2 top-2/4 transform -translate-y-1/2">
+                    <FiChevronDown size={18} color="#6B7280" />
+                  </div>
+                </div>
       </div>
 
       {selectedRows.length > 0 && (

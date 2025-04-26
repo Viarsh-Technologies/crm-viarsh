@@ -6,10 +6,10 @@ import Avatar from "../components/common/Avatar";
 import { format } from "date-fns";
 import { Star, Trash2, Search, EllipsisVertical } from "lucide-react";
 
-const breadcrumbItems = [
-  { name: "Home", path: "/" },
-  { name: "Inbox", path: "" },
-];
+// const breadcrumbItems = [
+//   { name: "Home", path: "/" },
+//   { name: "Inbox", path: "" },
+// ];
 
 const InboxPage = () => {
   const [activeTab, setActiveTab] = useState("Engaged");
@@ -22,7 +22,10 @@ const InboxPage = () => {
     <div>
       <PageTitle title={"Inbox"} actionText="" ActionIcon={""} onAction={""} />
       <div>
-        <Breadcrumbs items={breadcrumbItems} />
+        {/* <Breadcrumbs items={breadcrumbItems} /> */}
+        <p className="text-gray-400 mb-3 mt-3">
+        Conversation from all of your connected email accounts.
+      </p>
       </div>
       <div className="flex ">
         <div className="w-2xl">

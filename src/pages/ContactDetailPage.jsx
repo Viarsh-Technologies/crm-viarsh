@@ -21,6 +21,13 @@ export default function ContactDetailPage() {
     navigate("/contacts");
   };
 
+    const [note, setNote] = useState('');
+    const maxLength = 256;
+  
+    const handleChange = (e) => {
+      setNote(e.target.value);
+    };
+
   return (
     <div>
       <PageTitle
@@ -240,13 +247,25 @@ export default function ContactDetailPage() {
           <div className="bg-white rounded-2xl p-6 md:col-span-1">
             <h3 className="text-gray-800 font-semibold mb-3">Activity</h3>
 
-            <textarea
-              placeholder="Write a note..."
-              maxLength={256}
-              className="border rounded-md w-[604px] h-[108px] text-sm p-3"
-            />
+
+
+            <div className="relative">
+      <textarea
+        placeholder="Write a note..."
+        maxLength={maxLength}
+        value={note}
+        onChange={handleChange}
+        className="border rounded-md w-[604px] h-[108px] text-sm p-3"
+      />
+      <div className="absolute top-0 right-9 text-sm text-gray-500 p-1">
+        {note.length}/{maxLength}
+      </div>
+    </div>
+            
+
+
             <div className="flex justify-end mt-4">
-              <button className="bg-green-500 text-white px-4 py-1 rounded">
+              <button className="bg-brand-green text-white px-4 py-1 rounded">
                 Save
               </button>
             </div>

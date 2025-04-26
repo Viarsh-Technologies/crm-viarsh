@@ -22,8 +22,9 @@ import { IoIosSearch } from "react-icons/io";
 
 
 const breadcrumbItems = [
-  { name: "Home", path: "/" },
+  
   { name: "Contacts", path: "" },
+  { name: "", path: "/" },
 ];
 const columns = [
   { key: "Name", label: "Name" },

@@ -4,19 +4,25 @@ const PricingCard = ({ title, leads, emailText, price }) => {
   return (
     <div className="bg-white border border-[#E0E0E0] rounded-lg w-[306px] h-[459px] flex flex-col justify-between p-4">
       <div className="mt-7">
-        <h3 className="text-[32px] font-bold text-center mb-[80px]">
+        <h3 className="text-[32px] font-bold text-center mb-6">
           {title}
         </h3>
-        <p className="text-[16px] font-semibold text-center mb-1">
-          {leads}
-        </p>
-        <p className="text-[16px] font-semibold text-center mb-[90px]">
-          {emailText}
-        </p>
+        
+        {/* Wrapper for leads and emailText with equal vertical spacing */}
+        <div className="my-[85px]">
+          <p className="text-[16px] font-semibold text-center mb-1">
+            {leads}
+          </p>
+          <p className="text-[16px] font-semibold text-center">
+            {emailText}
+          </p>
+        </div>
+
         <p className="text-[24px] font-semibold text-center">
           {price}
         </p>
       </div>
+
       <div className="flex justify-center">
         <button className="w-[152px] h-[47px] bg-brand-green text-white py-2 rounded-md mt-8">
           Buy Now
@@ -25,6 +31,7 @@ const PricingCard = ({ title, leads, emailText, price }) => {
     </div>
   );
 };
+
 
 // Pricing Cards Container
 const PricingCards = () => {

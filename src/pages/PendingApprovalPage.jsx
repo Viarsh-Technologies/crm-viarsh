@@ -14,7 +14,7 @@ const PendingApprovalPage = () => {
   const [activeTab, setActiveTab] = useState("Pending");
   const [selectedEmail, setSelectedEmail] = useState(null);
   return (
-    <div>
+    <div className="max-w-4xl">
       <PageTitle
         title={"Pending Approval"}
         actionText="Approve & Schedule All"
