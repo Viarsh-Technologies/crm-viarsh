@@ -84,7 +84,7 @@ const Sender = () => {
             </div>
           </div>
           <div className="my-6">
-          <h2 className="text-sm font-bold text-gray-800 mb-5">Preferences</h2>
+          <h2 className="text-[16px] font-bold text-gray-800 mb-5">Preferences</h2>
           <div className="space-y-6">
 
 

@@ -38,7 +38,7 @@ const ManageLabels = () => {
   return (
     <div>
       <div className="border-b border-border pb-2 mb-8">
-        <div className="flex font-semibold text-[16px] text-black">
+        <div className="flex font-semibold text-[16px] text-black py-4">
           <div className="w-1/2">Sale Stage labels</div>
           <div className="w-1/2">Show in label list</div>
         </div>

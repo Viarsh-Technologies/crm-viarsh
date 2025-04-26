@@ -126,7 +126,7 @@ const Mailbox = () => {
             onClick={addMailbox}
             disabled={isLoading}
             className={`${
-              isLoading ? "bg-gray-300 cursor-not-allowed" : "bg-brand-green"
+              isLoading ? "bg-gray-300 cursor-not-allowed " : "bg-brand-green"
             } text-white px-5 py-2 rounded-md text-sm transition-colors duration-200`}
           >
             {isLoading ? "Adding..." : "+ Add Email Address"}
@@ -181,7 +181,7 @@ const Mailbox = () => {
                       ></div>
                     ))}
                   </td>
-                  <td className="py-3 px-9">
+                  {/* <td className="py-3 px-9">
                     <Switch
                       color="green"
                       // checked={box.enabled}
@@ -191,7 +191,21 @@ const Mailbox = () => {
                         transform: "scale(1.5)",
                       }}
                     />
-                  </td>
+                  </td> */}
+
+
+<td className="py-3 px-9">
+  <Switch
+    color="green"
+    checked={true} // Default on karne ke liye
+    // onChange={() => toggleMailbox(idx)}
+    className="transition-colors duration-200 custom-switch"
+    style={{
+      transform: "scale(1.5)",
+    }}
+  />
+</td>
+
 
                   <td className="py-2 px-6 flex gap-3 border-2 border-[#C9593A] rounded-md">
                     <button

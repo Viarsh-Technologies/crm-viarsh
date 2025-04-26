@@ -68,7 +68,7 @@ const InviteTeamMember = () => {
 
   return (
     <div className="">
-      <div className="bg-white p-6 w-full max-w-[44rem]">
+      <div className="bg-white p-1 w-full max-w-[44rem]">
         <h2 className="text-sm font-semibold text-[16px] text-gray-900 mb-1">
           Invite Team Members
         </h2>

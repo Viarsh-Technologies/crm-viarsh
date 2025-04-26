@@ -68,17 +68,17 @@ export default function Application() {
           <div className="flex justify-between items-center">
             <span>Browsing data</span>
             
-            <div className="flex justify-between items-center mt-4">
-            <button className="px-4 py-2 bg-[#F0F1FA] text-[#54768E] border-border border-1 rounded-md font-semibold hover:bg-blue-200 cursor-pointer">
+            <div className="flex justify-between items-center mt-4 ">
+            <button className="px-4 py-2 bg-[#F0F1FA] text-[#54768E] w-[256px] h-[34px] border-[#A1A1A1] border-1 rounded-md font-semibold cursor-pointer">
             Log out and clear site data
             </button>
           </div>
             
           </div>
           <hr className="border-border"/>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center ">
             <span>Personalization</span>
-            <button className="px-4 py-2 bg-[#F0F1FA] text-[#54768E] border-border border-1 rounded-md font-semibold hover:bg-blue-200 cursor-pointer">
+            <button className="px-4 py-2 bg-[#F0F1FA] w-[256px] h-[34px] text-[#54768E] border-[#A1A1A1] border-1 rounded-md font-semibold cursor-pointer">
               Delete personalization
             </button>
           </div>
