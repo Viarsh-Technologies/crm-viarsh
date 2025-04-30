@@ -11,7 +11,7 @@ function ChatTopBar({ historyOpen, setHistoryOpen, messages }) {
     >
       <button
         onClick={() => setHistoryOpen(!historyOpen)}
-        className="hover:text-[#009DE9] transition text-xl absolute left-4 top-1/2 -translate-y-1/2 z-30" // Ensure button is above sidebar
+        className="hover:text-[#009DE9] transition text-xl absolute left-4 top-1/2 -translate-y-1/2 z-30"
       >
         <img
           src={ChatbotSidebar}

@@ -18,8 +18,8 @@ import MainAgent from '../pages/agent/mainAgent';
 import ContactDetailPage from '../pages/ContactDetailPage'
 import { ContactsProvider } from '../context/ContactsContext';
 import NoFigma from '../pages/NoFigma';
-import Dummypage from '../pages/dummypage'
 import Chatbot from '../pages/chatbot/Chatbot'
+
 
 const AppRouter = () => {
   return (
@@ -46,7 +46,6 @@ const AppRouter = () => {
           <Route path="/pendingApproval" element={<PendingApprovalPage />} />
           <Route path='/contactdetailpage' element={<ContactDetailPage />} />
           <Route path='/pagenotfound' element={<NoFigma />} />
-          <Route path='/dummy' element={<Dummypage />} />
         </Route>
 
         {/* Routes that need ContactsProvider */}

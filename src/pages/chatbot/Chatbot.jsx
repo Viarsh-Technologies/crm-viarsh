@@ -24,9 +24,10 @@ function Chatbot() {
 
   const navigate = useNavigate();
 
-
   const handleSend = (optionalQuestion) => {
-    const queryToSend = (typeof optionalQuestion === 'string' ? optionalQuestion : question).trim();
+    const queryToSend = (
+      typeof optionalQuestion === "string" ? optionalQuestion : question
+    ).trim();
     if (!queryToSend) return;
 
     const newMessage = {
@@ -49,7 +50,6 @@ function Chatbot() {
     // navigate("/chatbot");
   };
 
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -63,22 +63,21 @@ function Chatbot() {
           title={"Chatbot"}
           actionText="New Chat"
           ActionIcon={Plus}
-          onAction={handleNewChat} 
+          onAction={handleNewChat}
         />
         <div>
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
-        <div className="flex flex-col font-sans transition-all duration-500 ease-in-out mt-1 border border-[#DDDFE3] rounded-lg overflow-hidden"> {/* Added mt-4, shadow, rounded */}
-
+        <div className="flex flex-col font-sans transition-all duration-500 ease-in-out mt-1 border border-[#DDDFE3] rounded-lg overflow-hidden">
+          {" "}
+          {/* Added mt-4, shadow, rounded */}
           <ChatTopBar
             historyOpen={historyOpen}
             setHistoryOpen={setHistoryOpen}
             messages={messages}
           />
-
           <div className="flex w-full h-[calc(100vh-250px)] min-h-[550px] overflow-hidden relative bg-white">
-
             {/* Sidebar */}
             <ChatSidebar
               historyOpen={historyOpen}
@@ -88,13 +87,14 @@ function Chatbot() {
               messages={messages}
               expandedIndex={expandedIndex}
               setQuestion={setQuestion}
-              question={question} 
-              handleSend={handleSend} 
+              question={question}
+              handleSend={handleSend}
+              setSearchHistory={setSearchHistory}
             />
 
             <div
               className={`flex-1 flex flex-col transition-all duration-500 ease-in-out ${
-                historyOpen ? "ml-[330px]" : "ml-0" 
+                historyOpen ? "ml-[330px]" : "ml-0"
               }`}
             >
               <ChatMessagesArea
@@ -120,8 +120,8 @@ function Chatbot() {
         </div>
       </div>
 
-       <style>
-          {`
+      <style>
+        {`
            /* Add any specific non-Tailwind/Framer Motion styles here if absolutely necessary */
            /* Example: Custom scrollbar */
            .overflow-y-auto::-webkit-scrollbar {
@@ -135,7 +135,7 @@ function Chatbot() {
              background-color: #f0f1fa;
            }
          `}
-       </style>
+      </style>
     </motion.div>
   );
 }
