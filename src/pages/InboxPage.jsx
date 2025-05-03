@@ -4,7 +4,8 @@ import Breadcrumbs from "../components/layout/Breadcrumbs";
 import emailsData from "../data/email-data.json";
 import Avatar from "../components/common/Avatar";
 import { format } from "date-fns";
-import { Star, Trash2, Search, EllipsisVertical } from "lucide-react";
+import { Star, Trash2, Search } from "lucide-react";
+import { BsThreeDots } from "react-icons/bs";
 
 // const breadcrumbItems = [
 //   { name: "Home", path: "/" },
@@ -24,8 +25,8 @@ const InboxPage = () => {
       <div>
         {/* <Breadcrumbs items={breadcrumbItems} /> */}
         <p className="text-gray-400 mb-3 mt-3">
-        Conversation from all of your connected email accounts.
-      </p>
+          Conversation from all of your connected email accounts.
+        </p>
       </div>
       <div className="flex ">
         <div className="w-2xl">
@@ -41,13 +42,16 @@ const InboxPage = () => {
                 {tab}
               </button>
             ))}
+            <div className="flex items-center justify-center w-8 h-8 rounded cursor-pointer">
+              <BsThreeDots size={20} className="text-gray-600" />
+            </div>
           </div>
 
-          <div className="relative bg-white min-w-[200px] mt-5 border-gray-400/60 rounded-md p-2 border">
+          <div className="relative bg-white mt-5 border-gray-400/60 rounded-md p-2 border">
             <input
               type="search"
               placeholder="Search project name, phone, tags ..."
-              className="w-full pl-10 pr-3 cursor-pointer rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-10 pr-3 cursor-pointer rounded-md focus:outline-none focus:ring-none focus:ring-none"
             />
 
             <Search
@@ -56,7 +60,7 @@ const InboxPage = () => {
             />
           </div>
 
-          <div className=" max-w-md flex gap-4 flex-col mt-5">
+          <div className=" flex gap-4 flex-col mt-5">
             {filteredEmails.map((email, index) => (
               <div
                 className={`bg-white rounded-lg flex gap-3 p-3 items-center justify-between ${

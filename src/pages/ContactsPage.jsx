@@ -18,6 +18,7 @@ import TableActionButton from "../components/TableActionButton";
 import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
+import Caret from "../assets/caret-down.svg";
 
 
 
@@ -167,8 +168,8 @@ const ContactsPage = () => {
           </thead>
           <tbody>
             {data.map((row, rowIndex) => (
-              <tr className="group  bg-white hover:shadow-[0px_4px_7px_rgb(0_0_0_/_13%)] hover:z-10 transition-shadow duration-200 relative">
-                <Td className="w-2.5  px-0 group-hover:bg-brand-surface/50">
+              <tr className="group bg-white hover:shadow-[0px_4px_7px_rgb(0_0_0_/_13%)] hover:z-10 transition-shadow duration-200 relative">
+                <Td className="w-2.5  px-4 group-hover:bg-brand-surface/50">
                   <CustomCheckbox
                     onChange={() => handleRowSelect(row.id)}
                     checked={selectedRows.includes(row.id)}
@@ -229,12 +230,31 @@ const ContactsPage = () => {
           </tbody>
         </table>
       </div>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        paginationRange={paginationRange}
-        onPaginate={handlePaginate}
-      />
+      <div className="flex justify-between items-center mt-4">
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            paginationRange={paginationRange}
+            onPaginate={handlePaginate}
+          />
+        )}
+
+        {/* Per Page Display */}
+        <div className="text-sm text-gray-500 pr-1 flex items-center">
+          <span className="text-[14px] font-inter text-[#B1B4BA]">
+            Per Page:
+          </span>
+          <span className="font-medium text-black flex items-center ml-2">
+            {itemsPerPage}
+            <img
+              src={Caret}
+              alt="Caret Icon"
+              className="ml-1 h-[12px] w-[12px]"
+            />
+          </span>
+        </div>
+      </div>
     </div>
   );
 };

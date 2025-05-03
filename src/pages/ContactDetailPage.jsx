@@ -21,12 +21,12 @@ export default function ContactDetailPage() {
     navigate("/contacts");
   };
 
-    const [note, setNote] = useState('');
-    const maxLength = 256;
-  
-    const handleChange = (e) => {
-      setNote(e.target.value);
-    };
+  const [note, setNote] = useState("");
+  const maxLength = 256;
+
+  const handleChange = (e) => {
+    setNote(e.target.value);
+  };
 
   return (
     <div>
@@ -247,22 +247,18 @@ export default function ContactDetailPage() {
           <div className="bg-white rounded-2xl p-6 md:col-span-1">
             <h3 className="text-gray-800 font-semibold mb-3">Activity</h3>
 
-
-
             <div className="relative">
-      <textarea
-        placeholder="Write a note..."
-        maxLength={maxLength}
-        value={note}
-        onChange={handleChange}
-        className="border rounded-md w-[604px] h-[108px] text-sm p-3"
-      />
-      <div className="absolute top-0 right-9 text-sm text-gray-500 p-1">
-        {note.length}/{maxLength}
-      </div>
-    </div>
-            
-
+              <textarea
+                placeholder="Write a note..."
+                maxLength={maxLength}
+                value={note}
+                onChange={handleChange}
+                className="border rounded-md w-full h-[108px] text-sm p-3"
+              />
+              <div className="absolute top-0 right-1 text-sm text-gray-500 p-1">
+                {note.length}/{maxLength}
+              </div>
+            </div>
 
             <div className="flex justify-end mt-4">
               <button className="bg-brand-green text-white px-4 py-1 rounded">
@@ -274,8 +270,8 @@ export default function ContactDetailPage() {
             <div className="relative mt-4 pl-10 text-sm text-gray-700">
               {/* Vertical Line */}
               <div className="absolute bottom-[30px] left-[5px] w-px h-[150px] bg-[#D7DADE]"></div>
-              <div className="absolute right-[39.1rem] top-3 border border-[#D7DADE] bg-white w-[11px] h-[11px] rounded-full z-10"></div>
-              <div className="absolute right-[39.1rem] top-[65px] mt-6 w-[11px] h-[11px] border border-[#D7DADE] bg-white rounded-full z-10"></div>
+              <div className="absolute right-[39.1rem] top-2 border border-[#D7DADE] bg-white w-[11px] h-[11px] rounded-full z-10"></div>
+              <div className="absolute right-[39.1rem] top-[75px] mt-6 w-[11px] h-[11px] border border-[#D7DADE] bg-white rounded-full z-10"></div>
 
               {/* Step 1 */}
               <div className="relative mb-8">

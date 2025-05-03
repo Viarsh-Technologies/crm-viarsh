@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
 
-const CustomCheckbox = ({ label, checked, onChange }) => {
+const CustomCheckbox = ({ label, checked, onChange, indeterminate = false }) => {
+  const checkboxRef = useRef();
+
+  useEffect(() => {
+    if (checkboxRef.current) {
+      checkboxRef.current.indeterminate = indeterminate;
+    }
+  }, [indeterminate]);
+
   return (
     <label className="inline-flex items-center space-x-2 cursor-pointer">
       <div className="relative m-0">
         <input
           type="checkbox"
-          className="peer appearance-none h-5 w-5 border-2 border-gray-300 rounded-md checked:bg-[#32D583] checked:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-[#32D583]"
+          ref={checkboxRef}
           checked={checked}
           onChange={onChange}
+          className="peer appearance-none h-5 w-5 border-2 border-gray-300 rounded-md checked:bg-[#32D583] checked:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-[#32D583]"
         />
-        {/* Tickmark */}
         <svg
           className="absolute left-0 top-0 w-5 h-5 text-white opacity-0 peer-checked:opacity-100 pointer-events-none"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +32,9 @@ const CustomCheckbox = ({ label, checked, onChange }) => {
           <polyline points="20 6 9 17 4 12" />
         </svg>
       </div>
-      <span className="text-gray-700">{label}</span>
+      {label && <span className="text-gray-700">{label}</span>}
     </label>
-  )
-}
+  );
+};
 
-export default CustomCheckbox
+export default CustomCheckbox;

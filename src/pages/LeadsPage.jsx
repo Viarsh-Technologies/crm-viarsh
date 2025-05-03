@@ -325,24 +325,31 @@ const LeadsPage = () => {
         </table>
       </div>
 
-      <div className="flex justify-between items-center">
-  {/* Pagination - Left side */}
-  <Pagination
-    currentPage={currentPage}
-    totalPages={totalPages}
-    paginationRange={paginationRange}
-    onPaginate={handlePaginate}
-  />
+      <div className="flex justify-between items-center mt-4">
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            paginationRange={paginationRange}
+            onPaginate={handlePaginate}
+          />
+        )}
 
-  {/* Per Page view - Right side */}
-  <div className="flex items-center">
-    <span className="text-[14px] font-inter text-[#B1B4BA]">Per Page:</span> 
-    <span className="font-medium text-black flex items-center ml-2">
-      {currentPage}
-      <img src={Caret} alt="Caret Icon" className="ml-1 h-[12px] w-[12px]" />
-    </span>
-  </div>
-</div>
+        {/* Per Page Display */}
+        <div className="text-sm text-gray-500 pr-1 flex items-center">
+          <span className="text-[14px] font-inter text-[#B1B4BA]">
+            Per Page:
+          </span>
+          <span className="font-medium text-black flex items-center ml-2">
+            {itemsPerPage}
+            <img
+              src={Caret}
+              alt="Caret Icon"
+              className="ml-1 h-[12px] w-[12px]"
+            />
+          </span>
+        </div>
+      </div>
 
     </div>
   );
