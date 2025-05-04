@@ -59,7 +59,7 @@ const Settings = () => {
           actionText="Upgrade"
           ActionIcon={Plus}
           onAction={onAction}
-        />
+          />
 
 
         <p className="text-sm text-gray-600 my-5">

@@ -192,7 +192,7 @@ const AiAgentPage = () => {
                     <span>{column.label}</span>
                     {column.key !== "view" && <UpDownIcon />}
                   </div>
-                </Th>
+                </Th> 
               ))}
             </tr>
           </thead>

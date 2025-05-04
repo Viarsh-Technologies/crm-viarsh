@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Switch } from "@material-tailwind/react";
 import Delete from '../../assets/delete.svg'
+import Warning from '../../assets/warning.svg'
 
 // Initial mailboxes data
 const initialMailboxes = Array.from({ length: 6 }, (_, i) => ({
@@ -127,7 +128,7 @@ const Mailbox = () => {
             disabled={isLoading}
             className={`${
               isLoading ? "bg-gray-300 cursor-not-allowed " : "bg-brand-green"
-            } text-white px-5 py-2 rounded-md text-sm transition-colors duration-200`}
+            } text-white w-[186px] h-[38px] rounded-md text-sm transition-colors duration-200`}
           >
             {isLoading ? "Adding..." : "+ Add Email Address"}
           </button>
@@ -166,8 +167,10 @@ const Mailbox = () => {
                     </div>
                   </td>
                   <td className="">
-                    <span className="inline-flex items-center justify-center text-xs bg-[#FFDCDC] text-[#C9593A] w-[83px] h-[24px] rounded-full truncate">
-                      ⚠️ {box.status}
+                  
+                  
+                    <span className="inline-flex items-center gap-1 justify-center bg-[#FFDCDC] text-[#C9593A] text-[14px] w-[83px] h-[24px] rounded-full truncate">
+                     <img src={Warning} alt="warn" />{box.status}
                     </span>
                   </td>
 
@@ -207,9 +210,9 @@ const Mailbox = () => {
 </td>
 
 
-                  <td className="py-2 px-6 flex gap-3 border-2 border-[#C9593A] rounded-md">
+                  <td className="flex w-[130px] h-[30px] items-center justify-center gap-3 border-2 border-[#C9593A] rounded-md">
                     <button
-                      className="text-[#C9593A]  font-[14px]  duration-200"
+                      className="text-[#C9593A]  font-[14px] duration-200"
                       onClick={() => disconnectMailbox(idx)}
                     >
                       Disconnect

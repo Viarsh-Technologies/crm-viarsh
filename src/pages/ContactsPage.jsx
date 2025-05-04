@@ -19,6 +19,7 @@ import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import Caret from "../assets/caret-down.svg";
+import UpDownIcon from "../components/common/UpDownIcon";
 
 
 
@@ -108,11 +109,11 @@ const ContactsPage = () => {
       <div>
         <Breadcrumbs items={breadcrumbItems} />
       </div>
-      <div className="flex mt-3 gap-4">
-        <div className="flex gap-0 mb-4 p-2 border border-gray-400 w-[882px] bg-white rounded-lg relative ">
+      <div className="flex gap-4">
+        <div className="flex gap-0 p-2 border border-gray-400 w-[882px] bg-white rounded-lg relative ">
           <select
             onChange={(e) => setSelectedStage(e.target.value)}
-            className="px-2 border-0 rounded w-[50px] focus:outline-0 active:outline-0 focus:bg-gray-100"
+            className=" border-0 rounded w-[50px] focus:outline-0 active:outline-0 text-[#6B7280]"
           >
             <option value="All">All</option>
             <option value="Not Interested">Not Interested</option>
@@ -151,21 +152,26 @@ const ContactsPage = () => {
       </div>
       <div className="border border-gray-300 rounded-lg overflow-hidden mt-4">
         <table className="min-w-full bg-white">
-          <thead>
-            <tr>
-              <Th>
-                <CustomCheckbox
-                  onChange={handleSelectAll}
-                  checked={
-                    selectedRows.length === data.length && data.length > 0
-                  }
-                />
-              </Th>
-              {columns.map((column) => (
-                <Th key={column.key}>{column.label}</Th>
-              ))}
-            </tr>
-          </thead>
+        <thead>
+  <tr>
+    <Th>
+      <CustomCheckbox
+        onChange={handleSelectAll}
+        checked={selectedRows.length === data.length && data.length > 0}
+      />
+    </Th>
+    {columns.map((column) => (
+      <Th key={column.key}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+          {column.label}
+          {column.key !== "action" && <UpDownIcon />}
+        </div>
+        
+      </Th>
+    ))}
+  </tr>
+</thead>
+
           <tbody>
             {data.map((row, rowIndex) => (
               <tr className="group bg-white hover:shadow-[0px_4px_7px_rgb(0_0_0_/_13%)] hover:z-10 transition-shadow duration-200 relative">
