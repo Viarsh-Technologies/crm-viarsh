@@ -6,7 +6,7 @@ const NavigationLink = ({ to, icon }) => {
     <NavLink
     to={to}
     className={({ isActive }) =>
-      `flex p-3 rounded-md hover:bg-brand-surface ${
+      `flex p-2 rounded-md hover:bg-brand-surface ${
         isActive ? 'bg-brand-surface' : ''
       }`
     }

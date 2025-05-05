@@ -15,6 +15,7 @@ import RecommendationButton from "../components/layout/RecommendationButton";
 import Caret from '../assets/caret-down.svg'
 import UpDownIcon from "../components/common/UpDownIcon";
 import { FiChevronDown } from "react-icons/fi";
+import Avatar from "../components/common/Avatar";
 
 
 
@@ -269,6 +270,7 @@ const LeadsPage = () => {
                   </Td>
 
                   {columns.map((column) => (
+                    
                     <Td
                       key={column.key}
                       className={`${
@@ -276,7 +278,9 @@ const LeadsPage = () => {
                           ? "bg-blue-50 group-hover:bg-blue-50"
                           : "group-hover:bg-gray-50"
                       }`}
+                      
                     >
+                     
                       {column.key === "stage" ? (
                         <StatusBadge
                           status={row[column.key]}
@@ -286,7 +290,8 @@ const LeadsPage = () => {
                           }
                         />
                       ) : column.key === "actions" ? (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-end justify-end gap-2">
+                          
                           {" "}
                           {/* Use flex to space out buttons */}
                           <RecommendationButton
@@ -340,7 +345,7 @@ const LeadsPage = () => {
           <span className="text-[14px] font-inter text-[#B1B4BA]">
             Per Page:
           </span>
-          <span className="font-medium text-black flex items-center ml-2">
+          <span className="font-medium text-[#767572] flex items-center ml-2">
             {itemsPerPage}
             <img
               src={Caret}

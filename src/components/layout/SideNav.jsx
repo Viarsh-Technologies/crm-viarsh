@@ -19,7 +19,7 @@ const SideNav = () => {
     return (
         <nav className="flex flex-col h-full">
             {/* Primary Navigation */}
-            <ul className="flex flex-col ">
+            <ul className="flex flex-col space-y-2"> {/* Added consistent space between items */}
                 <li><NavigationLink icon={iconDashboard} to="/dashboard" /></li>
                 <li><NavigationLink icon={iconBrief} to="/projects" /></li>
                 <li><NavigationLink icon={iconID} to="/contacts" /></li>
@@ -29,28 +29,28 @@ const SideNav = () => {
                 <li><NavigationLink icon={Question} to="/pagenotfound" /></li>
             </ul>
 
-            <hr className="my-2 border-gray-400" />
+            <hr className="my-3 border-gray-400" />
 
             {/* Secondary Links Group 1 */}
-            <ul className="flex flex-col ">
+            <ul className="flex flex-col space-y-2"> {/* Added consistent space between items */}
                 <li><NavigationLink icon={iconInbox} to="/inbox" /></li>
                 <li><NavigationLink icon={iconPendingMail} to="/pendingApproval" /></li>
             </ul>
 
-            <div className="flex-grow"></div>
 
-            <hr className="my-2 border-gray-400" />
+            <hr className="my-3 border-gray-400 mt-6" />
+
+
 
             {/* Secondary Links Group 2 */}
-            <ul className="flex flex-col ">
+            <ul className="flex flex-col space-y-2 mb-6"> {/* Added consistent space between items */}
                 <li><NavigationLink icon={Notifications} to="/pagenotfound" /></li>
                 <li><NavigationLink icon={Warn} to="/pagenotfound" /></li>
             </ul>
 
-            <hr className="my-2 border-gray-400" />
 
             {/* Footer Navigation */}
-            <ul className="flex flex-col gap-0">
+            <ul className="flex flex-col gap-2"> {/* Added consistent space between items */}
                 <li><NavigationLink icon={iconSettings} to="/settings" /></li>
                 <li><NavigationLink icon={Logout} to="/logout" /></li>
             </ul>

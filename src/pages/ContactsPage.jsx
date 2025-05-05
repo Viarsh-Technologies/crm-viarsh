@@ -21,10 +21,7 @@ import { IoIosSearch } from "react-icons/io";
 import Caret from "../assets/caret-down.svg";
 import UpDownIcon from "../components/common/UpDownIcon";
 
-
-
 const breadcrumbItems = [
-  
   { name: "Contacts", path: "" },
   { name: "", path: "/" },
 ];
@@ -129,12 +126,8 @@ const ContactsPage = () => {
               onChange={(e) => setQuery(e.target.value)}
               className="border-0 rounded-sm px-2 mr-2 w-64 focus:outline-0 active:outline-0 focus:bg-gray-100"
             />
-            
           </div>
-          <Search
-              size="20px"
-              className="absolute right-[7px] text-gray-400"
-            />
+          <Search size="20px" className="absolute right-[7px] text-gray-400" />
           {loading ? (
             <RefreshCcwDot className="animate-spin text-gray-600" size={24} />
           ) : (
@@ -152,25 +145,32 @@ const ContactsPage = () => {
       </div>
       <div className="border border-gray-300 rounded-lg overflow-hidden mt-4">
         <table className="min-w-full bg-white">
-        <thead>
-  <tr>
-    <Th>
-      <CustomCheckbox
-        onChange={handleSelectAll}
-        checked={selectedRows.length === data.length && data.length > 0}
-      />
-    </Th>
-    {columns.map((column) => (
-      <Th key={column.key}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-          {column.label}
-          {column.key !== "action" && <UpDownIcon />}
-        </div>
-        
-      </Th>
-    ))}
-  </tr>
-</thead>
+          <thead>
+            <tr>
+              <Th>
+                <CustomCheckbox
+                  onChange={handleSelectAll}
+                  checked={
+                    selectedRows.length === data.length && data.length > 0
+                  }
+                />
+              </Th>
+              {columns.map((column) => (
+                <Th key={column.key}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "4px",
+                    }}
+                  >
+                    {column.label}
+                    {column.key !== "action" && <UpDownIcon />}
+                  </div>
+                </Th>
+              ))}
+            </tr>
+          </thead>
 
           <tbody>
             {data.map((row, rowIndex) => (

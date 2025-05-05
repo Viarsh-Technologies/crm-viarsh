@@ -38,7 +38,7 @@ const PricingCards = () => {
   return (
     <div>
       <p className="text-1xl font-bold text-start mb-8">Pricing</p>
-      <div className="flex flex-wrap justify-start gap-6">
+      <div className="flex flex-wrap justify-center gap-11">
         <PricingCard
           title="Accelerate"
           leads="750 Leads Per Month"

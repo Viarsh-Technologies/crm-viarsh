@@ -71,7 +71,7 @@ const ProjectsPage = () => {
   } = usePagination(filteredData, itemsPerPage);
 
   const { selectedRows, handleSelectAll, handleRowSelect } =
-      useRowSelection(data);
+    useRowSelection(data);
 
   const [query, setQuery] = useState("");
   const [selectedStage, setSelectedStage] = useState("All");
@@ -197,7 +197,7 @@ const ProjectsPage = () => {
         </div>
 
         <div className="flex gap-0 mb-4 text-[#6B7280] bg-[#FFFFFF] rounded-lg relative border-[#2363C5] border-1">
-          <div className="relative w-[250px] h-[40px] text-black">
+          <div className="relative w-[184px] h-[38px] text-black">
             <select
               value={selectedStage}
               onChange={(e) => setSelectedStage(e.target.value)}
@@ -216,7 +216,7 @@ const ProjectsPage = () => {
           </div>
         </div>
 
-        <div className="flex mb-4 items-center justify-between p-2 w-[250px] h-[40px] border border-gray-300 bg-[#767572] rounded-lg">
+        <div className="flex mb-4 items-center justify-center w-[199px] h-[37px] border border-gray-300 bg-[#767572] rounded-lg">
           <label
             htmlFor="file-upload"
             className="cursor-pointer flex items-center gap-2 text-sm text-white font-medium"
@@ -239,7 +239,7 @@ const ProjectsPage = () => {
         <div className=" mb-5">
           <img src={QuestionIcon} alt="" />
         </div>
-        <div className="relative w-[113px] h-[40px] mb-4 border border-gray-300 bg-[#32D583] rounded-lg">
+        <div className="relative w-[113px] h-[38px] mb-4 border border-gray-300 bg-[#32D583] rounded-lg">
           <select
             value={selectedStage}
             onChange={(e) => setSelectedStage(e.target.value)}

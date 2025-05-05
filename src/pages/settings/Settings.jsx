@@ -6,7 +6,7 @@ import PricingCards from "./PricingCards";
 import Application from "./Application";
 import Sender from "./Sender";
 import ManageLabels from "./ManageLabels";
-import PageTitle from "../../components/layout/PageTitle";
+import Upgrade from "./Upgrade"
 import { Plus } from "lucide-react";
 
 const Settings = () => {
@@ -54,7 +54,7 @@ const Settings = () => {
   return (
     <div>
       <div className="max-w-6xl w-full">
-        <PageTitle
+        <Upgrade
           title="Settings"
           actionText="Upgrade"
           ActionIcon={Plus}

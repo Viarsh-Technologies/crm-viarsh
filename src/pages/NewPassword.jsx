@@ -44,13 +44,16 @@ export default function NewPassword() {
   };
 
   return (
-    <div className="h-screen bg-gradient-custom flex flex-col">
-      <PageTitleLogin title="CM" />
-      <div className="flex-grow flex items-center justify-center">
-        <div className="w-full max-w-md flex flex-col items-center justify-center">
+    <div className="h-screen overflow-hidden bg-gradient-custom flex flex-col">
+    <PageTitleLogin title={"CM"} />
+
+    {/* Main Content Fully Centered */}
+    <div className="flex-grow flex mt-[5rem] justify-center">
+      <div className="w-full max-w-md flex flex-col">
           <Link to="/signin" className="pt-4 self-start">
             <img src={BackArrow} alt="Back" />
           </Link>
+
           <h2 className="text-auth-header mb-2 mt-8">Enter Your New Password</h2>
           <p className="text-black font-semibold mb-6 pl-8 pr-8 text-center">
           Add OTP and reset your password.
