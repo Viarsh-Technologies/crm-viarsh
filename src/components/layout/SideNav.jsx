@@ -17,43 +17,39 @@ import Warn from '../../assets/warn.svg'
 
 const SideNav = () => {
     return (
-        <nav className="flex flex-col h-full">
-            {/* Primary Navigation */}
-            <ul className="flex flex-col space-y-2"> {/* Added consistent space between items */}
-                <li><NavigationLink icon={iconDashboard} to="/dashboard" /></li>
-                <li><NavigationLink icon={iconBrief} to="/projects" /></li>
-                <li><NavigationLink icon={iconID} to="/contacts" /></li>
-                <li><NavigationLink icon={Vector} to="/aiagent" /></li>
-                <li><NavigationLink icon={Bot} to="/chatbot" /></li>
-                <li><NavigationLink icon={iconTeam} to="/leads" /></li>
-                <li><NavigationLink icon={Question} to="/pagenotfound" /></li>
-            </ul>
+        <nav className="flex flex-col h-full justify-between">
+            {/* Top Section */}
+            <div className="flex flex-col">
+                <ul className="flex flex-col space-y-2 gap-[3px]">
+                    <li><NavigationLink icon={iconDashboard} to="/dashboard" /></li>
+                    <li><NavigationLink icon={iconBrief} to="/projects" /></li>
+                    <li><NavigationLink icon={iconID} to="/contacts" /></li>
+                    <li><NavigationLink icon={Vector} to="/aiagent" /></li>
+                    <li><NavigationLink icon={Bot} to="/chatbot" /></li>
+                    <li><NavigationLink icon={iconTeam} to="/leads" /></li>
+                    <li><NavigationLink icon={Question} to="/" /></li>
+                </ul>
 
-            <hr className="my-3 border-gray-400" />
+                <hr className="my-3 border-gray-400" />
 
-            {/* Secondary Links Group 1 */}
-            <ul className="flex flex-col space-y-2"> {/* Added consistent space between items */}
-                <li><NavigationLink icon={iconInbox} to="/inbox" /></li>
-                <li><NavigationLink icon={iconPendingMail} to="/pendingApproval" /></li>
-            </ul>
+                <ul className="flex flex-col space-y-2 gap-[3px]">
+                    <li><NavigationLink icon={iconInbox} to="/inbox" mailCount={120}/></li>
+                    <li><NavigationLink icon={iconPendingMail} to="/pendingApproval" pendingCount={120} /></li>
+                </ul>
 
+                <hr className="my-3 border-gray-400 mt-10" />
 
-            <hr className="my-3 border-gray-400 mt-6" />
+                <ul className="flex flex-col space-y-2 gap-[3px]">
+                    <li><NavigationLink icon={Notifications} to="/" notificationDot={true}/></li>
+                    <li><NavigationLink icon={Warn} to="/" warnDot={true}/></li>
+                </ul>
+            </div>
 
-
-
-            {/* Secondary Links Group 2 */}
-            <ul className="flex flex-col space-y-2 mb-6"> {/* Added consistent space between items */}
-                <li><NavigationLink icon={Notifications} to="/pagenotfound" /></li>
-                <li><NavigationLink icon={Warn} to="/pagenotfound" /></li>
-            </ul>
-
-
-            {/* Footer Navigation */}
-            <ul className="flex flex-col gap-2"> {/* Added consistent space between items */}
-                <li><NavigationLink icon={iconSettings} to="/settings" /></li>
-                <li><NavigationLink icon={Logout} to="/logout" /></li>
-            </ul>
+            {/* Bottom Section */}
+            <div className="flex flex-col gap-[7px] ">
+                <NavigationLink icon={iconSettings} to="/settings"/>
+                <NavigationLink icon={Logout} to="/logout" />
+            </div>
         </nav>
     )
 }

@@ -371,7 +371,7 @@ const ProjectsPage = () => {
           <span className="text-[14px] font-inter text-[#B1B4BA]">
             Per Page:
           </span>
-          <span className="font-medium text-black flex items-center ml-2">
+          <span className="font-medium text-[#767572] flex items-center ml-2">
             {itemsPerPage}
             <img
               src={Caret}

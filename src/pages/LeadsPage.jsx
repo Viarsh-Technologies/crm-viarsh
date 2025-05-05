@@ -270,50 +270,39 @@ const LeadsPage = () => {
                   </Td>
 
                   {columns.map((column) => (
-                    
-                    <Td
-                      key={column.key}
-                      className={`${
-                        selectedRows.includes(row.id)
-                          ? "bg-blue-50 group-hover:bg-blue-50"
-                          : "group-hover:bg-gray-50"
-                      }`}
-                      
-                    >
-                     
-                      {column.key === "stage" ? (
-                        <StatusBadge
-                          status={row[column.key]}
-                          statusType={
-                            statusMapping[row[column.key]] ||
-                            statusMapping["default"]
-                          }
-                        />
-                      ) : column.key === "actions" ? (
-                        <div className="flex items-end justify-end gap-2">
-                          
-                          {" "}
-                          {/* Use flex to space out buttons */}
-                          <RecommendationButton
-                            onClick={() => handleRecommendationAction(row.id)}
-                          />
-                          <TableActionButton
-                            onClick={() => handleViewAction(row.id)}
-                          >
-                            {row.view || "View"}{" "}
-                            {/* Use data value or fallback */}
-                          </TableActionButton>
-                        </div>
-                      ) : row[column.key] !== undefined &&
-                        row[column.key] !== null ? (
-                        row[column.key].toString()
-                      ) : (
-                        <span className="text-gray-400">N/A</span>
-                      ) // Style N/A
-                      }
-                      
-                    </Td>
-                  ))}
+  <Td
+    key={column.key}
+    className={`${
+      selectedRows.includes(row.id)
+        ? "bg-blue-50 group-hover:bg-blue-50"
+        : "group-hover:bg-gray-50"
+    }`}
+  >
+    {column.key === "stage" ? (
+      <StatusBadge
+        status={row[column.key]}
+        statusType={statusMapping[row[column.key]] || statusMapping["default"]}
+      />
+    ) : column.key === "actions" ? (
+      <div className="flex items-end justify-end gap-2">
+        <RecommendationButton onClick={() => handleRecommendationAction(row.id)} />
+        <TableActionButton onClick={() => handleViewAction(row.id)}>
+          {row.view || "View"}
+        </TableActionButton>
+      </div>
+    ) : column.key === "contact" ? (
+      <span className="flex items-center gap-2">
+        <div className="bg-[#D9D9D9] w-[29px] h-[29px] rounded-full"></div>
+        {row[column.key]}
+      </span>
+    ) : row[column.key] !== undefined && row[column.key] !== null ? (
+      row[column.key].toString()
+    ) : (
+      <span className="text-gray-400">N/A</span>
+    )}
+  </Td>
+))}
+
                 </tr>
               ))
             ) : (
