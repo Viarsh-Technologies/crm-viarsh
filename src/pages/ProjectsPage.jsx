@@ -161,12 +161,12 @@ const ProjectsPage = () => {
         <Breadcrumbs items={breadcrumbItems} />
       </div>
       <div className="flex mt-3 gap-4 items-center w-[1220px]">
-        <div className="flex gap-0 mb-4 border border-gray-300 bg-white rounded-lg relative">
-          <div className="relative  h-[40px] text-black">
+        <div className="flex gap-0 mb-4 border border-gray-300 bg-white rounded-[9px] h-[40px] w-[436px] relative">
+          <div className="relative text-black">
             <select
               value={selectedStage}
               onChange={(e) => setSelectedStage(e.target.value)}
-              className="appearance-none text-[#6B7280] w-full h-full pl-3 pr-8 rounded-lg text-[14px] focus:outline-none focus:ring-0"
+              className="appearance-none text-[#6B7280] w-[107px] h-full pl-3 pr-8 rounded-lg text-[14px] focus:outline-none focus:ring-0"
             >
               <option value="All">Workflow</option>
               <option value="Not Interested">Not Interested</option>
@@ -192,12 +192,12 @@ const ProjectsPage = () => {
               onChange={(e) => setQuery(e.target.value)}
               className="rounded-sm px-2 py-1 mr-2 w-82 bg-transparent outline-none border-none focus:outline-none focus:ring-0"
             />
-            <Search size="18px" className="absolute right-3 text-gray-400" />
+            <Search size="18px" className="absolute left-[290px] text-gray-400" />
           </div>
         </div>
 
-        <div className="flex gap-0 mb-4 text-[#6B7280] bg-[#FFFFFF] rounded-lg relative border-[#2363C5] border-1">
-          <div className="relative w-[184px] h-[38px] text-black">
+        <div className="flex gap-0 mb-4 text-[#6B7280] bg-[#FFFFFF] relative rounded-[6px] border-[#2363C5] border-1">
+          <div className="relative w-[250px] h-[38px] text-black">
             <select
               value={selectedStage}
               onChange={(e) => setSelectedStage(e.target.value)}
@@ -239,7 +239,7 @@ const ProjectsPage = () => {
         <div className=" mb-5">
           <img src={QuestionIcon} alt="" />
         </div>
-        <div className="relative w-[113px] h-[38px] mb-4 border border-gray-300 bg-[#32D583] rounded-lg">
+        <div className="relative  mb-4 border border-gray-300 bg-[#32D583] w-[113px] h-[38px] rounded-[6px]">
           <select
             value={selectedStage}
             onChange={(e) => setSelectedStage(e.target.value)}
@@ -257,11 +257,11 @@ const ProjectsPage = () => {
           </div>
         </div>
 
-        <div className="relative w-[80px] h-[38px] mb-4 bg-white rounded-lg">
+        <div className="relative w-[80px] h-[38px] mb-4 rounded-[6px]">
           <select
             value={selectedStage}
             onChange={(e) => setSelectedStage(e.target.value)}
-            className="appearance-none text-[#969696] w-full h-full border border-border pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-0"
+            className="appearance-none text-[#949494] w-full h-full border border-[#969696] pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-0"
           >
             <option value="All">Sort</option>
             <option value="Not Interested">Not Interested</option>
@@ -270,8 +270,8 @@ const ProjectsPage = () => {
           </select>
 
           {/* Custom dropdown icon */}
-          <div className="pointer-events-none absolute right-2 top-2/4 transform -translate-y-1/2">
-            <FiChevronDown size={18} color="#969696" />
+          <div className="pointer-events-none absolute right-3 top-2/4 transform -translate-y-1/2">
+            <FiChevronDown size={18} color="#949494" />
           </div>
         </div>
       </div>

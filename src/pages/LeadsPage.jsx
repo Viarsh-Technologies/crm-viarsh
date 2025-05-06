@@ -12,12 +12,10 @@ import { usePagination } from "../hooks/usePagination";
 import { useRowSelection } from "../hooks/useRowSelection";
 import TableActionButton from "../components/TableActionButton";
 import RecommendationButton from "../components/layout/RecommendationButton";
-import Caret from '../assets/caret-down.svg'
+import Caret from "../assets/caret-down.svg";
 import UpDownIcon from "../components/common/UpDownIcon";
 import { FiChevronDown } from "react-icons/fi";
 import Avatar from "../components/common/Avatar";
-
-
 
 const breadcrumbItems = [
   { name: "Leads", path: "/leads" },
@@ -177,34 +175,34 @@ const LeadsPage = () => {
               onChange={(e) => setQuery(e.target.value)}
               className="border-0 rounded-sm px-2 py-1 mr-8 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
             />
-            {(
+            {
               <Search
                 size="18px"
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"
               />
-            )}
+            }
           </div>
 
           {/* Second Dropdown - Separated with margin-left */}
         </div>
-       
+
         <div className="relative w-[250px] h-[40px] mb-4 border border-gray-300 bg-white  rounded-lg">
-                  <select
-                    value={selectedStage}
-                    onChange={(e) => setSelectedStage(e.target.value)}
-                    className="appearance-none text-[#6B7280] w-full h-full pl-3 pr-8 rounded-lg text-sm"
-                  >
-                    <option value="All">Company</option>
-                    <option value="Not Interested">Not Interested</option>
-                    <option value="Negotiation">Negotiation</option>
-                    <option value="Deal Closed">Deal Closed</option>
-                  </select>
-        
-                  {/* Custom dropdown icon */}
-                  <div className="pointer-events-none absolute right-2 top-2/4 transform -translate-y-1/2">
-                    <FiChevronDown size={18} color="#6B7280" />
-                  </div>
-                </div>
+          <select
+            value={selectedStage}
+            onChange={(e) => setSelectedStage(e.target.value)}
+            className="appearance-none text-[#6B7280] w-full h-full pl-3 pr-8 rounded-lg text-sm"
+          >
+            <option value="All">Company</option>
+            <option value="Not Interested">Not Interested</option>
+            <option value="Negotiation">Negotiation</option>
+            <option value="Deal Closed">Deal Closed</option>
+          </select>
+
+          {/* Custom dropdown icon */}
+          <div className="pointer-events-none absolute right-2 top-2/4 transform -translate-y-1/2">
+            <FiChevronDown size={18} color="#6B7280" />
+          </div>
+        </div>
       </div>
 
       {selectedRows.length > 0 && (
@@ -223,27 +221,32 @@ const LeadsPage = () => {
 
       <div className="border border-gray-200 rounded-lg overflow-x-auto shadow-sm bg-white">
         <table className="min-w-full">
-        <thead className="bg-gray-50">
-  <tr>
-    <Th className="w-12 px-4">
-      <CustomCheckbox
-        onChange={(e) => handleSelectAllOnPage(e.target.checked)}
-        checked={isAllOnPageSelected}
-        indeterminate={isAnySelectedOnPage && !isAllOnPageSelected}
-      />
-    </Th>
-    {columns.map((column) => (
-      <Th key={column.key} className=" items-center justify-start space-x-1">
-        <span className="flex items-center justify-start gap-1">{column.label}
-        {/* Only show the icon if it's not in the excluded list */}
-        {(column.key !== "company" && column.key !== "stage" && column.key !== "summary" && column.key !== "actions") && (
-          <UpDownIcon />
-        )}
-        </span>
-      </Th>
-    ))}
-  </tr>
-</thead>
+          <thead className="bg-gray-50">
+            <tr>
+              <Th className="w-12 px-4">
+                <CustomCheckbox
+                  onChange={(e) => handleSelectAllOnPage(e.target.checked)}
+                  checked={isAllOnPageSelected}
+                  indeterminate={isAnySelectedOnPage && !isAllOnPageSelected}
+                />
+              </Th>
+              {columns.map((column) => (
+                <Th
+                  key={column.key}
+                  className=" items-center justify-start space-x-1"
+                >
+                  <span className="flex items-center justify-start gap-1">
+                    {column.label}
+                    {/* Only show the icon if it's not in the excluded list */}
+                    {column.key !== "company" &&
+                      column.key !== "stage" &&
+                      column.key !== "summary" &&
+                      column.key !== "actions" && <UpDownIcon />}
+                  </span>
+                </Th>
+              ))}
+            </tr>
+          </thead>
 
           <tbody className="divide-y divide-gray-200">
             {paginatedData.length > 0 ? (
@@ -270,39 +273,46 @@ const LeadsPage = () => {
                   </Td>
 
                   {columns.map((column) => (
-  <Td
-    key={column.key}
-    className={`${
-      selectedRows.includes(row.id)
-        ? "bg-blue-50 group-hover:bg-blue-50"
-        : "group-hover:bg-gray-50"
-    }`}
-  >
-    {column.key === "stage" ? (
-      <StatusBadge
-        status={row[column.key]}
-        statusType={statusMapping[row[column.key]] || statusMapping["default"]}
-      />
-    ) : column.key === "actions" ? (
-      <div className="flex items-end justify-end gap-2">
-        <RecommendationButton onClick={() => handleRecommendationAction(row.id)} />
-        <TableActionButton onClick={() => handleViewAction(row.id)}>
-          {row.view || "View"}
-        </TableActionButton>
-      </div>
-    ) : column.key === "contact" ? (
-      <span className="flex items-center gap-2">
-        <div className="bg-[#D9D9D9] w-[29px] h-[29px] rounded-full"></div>
-        {row[column.key]}
-      </span>
-    ) : row[column.key] !== undefined && row[column.key] !== null ? (
-      row[column.key].toString()
-    ) : (
-      <span className="text-gray-400">N/A</span>
-    )}
-  </Td>
-))}
-
+                    <Td
+                      key={column.key}
+                      className={`${
+                        selectedRows.includes(row.id)
+                          ? "bg-blue-50 group-hover:bg-blue-50"
+                          : "group-hover:bg-gray-50"
+                      }`}
+                    >
+                      {column.key === "stage" ? (
+                        <StatusBadge
+                          status={row[column.key]}
+                          statusType={
+                            statusMapping[row[column.key]] ||
+                            statusMapping["default"]
+                          }
+                        />
+                      ) : column.key === "actions" ? (
+                        <div className="flex items-end justify-end gap-2">
+                          <RecommendationButton
+                            onClick={() => handleRecommendationAction(row.id)}
+                          />
+                          <TableActionButton
+                            onClick={() => handleViewAction(row.id)}
+                          >
+                            {row.view || "View"}
+                          </TableActionButton>
+                        </div>
+                      ) : column.key === "contact" ? (
+                        <span className="flex items-center gap-2">
+                          <div className="bg-[#D9D9D9] w-[29px] h-[29px] rounded-full"></div>
+                          {row[column.key]}
+                        </span>
+                      ) : row[column.key] !== undefined &&
+                        row[column.key] !== null ? (
+                        row[column.key].toString()
+                      ) : (
+                        <span className="text-gray-400">N/A</span>
+                      )}
+                    </Td>
+                  ))}
                 </tr>
               ))
             ) : (
@@ -344,7 +354,6 @@ const LeadsPage = () => {
           </span>
         </div>
       </div>
-
     </div>
   );
 };
