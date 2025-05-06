@@ -51,9 +51,7 @@ const LeadsPage = () => {
     id: item.id || `lead-${index}`,
   }));
 
-  const { selectedRows, handleRowSelect, setSelectedRows } = useRowSelection(
-    leadsWithIds.map((item) => item.id)
-  );
+  
 
   const {
     currentPage,
@@ -63,6 +61,9 @@ const LeadsPage = () => {
     handlePaginate,
     setCurrentPage,
   } = usePagination(filteredData, itemsPerPage);
+
+  const { selectedRows, setSelectedRows, handleRowSelect, handleSelectAll } = useRowSelection(filteredData);
+
 
   useEffect(() => {
     setFilteredData(leadsWithIds);
@@ -139,6 +140,20 @@ const LeadsPage = () => {
     return <div className="p-4 text-center">Loading Leads...</div>;
   }
 
+  const handleSelectAllVisible = (isChecked) => {
+    const currentIds = paginatedData.map((item) => item.id);
+    if (isChecked) {
+      setSelectedRows((prevSelected) => [
+        ...new Set([...prevSelected, ...currentIds]),
+      ]);
+    } else {
+      setSelectedRows((prevSelected) =>
+        prevSelected.filter((id) => !currentIds.includes(id))
+      );
+    }
+  };
+  
+
   return (
     <div>
       <PageTitle
@@ -205,6 +220,16 @@ const LeadsPage = () => {
         </div>
       </div>
 
+
+
+
+
+
+
+
+
+
+
       {selectedRows.length > 0 && (
         <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-md text-sm text-blue-800 flex justify-between items-center">
           {" "}
@@ -219,16 +244,36 @@ const LeadsPage = () => {
         </div>
       )}
 
+
+
+
+
+
+
+
+
+
+
+      
+
       <div className="border border-gray-200 rounded-lg overflow-x-auto shadow-sm bg-white">
         <table className="min-w-full">
           <thead className="bg-gray-50">
             <tr>
               <Th className="w-12 px-4">
-                <CustomCheckbox
-                  onChange={(e) => handleSelectAllOnPage(e.target.checked)}
-                  checked={isAllOnPageSelected}
-                  indeterminate={isAnySelectedOnPage && !isAllOnPageSelected}
+              
+
+              <CustomCheckbox
+                  onChange={handleSelectAll}
+                  checked={
+                    selectedRows.length === data.length && data.length > 0
+                  }
                 />
+
+
+
+
+
               </Th>
               {columns.map((column) => (
                 <Th
@@ -267,9 +312,11 @@ const LeadsPage = () => {
                     {" "}
                     {/* Adjusted padding/hover */}
                     <CustomCheckbox
-                      onChange={() => handleRowSelect(row.id)}
-                      checked={selectedRows.includes(row.id)}
-                    />
+  onChange={(e) => handleRowSelect(row.id, e.target.checked)}
+  checked={selectedRows.includes(row.id)}
+/>
+
+
                   </Td>
 
                   {columns.map((column) => (

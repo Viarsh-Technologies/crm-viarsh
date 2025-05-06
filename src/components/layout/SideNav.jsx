@@ -27,7 +27,7 @@ const SideNav = () => {
           <li><NavigationLink icon={Vector} to="/aiagent" /></li>
           <li><NavigationLink icon={Bot} to="/chatbot" /></li>
           <li><NavigationLink icon={iconTeam} to="/leads" /></li>
-          <li><NavigationLink icon={Question} to="/" /></li>
+          <li><NavigationLink icon={Question} to="/question" /></li>
         </ul>
 
         <hr className="my-3 w-3/4 border-gray-400" />
@@ -40,8 +40,8 @@ const SideNav = () => {
         <hr className="my-3 w-3/4 border-gray-400" />
 
         <ul className="flex flex-col space-y-2">
-          <li><NavigationLink icon={Notifications} to="/" notificationDot={true} /></li>
-          <li><NavigationLink icon={Warn} to="/" warnDot={true} /></li>
+          <li><NavigationLink icon={Notifications} to="/notification" notificationDot={true} /></li>
+          <li><NavigationLink icon={Warn} to="/calender" warnDot={true} /></li>
         </ul>
       </div>
 

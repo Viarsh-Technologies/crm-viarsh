@@ -19,6 +19,9 @@ import ContactDetailPage from '../pages/ContactDetailPage'
 import { ContactsProvider } from '../context/ContactsContext';
 import NoFigma from '../pages/NoFigma';
 import Chatbot from '../pages/chatbot/Chatbot'
+import Question from '../pages/Question';
+import Notifications from '../pages/Notifications';
+import Calender from '../pages/Calender';
 
 
 const AppRouter = () => {
@@ -46,6 +49,16 @@ const AppRouter = () => {
           <Route path="/pendingApproval" element={<PendingApprovalPage />} />
           <Route path='/contactdetailpage' element={<ContactDetailPage />} />
           <Route path='/pagenotfound' element={<NoFigma />} />
+
+
+
+          {/* NO UI (Blank Files) */}
+          <Route path='/question' element={<Question />} />
+          <Route path='/calender' element={<Calender />} />
+          <Route path='/notification' element={<Notifications />} />
+
+
+
         </Route>
 
         {/* Routes that need ContactsProvider */}
@@ -57,5 +70,5 @@ const AppRouter = () => {
     </BrowserRouter>
   );
 };
-
+ 
 export default AppRouter;

@@ -234,7 +234,7 @@ const ProjectsPage = () => {
                 }
               }}
             />
-          </label>
+          </label> 
         </div>
         <div className=" mb-5">
           <img src={QuestionIcon} alt="" />
