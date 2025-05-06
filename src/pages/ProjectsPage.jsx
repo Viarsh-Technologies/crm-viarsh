@@ -192,7 +192,10 @@ const ProjectsPage = () => {
               onChange={(e) => setQuery(e.target.value)}
               className="rounded-sm px-2 py-1 mr-2 w-82 bg-transparent outline-none border-none focus:outline-none focus:ring-0"
             />
-            <Search size="18px" className="absolute left-[290px] text-gray-400" />
+            <Search
+              size="18px"
+              className="absolute left-[290px] text-gray-400"
+            />
           </div>
         </div>
 
@@ -234,7 +237,7 @@ const ProjectsPage = () => {
                 }
               }}
             />
-          </label> 
+          </label>
         </div>
         <div className=" mb-5">
           <img src={QuestionIcon} alt="" />
