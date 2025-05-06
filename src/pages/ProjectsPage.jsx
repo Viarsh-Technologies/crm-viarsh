@@ -199,7 +199,7 @@ const ProjectsPage = () => {
           </div>
         </div>
 
-        <div className="flex gap-0 mb-4 text-[#6B7280] bg-[#FFFFFF] relative rounded-[6px] border-[#2363C5] border-1">
+        <div className="flex gap-0 mb-4 text-[#6B7280] bg-[#FFFFFF] relative rounded-[6px] border-border border-1">
           <div className="relative w-[250px] h-[38px] text-black">
             <select
               value={selectedStage}
@@ -239,7 +239,7 @@ const ProjectsPage = () => {
             />
           </label>
         </div>
-        <div className=" mb-5">
+        <div className=" mb-8">
           <img src={QuestionIcon} alt="" />
         </div>
         <div className="relative  mb-4 border border-gray-300 bg-[#32D583] w-[113px] h-[38px] rounded-[6px]">
@@ -264,7 +264,7 @@ const ProjectsPage = () => {
           <select
             value={selectedStage}
             onChange={(e) => setSelectedStage(e.target.value)}
-            className="appearance-none text-[#949494] w-full h-full border border-[#969696] pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-0"
+            className="appearance-none text-[#949494] w-full h-full border border-[#D1D5DB] pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-0"
           >
             <option value="All">Sort</option>
             <option value="Not Interested">Not Interested</option>
