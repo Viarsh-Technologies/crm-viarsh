@@ -1,51 +1,75 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavigationLink = ({
   to,
   icon,
   notificationDot = false,
   warnDot = false,
-  mailMsg = false,
-  pendingApproval = false,
   pendingCount,
   mailCount,
 }) => {
   return (
-    <NavLink
-      to={to}
-      className={({ isActive }) =>
-        `flex items-center justify-center p-[6px] rounded-md transition-colors duration-150
-         hover:bg-brand-surface ${isActive ? "bg-brand-surface" : ""}`
-      }
-    >
-      <img
-        src={icon}
-        alt="nav icon"
-        className="w-[23px] h-[23px] object-contain"
-      />
+    <div className="relative">
+      <NavLink
+  to={to}
+  className={({ isActive }) =>
+    `w-[40px] h-[40px] relative flex items-center justify-center rounded-md transition-colors duration-150
+     hover:bg-gray-200 ${isActive ? "bg-gray-200" : ""}`
+  }
+>
+  <img
+    src={icon}
+    alt="nav icon"
+    className="w-[23px] h-[23px] object-contain"
+  />
 
-      {notificationDot && (
-        <span className="absolute bottom-[190px] left-[35px] w-[11px] h-[10px] rounded-full border-2 border-[#FAFBFF] bg-[#EA4646]" />
+  {/* Notification Dot */}
+  {notificationDot && (
+    <span className="absolute top-[7px] right-[10px] w-[10px] h-[10px] rounded-full border-2 border-white bg-red-600" />
+  )}
+
+  {/* Warning Dot */}
+  {warnDot && (
+    <span className="absolute top-[7px] right-[7px] w-[10px] h-[10px] rounded-full border-2 border-white bg-red-600" />
+  )}
+
+  {/* Email Badge */}
+  {mailCount > 0 && (
+    <span className="absolute -top-[6px] -right-[6px] min-w-[16px] h-[16px] px-[5px] text-[10px] flex items-center justify-center text-white bg-red-600 rounded-full font-semibold leading-none">
+      {mailCount > 120 ? '120+' : mailCount}
+    </span>
+  )}
+
+  {/* Pending Approval Badge */}
+  {pendingCount > 0 && (
+    <span className="absolute -top-[8px] -right-[6px] min-w-[16px] h-[16px] px-[5px] text-[10px] flex items-center justify-center text-white bg-red-600 rounded-full font-semibold leading-none">
+      {pendingCount > 120 ? '120+' : pendingCount}
+    </span>
+  )}
+</NavLink>
+
+
+      {/* {notificationDot && (
+        <span className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full border-2 border-white bg-red-600" />
       )}
 
       {warnDot && (
-        <span className="absolute bottom-[145px] left-[38px] w-[11px] h-[10px] rounded-full border-2 border-[#FAFBFF] bg-[#EA4646]" />
+        <span className="absolute top-0 right-0 w-[10px] h-[10px] rounded-full border-2 border-white bg-yellow-400" />
       )}
 
-      {/* email */}
       {mailCount > 0 && (
-        <span className="absolute bottom-[331px] left-[35px] min-w-[16px] h-[16px] px-[5px] text-[10px] flex items-center justify-center text-white bg-red-600 rounded-full font-semibold leading-none">
-          {mailCount > 120 ? "120+" : mailCount}
+        <span className="absolute top-0 right-0 min-w-[16px] h-[16px] px-[5px] text-[10px] flex items-center justify-center text-white bg-red-600 rounded-full font-semibold leading-none">
+          {mailCount > 120 ? '120+' : mailCount}
         </span>
       )}
 
       {pendingCount > 0 && (
-        <span className="absolute bottom-[288px] left-[35px] min-w-[16px] h-[16px] px-[5px] text-[10px] flex items-center justify-center text-white bg-red-600 rounded-full font-semibold leading-none">
-          {pendingCount > 120 ? "120+" : pendingCount}
+        <span className="absolute top-0 right-0 min-w-[16px] h-[16px] px-[5px] text-[10px] flex items-center justify-center text-white bg-red-600 rounded-full font-semibold leading-none">
+          {pendingCount > 120 ? '120+' : pendingCount}
         </span>
-      )}
-    </NavLink>
+      )} */}
+    </div>
   );
 };
 
