@@ -15,7 +15,7 @@ const NavigationLink = ({
   to={to}
   className={({ isActive }) =>
     `w-[40px] h-[40px] relative flex items-center justify-center rounded-md transition-colors duration-150
-     hover:bg-gray-200 ${isActive ? "bg-gray-200" : ""}`
+     hover:bg-brand-surface ${isActive ? "bg-brand-surface" : ""}`
   }
 >
   <img
@@ -113,3 +113,16 @@ export default NavigationLink;
 
 //   return () => socket.close()
 // }, [])
+
+
+
+
+
+
+
+
+
+
+
+
+
